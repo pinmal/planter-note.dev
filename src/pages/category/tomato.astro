@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="ミニトマト プランター栽培 — 支柱と誘引で収穫量を上げる"
+  description="ミニトマトを確実に育てるための苗選び・支柱立て・誘引クリップの使い方。失敗ノートから学んだ管理のコツ。"
+>
+  <h1>🍅 ミニトマト — 支柱と誘引が収穫量を決める</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    ミニトマトは水と肥料のコントロールさえできれば、プランターでも豊作になる野菜です。
+    品質管理的に言えば「管理のしやすさ」が優れた作物です。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田のミニトマト栽培メモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>苗選び</strong>: 接ぎ木苗は高いが病気に強い。初心者は接ぎ木推奨</li>
+      <li><strong>植え付け</strong>: GW前後が目安。霜が降りた後に定植する</li>
+      <li><strong>支柱</strong>: 180cm以上を早めに立てる。大きくなってからでは遅い</li>
+      <li><strong>誘引</strong>: 麻ひもより誘引クリップが傷つきにくく着脱しやすい</li>
+      <li><strong>わき芽かき</strong>: 主茎以外から出るわき芽は早めに取る（1本仕立て）</li>
+      <li><strong>水やり</strong>: 実の肥大期に水を切らさない。乾燥すると実が割れる</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめアイテム</h2>
+    <ProductCard id="tomato-mini-plant" />
+    <ProductCard id="tomato-support" />
+    <ProductCard id="tomato-clip" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>支柱を立てるのが遅れて茎が倒れる → 折れると復活しない</li>
+      <li>わき芽を放置して多本仕立てにする → 実が小さく栄養が分散する</li>
+      <li>着果後に追肥を増やしすぎる → 葉ばかり茂って実が付きにくくなる</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/fertilizer/">肥料</a> ·
+    <a href="/category/pest-control/">害虫対策</a> ·
+    <a href="/category/summer-vege/">夏野菜（なす・きゅうり）</a>
+  </nav>
+</BaseLayout>

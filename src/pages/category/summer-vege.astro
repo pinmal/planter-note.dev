@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="夏野菜 ベランダ栽培 — なす・きゅうりのプランター入門"
+  description="なす・きゅうりをベランダプランターで育てるポイント。肥料と水を切らさないための管理方法と失敗しないコンテナサイズの選び方。"
+>
+  <h1>🥒 夏野菜 — 肥料と水を切らさないことが全て</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    なすときゅうりは、収穫の達成感が大きい夏野菜の代表です。
+    ただし要求量が多いので、管理が甘いと収穫がぱたりと止まります。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の夏野菜栽培メモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>なす</strong>: 最低30Lのプランター。肥料切れのサインは葉色の黄化</li>
+      <li><strong>きゅうり</strong>: 成長が速く15〜20cmで収穫。放置すると皮が固くなる</li>
+      <li><strong>共通ルール</strong>: 週1〜2回の追肥を徹底（失敗ノート最多記録の原因）</li>
+      <li><strong>水やり</strong>: 夏は朝晩の2回。土の乾燥は収穫量減に直結する</li>
+      <li><strong>支柱</strong>: なす・きゅうりどちらも必須。倒れると茎が折れて終わり</li>
+      <li><strong>更新剪定（なす）</strong>: 8月に半分に切り戻すと秋まで収穫が続く</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめアイテム</h2>
+    <ProductCard id="summer-eggplant" />
+    <ProductCard id="summer-cucumber" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>プランターが小さすぎる（なすに20L以下）→ 根が詰まって成長が止まる</li>
+      <li>肥料を2週間以上与えない → 葉が黄色くなり収穫がゼロになった</li>
+      <li>きゅうりを大きくなるまで待つ → 翌日には太くて種だらけに</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/fertilizer/">肥料</a> ·
+    <a href="/category/planter/">プランター</a> ·
+    <a href="/category/tomato/">ミニトマト</a>
+  </nav>
+</BaseLayout>

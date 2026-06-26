@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="プランター選びのポイントとおすすめ"
+  description="底穴・深さ・素材でプランターを選ぶコツを、失敗ノート6冊の経験からまとめました。根腐れゼロを目指すスリット鉢から深型まで。"
+>
+  <h1>🪴 プランター — 底穴と深さが最初の選択</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    プランター失敗の原因ナンバーワンは「根腐れ」です。根腐れはほぼ、水はけの悪い容器で起きます。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の選び方メモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>スリット鉢</strong>: 根腐れ予防に最も効果的。底・側面から余分な水が抜ける</li>
+      <li><strong>深さ30cm以上</strong>: なす・きゅうり・ミニトマトはこれが必須条件</li>
+      <li><strong>深さ20cm前後</strong>: ハーブ・葉物野菜・ラディッシュに適している</li>
+      <li><strong>素材はプラスチック</strong>: 軽くて移動しやすい。陶器は重さに注意</li>
+      <li><strong>色は薄いほうが無難</strong>: 黒いプランターは夏の直射で土温が上がりすぎる</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめプランター</h2>
+    <ProductCard id="planter-slit-pot" />
+    <ProductCard id="planter-deep-60" />
+    <ProductCard id="planter-round-herb" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>底穴が小さすぎて水が溜まる → スリット鉢に変えるだけで改善</li>
+      <li>浅いプランターでトマトを育てようとする → 根が回って成長が止まる</li>
+      <li>受け皿に水を溜めっぱなしにする → 夏でも3日で根腐れになった</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/soil/">土・培養土</a> ·
+    <a href="/category/fertilizer/">肥料</a> ·
+    <a href="/category/tools/">道具</a>
+  </nav>
+</BaseLayout>

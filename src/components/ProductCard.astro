@@ -1,0 +1,33 @@
+---
+import { getProductById, buildAmazonUrl, buildRakutenUrl, type Product } from '../data/products';
+
+interface Props {
+  id: string;
+  product?: Product;
+}
+const { id, product: forced } = Astro.props;
+const product = forced ?? getProductById(id);
+if (!product) throw new Error(`ProductCard: product id "${id}" not found`);
+
+const amazonUrl = buildAmazonUrl(product);
+const rakutenUrl = buildRakutenUrl(product);
+---
+<aside class="card product-card" aria-label={`商品紹介: ${product.name}`}>
+  <span class="pr-badge">広告 / PR</span>
+  <h4 style="margin:0.3rem 0 0.5rem; font-size:1.05rem;">{product.name}</h4>
+  <p style="font-size:0.95rem; color:var(--color-text); margin:0.4rem 0 0.6rem; line-height:1.85;">
+    {product.shopComment}
+  </p>
+  <div class="btn-row">
+    {amazonUrl && (
+      <a class="btn btn-amazon" href={amazonUrl} rel="sponsored noopener" target="_blank" data-affiliate="amazon" data-product-id={product.id}>
+        <span>📦 Amazonで見る</span>
+      </a>
+    )}
+    {rakutenUrl && (
+      <a class="btn btn-rakuten" href={rakutenUrl} rel="sponsored noopener" target="_blank" data-affiliate="rakuten" data-product-id={product.id}>
+        <span>🛒 楽天で見る</span>
+      </a>
+    )}
+  </div>
+</aside>

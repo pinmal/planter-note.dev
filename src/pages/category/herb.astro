@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="ベランダで育てるハーブ — バジル・シソ・ミント"
+  description="バジル・大葉（シソ）・ミントのプランター栽培のコツ。初心者が失敗しやすいポイントと品種選びを解説。"
+>
+  <h1>🌿 ハーブ — ベランダで育てやすい品種から</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    ハーブは収穫サイクルが早く、初めてのプランター菜園に向いています。
+    ただし品種によって性質が全く違うので、まとめて植えないことが大切です。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田のハーブ栽培メモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>バジル</strong>: 20℃以上で播種。低温に弱く秋に枯れる。1プランター1株が基本</li>
+      <li><strong>大葉（シソ）</strong>: 半日陰でも育つ。水切れすると葉が固くなる</li>
+      <li><strong>ミント</strong>: 必ず単独プランターで。他の野菜と一緒に植えると占領される</li>
+      <li><strong>共通ポイント</strong>: 花が咲く前に摘んで収穫量を増やす</li>
+      <li><strong>水やり</strong>: 土の表面が乾いたらたっぷり。過湿より乾燥気味が安全</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめハーブ</h2>
+    <ProductCard id="herb-basil-seed" />
+    <ProductCard id="herb-shiso-seed" />
+    <ProductCard id="herb-mint-plant" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>ミントをバジルと一緒のプランターに植える → ミントが全体を占拠した</li>
+      <li>バジルを4月に播種する → 気温が低くて発芽しない。5月中旬以降が目安</li>
+      <li>花が咲いたまま放置する → 葉の成長が止まり収穫量が激減する</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/planter/">プランター</a> ·
+    <a href="/category/soil/">土・培養土</a> ·
+    <a href="/category/pest-control/">害虫対策</a>
+  </nav>
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="害虫・病気対策 — 防虫ネットと殺虫剤の使い方"
+  description="農薬を使わずに害虫を防ぐ防虫ネットの正しい張り方と、やむを得ない場合の殺虫剤の選び方。"
+>
+  <h1>🛡️ 害虫・病気対策 — 予防が全て</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    害虫は「発生してから対処」より「発生させない」ほうが何倍も楽です。
+    失敗ノート5冊目は、ほぼ害虫対策の記録でした。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の害虫対策メモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>第1防衛ライン</strong>: 防虫ネット（目合い0.4mm）で物理的に侵入を防ぐ</li>
+      <li><strong>ネットは隙間が命</strong>: 端が開いていると虫が入る。密閉が大切</li>
+      <li><strong>早期発見</strong>: 週1回の葉の裏チェック習慣をつける</li>
+      <li><strong>殺虫剤</strong>: 「収穫前日まで使用可」の表示を必ず確認する</li>
+      <li><strong>適用作物</strong>: ラベルに記載のない作物に使わない（法令上も）</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめ害虫対策グッズ</h2>
+    <ProductCard id="pest-net" />
+    <ProductCard id="pest-spray" />
+    <ProductCard id="pest-copper" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>防虫ネットを張ったが端が開いていた → ネットの中に虫が大量発生</li>
+      <li>アブラムシを見つけてから農薬を探す → すでに広がっていて手遅れ</li>
+      <li>適用外の作物に殺虫剤を使う → 法令違反になる可能性がある</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/tomato/">ミニトマト</a> ·
+    <a href="/category/summer-vege/">夏野菜</a> ·
+    <a href="/category/herb/">ハーブ</a>
+  </nav>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="プランター菜園の土・培養土 選び方とおすすめ"
+  description="野菜用培養土の選び方とpH管理のコツを失敗ノートから解説。元肥入り・有機培養土・pH調整の基本。"
+>
+  <h1>🌱 土・培養土 — 失敗の3割は土で決まる</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    品質管理の現場でいう「インプット品質」が、土の質です。材料が悪ければ結果は出ません。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の土選びメモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>元肥入り培養土</strong>: 最初の2ヶ月は追肥不要。初心者にとくにおすすめ</li>
+      <li><strong>pH 6.0〜6.5</strong>: ほとんどの野菜はこの範囲が適している</li>
+      <li><strong>バーク堆肥入り</strong>: 通気性が高く根が伸びやすい。値段は上がる</li>
+      <li><strong>2年目以降の古土</strong>: 必ずpH計測 → 苦土石灰で調整してから再利用</li>
+      <li><strong>園芸用ではない土（庭土）</strong>: プランターに使うと水はけが悪くなる</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめの土・培養土</h2>
+    <ProductCard id="soil-veggie-25l" />
+    <ProductCard id="soil-organic-bark" />
+    <ProductCard id="soil-ph-adjuster" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>pHを測らずに毎年同じ土を使い続ける → 酸性化して肥料が効かなくなる</li>
+      <li>格安の培養土を選ぶ → 元肥なし・水はけ悪・虫卵入りのリスクあり</li>
+      <li>石灰を一度に大量に入れる → pHが上がりすぎて植え付け不可になった</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/planter/">プランター</a> ·
+    <a href="/category/fertilizer/">肥料</a> ·
+    <a href="/category/tools/">道具（pH計）</a>
+  </nav>
+</BaseLayout>

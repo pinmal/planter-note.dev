@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="家庭菜園の道具 — ジョウロ・移植ゴテ・pH計"
+  description="ガーデニングに最低限必要な道具の選び方。感覚に頼らず数値で管理するためのツール選びのポイント。"
+>
+  <h1>🔧 道具 — 測れるものは測る</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    品質管理の現場でも家庭菜園でも、「感覚」から「数値」に変えた瞬間から結果が安定します。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の道具選びメモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>ジョウロ</strong>: ハス口（シャワー型）は種まき後の土を崩さず水やりできる</li>
+      <li><strong>移植ゴテ</strong>: 目盛り付きステンレス製。安物は刃が曲がってすぐ使えなくなる</li>
+      <li><strong>pH計</strong>: デジタル式が読み取り明確。年1回以上は計測する習慣を</li>
+      <li><strong>水分計</strong>: 過湿による根腐れを数値で事前に防ぐ</li>
+      <li><strong>手袋</strong>: 薄手コーティングタイプが細かい作業に向いている</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめ道具</h2>
+    <ProductCard id="tools-jouro" />
+    <ProductCard id="tools-trowel" />
+    <ProductCard id="tools-gloves" />
+    <ProductCard id="tools-ph-meter" />
+    <ProductCard id="tools-moisture-meter" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>ジョウロの口が太く水が勢いよく出る → 種まき後の土が崩れて発芽率が下がる</li>
+      <li>pH計を買わずに毎年同じ土を使う → 酸性化に気づかず肥料が効かない原因に</li>
+      <li>安い移植ゴテで固い土を掘る → 刃が曲がって使えなくなった（2回経験）</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/soil/">土・培養土</a> ·
+    <a href="/category/planter/">プランター</a> ·
+    <a href="/category/pest-control/">害虫対策</a>
+  </nav>
+</BaseLayout>

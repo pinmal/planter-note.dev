@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import DisclosureBanner from '../components/DisclosureBanner.astro';
+
+const books = [
+  { num: 'book05',  title: 'プランター菜園完全入門',                              asin: '' },
+  { num: 'book256', title: '失敗ノートから学ぶ 水やりの法則',                     asin: '' },
+  { num: 'book257', title: 'ミニトマトを確実に育てるプランター入門',              asin: '' },
+  { num: 'book258', title: 'プランター菜園の土と肥料の選び方入門',                asin: '' },
+  { num: 'book259', title: 'なす・きゅうり ベランダ夏野菜入門',                   asin: '' },
+  { num: 'book260', title: '定年後に始める市民農園入門',                           asin: '' },
+  { num: 'book261', title: '害虫・病気からプランター野菜を守る入門',              asin: '' },
+  { num: 'book262', title: 'ベランダで育てるハーブ入門',                          asin: '' },
+  { num: 'book263', title: 'プランター菜園の収穫量を倍にする管理術',              asin: '' },
+  { num: 'book264', title: 'マンションベランダで年30品種育てる菜園計画',          asin: '' },
+  { num: 'book265', title: '家庭菜園の失敗ノートからわかった 野菜を枯らさない7つのルール', asin: '' },
+];
+---
+<BaseLayout
+  title="本をお読みの方へ — おすすめアイテム一覧"
+  description="増田博之のKindle本をお読みいただいた方へ。本の中で紹介したプランター・土・肥料・道具をカテゴリ別にまとめました。"
+>
+  <section style="padding:1.2rem 0 0.5rem;">
+    <h1>📚 本をお読みいただきありがとうございます</h1>
+    <p style="font-size:1.05rem; line-height:1.9; margin:0.8rem 0 0.5rem;">
+      このページを開いてくださったということは、増田の本を読んでくださったのだと思います。
+      ありがとうございます。
+    </p>
+    <p style="line-height:1.9;">
+      本の中でお話しした「プランター・土・肥料・道具」について、実際に使ってよかったものをここにまとめました。
+      Amazonで検索できるようにしていますので、気になるものがあればご確認ください。
+    </p>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:2rem;">
+    <h2>🪴 プランター（底穴と深さが最重要）</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
+      根腐れの原因の多くは、プランター選びにあります。底穴の大きさと深さを意識してください。
+    </p>
+    <ProductCard id="planter-slit-pot" />
+    <ProductCard id="planter-deep-60" />
+    <ProductCard id="planter-round-herb" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>🌱 土・培養土（失敗の3割は土で決まる）</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
+      市販の培養土は品質にばらつきがあります。元肥入りかどうか確認してから購入を。
+    </p>
+    <ProductCard id="soil-veggie-25l" />
+    <ProductCard id="soil-organic-bark" />
+    <ProductCard id="soil-ph-adjuster" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>💊 肥料（元肥・追肥・液肥の使い分け）</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
+      肥料切れが収穫量の差を生みます。追肥のタイミングは葉の色で判断してください。
+    </p>
+    <ProductCard id="fertilizer-kagaku" />
+    <ProductCard id="fertilizer-organic" />
+    <ProductCard id="fertilizer-liquid" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>🔧 道具（測れるものは測る）</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
+      感覚でやっていた水やりと肥料を、数値で管理するようになってから収穫が安定しました。
+    </p>
+    <ProductCard id="tools-jouro" />
+    <ProductCard id="tools-trowel" />
+    <ProductCard id="tools-ph-meter" />
+    <ProductCard id="tools-moisture-meter" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>🛡️ 害虫・病気対策（予防が全て）</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
+      農薬を使いたくない方は防虫ネットから始めてください。張り方が9割です。
+    </p>
+    <ProductCard id="pest-net" />
+    <ProductCard id="pest-spray" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>📔 失敗を記録する道具</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
+      記録することで、同じ失敗を繰り返さなくなります。最初は「日付・天気・気づき1行」から。
+    </p>
+    <ProductCard id="record-garden-notebook" />
+    <ProductCard id="record-label" />
+  </section>
+
+  <section style="margin-top:2.8rem; padding:1.4rem 1.2rem; background:#f0f7ee; border-radius:12px; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.8rem;">増田博之の著書一覧</h2>
+    <p style="font-size:0.9rem; color:var(--color-text-muted); margin:0 0 1rem;">
+      ※ ASIN取得後にリンクを追加します
+    </p>
+    <ul style="list-style:none; margin:0; padding:0; display:grid; gap:0.5rem;">
+      {books.map((b) => (
+        <li style="padding:0.5rem 0.6rem; background:white; border:1px solid var(--color-border); border-radius:7px; font-size:0.9rem;">
+          {b.asin ? (
+            <a href={`https://www.amazon.co.jp/dp/${b.asin}?tag=planter-note-22`} rel="sponsored noopener" target="_blank" style="color:var(--color-link);">
+              📖 {b.title}
+            </a>
+          ) : (
+            <span style="color:var(--color-text-muted);">📖 {b.title}（予約・発売準備中）</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section style="margin-top:2rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7;">
+    ※ 当サイトの「増田博之」は架空のキャラクターです。商品紹介リンクはAmazon.co.jpアソシエイトプログラムを通じた広告リンクです。
+  </section>
+</BaseLayout>

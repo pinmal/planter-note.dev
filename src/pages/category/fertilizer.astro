@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import DisclosureBanner from '../../components/DisclosureBanner.astro';
+---
+<BaseLayout
+  title="プランター菜園の肥料 — 元肥・追肥・液肥の使い分け"
+  description="化成肥料・有機肥料・液体肥料の違いと使いどころを解説。肥料切れのサインと追肥タイミングのコツ。"
+>
+  <h1>💊 肥料 — 肥料切れを数値で判断する</h1>
+  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
+    収穫量が安定しなかった時代は、肥料のタイミングを感覚でやっていました。
+    記録するようになってから、2週間ごとの追肥が最適だとわかりました。
+  </p>
+
+  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の肥料使い分けメモ</h2>
+    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
+      <li><strong>元肥（化成肥料）</strong>: 植え付け時に土に混ぜる。2ヶ月は追肥不要</li>
+      <li><strong>追肥（化成肥料）</strong>: 元肥が切れる2ヶ月後から2週間ごとに施す</li>
+      <li><strong>液肥</strong>: 即効性あり。肥料切れの症状が出たらすぐ与える</li>
+      <li><strong>有機肥料</strong>: ゆっくり効く・土壌改善効果あり。においに注意</li>
+      <li><strong>肥料切れのサイン</strong>: 葉の色が黄色に薄くなったとき</li>
+    </ul>
+  </section>
+
+  <DisclosureBanner />
+
+  <section style="margin-top:0.5rem;">
+    <h2>おすすめ肥料</h2>
+    <ProductCard id="fertilizer-kagaku" />
+    <ProductCard id="fertilizer-organic" />
+    <ProductCard id="fertilizer-liquid" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある失敗</h2>
+    <ul style="line-height:2; font-size:0.95rem;">
+      <li>「元肥入り培養土」なのに植え付け直後も追肥する → 肥料焼けで根が傷む</li>
+      <li>液肥を濃くすれば早く効くと思って原液のまま与える → 根が枯れた</li>
+      <li>花が咲いてから肥料を与えすぎる → 葉ばかり茂って実がつかない</li>
+    </ul>
+  </section>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/soil/">土・培養土</a> ·
+    <a href="/category/tomato/">ミニトマト</a> ·
+    <a href="/category/summer-vege/">夏野菜</a>
+  </nav>
+</BaseLayout>
