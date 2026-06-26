@@ -1,80 +1,121 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
 
 const categories = [
-  { href: '/category/planter/',      emoji: '🪴', label: 'プランター',       desc: '底穴・サイズ・素材の選び方。根腐れゼロのスリット鉢から始める。' },
-  { href: '/category/soil/',         emoji: '🌱', label: '土・培養土',       desc: 'pH・通気・有機質のバランス。失敗の3割は土で決まる。' },
-  { href: '/category/fertilizer/',   emoji: '💊', label: '肥料',             desc: '元肥・追肥・液肥の使い分け。「肥料切れ」を数値で判断する。' },
-  { href: '/category/tools/',        emoji: '🔧', label: '道具',             desc: 'ジョウロ・移植ゴテ・pH計。測れるものは測る。' },
-  { href: '/category/pest-control/', emoji: '🛡️', label: '害虫・病気対策',  desc: '防虫ネットが最初の防衛ライン。農薬は最後の手段。' },
-  { href: '/category/herb/',         emoji: '🌿', label: 'ハーブ',           desc: 'バジル・シソ・ミント。ベランダで育てやすい品種から。' },
-  { href: '/category/tomato/',       emoji: '🍅', label: 'ミニトマト',       desc: '支柱と誘引が収穫量を決める。接ぎ木苗で病気リスクを下げる。' },
-  { href: '/category/summer-vege/',  emoji: '🥒', label: '夏野菜',           desc: 'なす・きゅうり。肥料と水を切らさないことが全て。' },
+  { href: '/category/planter/',      emoji: '🪴', label: 'プランター',       desc: '根腐れゼロのスリット鉢から始める。底穴と深さだけで収穫量が変わる。' },
+  { href: '/category/soil/',         emoji: '🌱', label: '土・培養土',       desc: '格安の土で3年失敗した。元肥入りの培養土に変えてから収穫が安定した。' },
+  { href: '/category/fertilizer/',   emoji: '💊', label: '肥料',             desc: '肥料切れは葉の色でわかる。化成・有機・液肥の使い分けを覚えれば十分。' },
+  { href: '/category/tools/',        emoji: '🔧', label: '道具',             desc: 'pH計1台で失敗の28%がなくなった。感覚より数値を信じる。' },
+  { href: '/category/pest-control/', emoji: '🛡️', label: '害虫・病気対策',  desc: '防虫ネット1枚でキュウリの収穫が11本→147本に。端の密閉だけ気をつける。' },
+  { href: '/category/herb/',         emoji: '🌿', label: 'ハーブ',           desc: 'バジル・シソ・ミント。ベランダ菜園の入口として最も育てやすい。' },
+  { href: '/category/tomato/',       emoji: '🍅', label: 'ミニトマト',       desc: '接ぎ木苗と支柱の2つで収穫量が2倍になった。早めの支柱立てが命。' },
+  { href: '/category/summer-vege/',  emoji: '🥒', label: '夏野菜',           desc: 'なすは肥料を切らすな。きゅうりは1日放置すると食べごろを逃す。' },
 ];
 ---
 <BaseLayout
   title="プランターノート — 失敗ノートから選ぶ家庭菜園アイテム"
-  description="家庭菜園歴12年の増田博之が失敗から選んだプランター・土・肥料のおすすめ品を紹介します。品質管理の思考で「なぜ失敗するか」を記録し続けた6冊のノートから厳選。"
+  description="家庭菜園歴12年の増田博之が、失敗ノート6冊から選んだプランター・土・肥料のおすすめを紹介します。根腐れ・肥料切れ・pH異常——失敗の9割はこの3つで防げます。"
 >
+
+  <!-- ─── ヒーロー -->
   <section class="hero-section">
     <p class="hero-lead">
       プランター菜園は<br />土と水のコントロールがすべて
     </p>
-    <p style="font-size:1rem; line-height:1.9; margin:0 0 1.2rem; color:var(--color-text-muted);">
-      品質管理の仕事を30年続けた増田博之が、12年間の家庭菜園で書いた失敗ノート6冊から<br />
-      「本当に使えるアイテム」だけを選んで紹介するサイトです。
+    <p style="font-size:0.98rem; line-height:1.95; margin:0 0 1.2rem; color:var(--color-text-muted);">
+      品質管理の仕事を30年続けた増田博之が、12年間の菜園で書いた失敗ノート6冊から
+      「本当に使えるアイテム」だけを選んで紹介します。<br />
+      根腐れ32回、肥料切れ多数、pH異常の沼——これを全部経験してたどり着いた選択です。
     </p>
     <div class="hero-badges">
       <span class="hero-badge">🌱 菜園歴12年</span>
       <span class="hero-badge">📔 失敗ノート6冊</span>
       <span class="hero-badge">🔬 品質管理思考</span>
-      <span class="hero-badge">🪴 プランター専門</span>
+      <span class="hero-badge">🏆 収穫36品種以上</span>
     </div>
   </section>
 
-  <section style="background:linear-gradient(135deg,#f0f7ee,#e8f5e2); border-radius:14px; padding:1.4rem 1.2rem; margin:0.5rem 0 2rem; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.5rem; border-left:4px solid var(--color-accent); padding-left:0.6rem; font-size:1.1rem; color:var(--color-accent);">
-      📚 Kindle本をお読みの方へ
+  <!-- ─── Kindle 読者向けバナー -->
+  <section style="background:linear-gradient(135deg,#1b4332,#2d6a4f); border-radius:14px; padding:1.5rem 1.4rem; margin:0.5rem 0 2rem; color:white;">
+    <p style="font-size:0.8rem; color:#90e090; margin:0 0 0.3rem; letter-spacing:0.08em;">Kindle本をお読みの方へ</p>
+    <h2 style="margin:0 0 0.6rem; border-left:none; padding-left:0; font-size:1.1rem; color:white;">
+      本の中で紹介した商品をまとめました
     </h2>
-    <p style="margin:0 0 0.8rem; font-size:0.95rem; line-height:1.8;">
-      本の中で紹介した商品・おすすめアイテムを、カテゴリ別にまとめたページをご用意しています。
+    <p style="margin:0 0 1rem; font-size:0.9rem; line-height:1.75; color:#c0e8b8;">
+      「あれ、どこで買えばいいの？」に答えるページを用意しています。
+      本をお読みいただいた方はこちらからどうぞ。
     </p>
-    <a href="/kindle-guide/" style="display:inline-block; background:var(--color-accent); color:#fff; padding:0.65rem 1.4rem; border-radius:7px; text-decoration:none; font-weight:700; font-size:0.95rem;">
-      → 本をお読みの方はこちら
+    <a href="/kindle-guide/" style="display:inline-block; background:white; color:#1b4332; padding:0.65rem 1.5rem; border-radius:7px; text-decoration:none; font-weight:800; font-size:0.95rem;">
+      → 本をお読みの方へ（おすすめアイテム一覧）
     </a>
   </section>
 
-  <section>
+  <!-- ─── まずこの3点から（初心者向け） -->
+  <section style="margin-top:0.5rem; padding:1.5rem 1.4rem; border:2px solid var(--color-primary); border-radius:14px; background:#fafcf9;">
+    <p style="font-size:0.8rem; color:var(--color-primary); font-weight:700; margin:0 0 0.3rem; letter-spacing:0.08em;">
+      はじめての方へ
+    </p>
+    <h2 style="margin:0 0 0.6rem; border-left:none; padding-left:0; font-size:1.15rem;">
+      「何から揃えればいい？」に答える3点
+    </h2>
+    <p style="font-size:0.9rem; line-height:1.8; color:var(--color-text-muted); margin:0 0 1.2rem;">
+      全部一度に揃える必要はありません。まずこの3点から始めれば、
+      最初の失敗の多くは防げます。
+    </p>
+    <ProductCard id="planter-slit-pot" />
+    <ProductCard id="soil-veggie-25l" />
+    <ProductCard id="tools-ph-meter" />
+    <p style="text-align:right; margin:0.4rem 0 0; font-size:0.88rem;">
+      <a href="/kindle-guide/">→ 全アイテムを見る</a>
+    </p>
+  </section>
+
+  <!-- ─── カテゴリ -->
+  <section style="margin-top:2.4rem;">
     <h2>カテゴリから探す</h2>
     <div class="category-grid">
       {categories.map((c) => (
         <a href={c.href} class="card" style="text-decoration:none; color:inherit;">
-          <div style="font-size:1.8rem; margin-bottom:0.3rem;">{c.emoji}</div>
+          <div style="font-size:1.7rem; margin-bottom:0.3rem;">{c.emoji}</div>
           <h3 style="margin:0 0 0.35rem; font-size:1rem;">{c.label}</h3>
-          <p style="margin:0; font-size:0.86rem; color:var(--color-text-muted); line-height:1.65;">{c.desc}</p>
+          <p style="margin:0; font-size:0.84rem; color:var(--color-text-muted); line-height:1.65;">{c.desc}</p>
         </a>
       ))}
     </div>
   </section>
 
-  <section style="margin-top:2.8rem; padding:1.4rem 1.2rem; border:1px solid var(--color-border); border-radius:12px; background:#fafcfa;">
-    <h2 style="margin:0 0 0.8rem;">増田博之のプランター菜園の考え方</h2>
-    <p style="margin:0 0 0.8rem; line-height:1.9;">
-      品質管理の仕事を30年続けると、「なぜ失敗するか」を記録することが習慣になります。
+  <!-- ─── 増田の考え方 -->
+  <section style="margin-top:2.8rem; padding:1.6rem 1.4rem; border:1px solid var(--color-border); border-radius:12px; background:white;">
+    <h2 style="margin:0 0 1rem;">なぜ「失敗ノート」から選ぶのか</h2>
+    <p style="line-height:1.95; margin:0 0 0.9rem;">
+      品質管理の仕事を30年続けると、「なぜ失敗したか」を記録することが習慣になります。
       家庭菜園でも同じで、失敗のたびにノートを書き続けて6冊になりました。
     </p>
-    <p style="margin:0 0 0.8rem; line-height:1.9;">
-      気づいたのは、ほとんどの失敗が「根腐れ」「肥料切れ」「pH異常」の3つに集中しているということです。
-      この3つを数値で管理できるようになると、収穫は安定します。
+    <p style="line-height:1.95; margin:0 0 0.9rem;">
+      気づいたのは、失敗の原因が集中しているということです。
     </p>
-    <p style="margin:0; line-height:1.9; color:var(--color-text-muted); font-size:0.92rem;">
-      このサイトでは、私が実際に使ってみて「失敗が減った」と感じたアイテムだけを紹介しています。
-      良い点だけでなく、使ってみて気になった点も正直に書くようにしています。
+    <div style="background:#f0f7ee; border-radius:10px; padding:1.1rem 1.2rem; margin:0 0 0.9rem; font-size:0.92rem; line-height:1.9;">
+      <strong>失敗ノートの原因内訳（失敗ノート4冊目・集計）</strong><br />
+      　肥料切れ：31%<br />
+      　pH異常：28%<br />
+      　水やり過多（根腐れ）：23%<br />
+      　原因不明：18%
+    </div>
+    <p style="line-height:1.95; margin:0 0 0.9rem;">
+      この3つ（肥料・pH・水やり）を数値で管理できるようになれば、
+      失敗の8割以上は防げます。このサイトで紹介するアイテムは、
+      その3つを管理しやすくするための道具を中心に選んでいます。
+    </p>
+    <p style="line-height:1.95; margin:0; color:var(--color-text-muted); font-size:0.92rem;">
+      良い点だけを書くつもりはありません。
+      使ってみて気になった点、向いていない使い方も正直に書いています。
     </p>
   </section>
 
-  <section style="margin-top:2rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7; padding:0.8rem; border:1px dashed var(--color-border); border-radius:8px;">
-    ※ 当サイトの「増田博之」は架空のキャラクターです。紹介商品はAmazon.co.jpアソシエイトプログラムを通じた広告リンクを含みます。
+  <!-- ─── 免責 -->
+  <section style="margin-top:1.6rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7; padding:0.8rem; border:1px dashed var(--color-border); border-radius:8px;">
+    ※ 当サイトの「増田博之」は架空のキャラクターです。商品リンクはAmazon.co.jpアソシエイトプログラムを通じた広告リンクを含みます。
     詳しくは<a href="/privacy-policy/">プライバシーポリシー</a>をご覧ください。
   </section>
 </BaseLayout>

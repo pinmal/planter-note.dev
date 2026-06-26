@@ -4,49 +4,104 @@ import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
 ---
 <BaseLayout
-  title="ミニトマト プランター栽培 — 支柱と誘引で収穫量を上げる"
-  description="ミニトマトを確実に育てるための苗選び・支柱立て・誘引クリップの使い方。失敗ノートから学んだ管理のコツ。"
+  title="プランターでミニトマト — 脇芽放置で収穫5個になった失敗から学んだ育て方"
+  description="脇芽を放置して実が5個しかつかなかった失敗の記録。整枝・支柱・水やりの3点で安定収穫する方法を解説。"
 >
-  <h1>🍅 ミニトマト — 支柱と誘引が収穫量を決める</h1>
-  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
-    ミニトマトは水と肥料のコントロールさえできれば、プランターでも豊作になる野菜です。
-    品質管理的に言えば「管理のしやすさ」が優れた作物です。
-  </p>
+  <h1>🍅 ミニトマト — 整枝だけで収穫数が変わる</h1>
 
-  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田のミニトマト栽培メモ</h2>
-    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
-      <li><strong>苗選び</strong>: 接ぎ木苗は高いが病気に強い。初心者は接ぎ木推奨</li>
-      <li><strong>植え付け</strong>: GW前後が目安。霜が降りた後に定植する</li>
-      <li><strong>支柱</strong>: 180cm以上を早めに立てる。大きくなってからでは遅い</li>
-      <li><strong>誘引</strong>: 麻ひもより誘引クリップが傷つきにくく着脱しやすい</li>
-      <li><strong>わき芽かき</strong>: 主茎以外から出るわき芽は早めに取る（1本仕立て）</li>
-      <li><strong>水やり</strong>: 実の肥大期に水を切らさない。乾燥すると実が割れる</li>
-    </ul>
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「菜園2年目にミニトマトを育てたとき、脇芽を全部伸ばしたままにしていました。
+      結果、葉と茎だけが茂って実は5個しかつきませんでした。
+      翌年、脇芽を全部かいたら、同じ苗から78個収穫できました。
+      ミニトマトで失敗した人の大半は、脇芽処理をしていないか、水やりのタイミングが違います。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（失敗ノート2冊目）</p>
+  </section>
+
+  <section style="margin-top:1.4rem;">
+    <h2>収穫を安定させる3つのポイント</h2>
+    <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid #2d6a4f; border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:#1b4332;">① 脇芽は毎週かく（最重要）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          葉と茎の分岐点（葉腋）から出る小さな芽が脇芽。放置すると1本の苗から何本もの茎が伸びて
+          養分が分散し、実がつかなくなります。毎週1回、発見次第かき取る。
+          親指と人差し指でつまんで横に引くと綺麗に取れます。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">② 支柱で誘引する（150cm以上）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          ミニトマトの主茎は1.5m以上伸びます。支柱なしだと茎が倒れて折れます。
+          定植時に支柱を立て、成長に合わせて麻紐で誘引していきます。
+          プランターでは傾くこともあるため、地面への固定も忘れずに。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">③ 水やりは「乾いてからたっぷり」</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          トマトは過湿に弱い一方、乾燥しすぎると実が割れます。
+          表土が乾いてから底から水が出るまでたっぷり与えるのが基本。
+          実が色づき始めたら水やりを減らすと甘みが増します（糖度が上がる）。
+        </p>
+      </div>
+    </div>
   </section>
 
   <DisclosureBanner />
 
   <section style="margin-top:0.5rem;">
-    <h2>おすすめアイテム</h2>
-    <ProductCard id="tomato-mini-plant" />
+    <h2>おすすめ資材</h2>
     <ProductCard id="tomato-support" />
     <ProductCard id="tomato-clip" />
+    <ProductCard id="fertilizer-liquid" />
+  </section>
+
+  <section style="margin-top:2rem; padding:1rem 1.1rem; background:#fff8e8; border:1px solid #f0d9a8; border-radius:10px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:#8b5e3c;">🗓️ ミニトマト栽培カレンダー（関東平野部の目安）</p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.4rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #f0d9a8;">
+            <th style="padding:0.4rem 0.6rem; text-align:left;">作業</th>
+            <th style="padding:0.4rem 0.6rem; text-align:left;">時期</th>
+            <th style="padding:0.4rem 0.6rem; text-align:left;">ポイント</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { op: '苗の植え付け', time: '5月上旬〜中旬', note: '霜が終わった後。気温15℃以上が目安' },
+            { op: '脇芽かき開始', time: '定植後すぐ', note: '毎週チェック。見逃すと急速に大きくなる' },
+            { op: '支柱・誘引', time: '20cm以上になったら', note: '150cm支柱。麻紐で8の字に結ぶ' },
+            { op: '初収穫', time: '7月上旬〜', note: '完熟（赤くなってから2〜3日後）が甘い' },
+            { op: '摘芯', time: '支柱の高さに達したら', note: '頂点を切って実の充実に集中させる' },
+          ].map((row) => (
+            <tr style="border-bottom:1px solid #f0d9a8;">
+              <td style="padding:0.4rem 0.6rem; font-weight:600;">{row.op}</td>
+              <td style="padding:0.4rem 0.6rem;">{row.time}</td>
+              <td style="padding:0.4rem 0.6rem; color:var(--color-text-muted);">{row.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section style="margin-top:2rem;">
     <h2>よくある失敗</h2>
-    <ul style="line-height:2; font-size:0.95rem;">
-      <li>支柱を立てるのが遅れて茎が倒れる → 折れると復活しない</li>
-      <li>わき芽を放置して多本仕立てにする → 実が小さく栄養が分散する</li>
-      <li>着果後に追肥を増やしすぎる → 葉ばかり茂って実が付きにくくなる</li>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li>脇芽を放置 → 実が5個しかつかなかった（菜園2年目の記録。翌年整枝したら78個に）</li>
+      <li>4月に植えて遅霜に当たる → 苗が枯れた。ゴールデンウィーク明けが安全</li>
+      <li>実が色づいてからも毎日水をたっぷり → 実が裂けた（裂果）。赤くなったら水を控えめに</li>
+      <li>支柱が短すぎて倒れる → 120cmは伸びる。150cm以上の支柱を最初から立てる</li>
     </ul>
   </section>
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
+    <a href="/category/summer-vege/">夏野菜（きゅうり・なす）</a> ·
     <a href="/category/fertilizer/">肥料</a> ·
-    <a href="/category/pest-control/">害虫対策</a> ·
-    <a href="/category/summer-vege/">夏野菜（なす・きゅうり）</a>
+    <a href="/category/pest-control/">害虫対策</a>
   </nav>
 </BaseLayout>

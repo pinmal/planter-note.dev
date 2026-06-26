@@ -4,23 +4,47 @@ import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
 ---
 <BaseLayout
-  title="プランター菜園の土・培養土 選び方とおすすめ"
-  description="野菜用培養土の選び方とpH管理のコツを失敗ノートから解説。元肥入り・有機培養土・pH調整の基本。"
+  title="プランター菜園の土・培養土 選び方とおすすめ — pH管理の基本"
+  description="格安の土で3年失敗した経験から選んだ培養土。元肥入り・バーク堆肥入り・pH調整の3ステップで失敗を防ぐ。"
 >
   <h1>🌱 土・培養土 — 失敗の3割は土で決まる</h1>
-  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
-    品質管理の現場でいう「インプット品質」が、土の質です。材料が悪ければ結果は出ません。
-  </p>
 
-  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の土選びメモ</h2>
-    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
-      <li><strong>元肥入り培養土</strong>: 最初の2ヶ月は追肥不要。初心者にとくにおすすめ</li>
-      <li><strong>pH 6.0〜6.5</strong>: ほとんどの野菜はこの範囲が適している</li>
-      <li><strong>バーク堆肥入り</strong>: 通気性が高く根が伸びやすい。値段は上がる</li>
-      <li><strong>2年目以降の古土</strong>: 必ずpH計測 → 苦土石灰で調整してから再利用</li>
-      <li><strong>園芸用ではない土（庭土）</strong>: プランターに使うと水はけが悪くなる</li>
-    </ul>
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「品質管理の現場でいう"インプット品質"が、土の質です。
+      最初の3年間に犯した失敗の半分は、格安の培養土から始めたことが根本原因でした。
+      土への投資を惜しむと、あとで何倍もの損をします。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.4rem;">
+    <h2>土選び 3つのチェックポイント</h2>
+    <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">① 元肥が入っているか</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          「元肥入り」の表示があれば植え付け後2ヶ月は追肥不要。
+          初心者が最初に挫折するポイントが「肥料切れに気づかなかった」ことなので、
+          この2ヶ月のバッファは大きい。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">② pH 6.0〜6.5 範囲か</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          ほとんどの野菜はpH 6.0〜6.5 が適正範囲。市販の培養土はこの範囲に調整済みのものが多い。
+          袋の裏に記載があれば確認する。ない場合はpH計で計測する習慣をつけると安心。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">③ 2年目以降は必ずpH計測</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          水やりを繰り返すと土は少しずつ酸性に傾きます。
+          4年目の夏、肥料を与えているのに葉が黄色くなり続けた原因はpH 5.2 でした。
+          苦土石灰で6.0に戻したら2週間で葉の色が戻りました。
+        </p>
+      </div>
+    </div>
   </section>
 
   <DisclosureBanner />
@@ -32,12 +56,35 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
     <ProductCard id="soil-ph-adjuster" />
   </section>
 
+  <!-- FAQ -->
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.7rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 去年使った土は再利用できますか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          できます。ただし必ずpHを計測してください。酸性に傾いていたら苦土石灰で調整し、
+          古い根をすべて取り除いてから再利用します。2〜3年に一度は新しい土に交換するのがおすすめです。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 庭の土をプランターに使ってもいいですか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          おすすめしません。庭土は密度が高く、プランターでは水はけが悪くなります。
+          根腐れのリスクが高く、病原菌や害虫の卵が含まれていることもあります。
+          市販の培養土との違いは「排水性」と「衛生状態」です。
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section style="margin-top:2rem;">
     <h2>よくある失敗</h2>
-    <ul style="line-height:2; font-size:0.95rem;">
-      <li>pHを測らずに毎年同じ土を使い続ける → 酸性化して肥料が効かなくなる</li>
-      <li>格安の培養土を選ぶ → 元肥なし・水はけ悪・虫卵入りのリスクあり</li>
-      <li>石灰を一度に大量に入れる → pHが上がりすぎて植え付け不可になった</li>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li>格安の培養土を選ぶ → 元肥なし・水はけ悪・虫卵入りのリスクがある</li>
+      <li>pH測定をしない → 酸性化して肥料が効かなくなるのに原因がわからない</li>
+      <li>苦土石灰を一度に大量投入 → pHが7.5を超えて植え付けできなくなった</li>
+      <li>余った土を袋のまま野外放置 → コバエが大量発生、翌年には使えなかった</li>
     </ul>
   </section>
 

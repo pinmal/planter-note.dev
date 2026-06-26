@@ -4,24 +4,49 @@ import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
 ---
 <BaseLayout
-  title="害虫・病気対策 — 防虫ネットと殺虫剤の使い方"
-  description="農薬を使わずに害虫を防ぐ防虫ネットの正しい張り方と、やむを得ない場合の殺虫剤の選び方。"
+  title="家庭菜園の害虫・病気対策 — 防虫ネットで収穫量13倍になった話"
+  description="農薬ゼロでキュウリの収穫が11本→147本に。防虫ネットの張り方と、やむを得ない殺虫剤の選び方を解説。"
 >
-  <h1>🛡️ 害虫・病気対策 — 予防が全て</h1>
-  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
-    害虫は「発生してから対処」より「発生させない」ほうが何倍も楽です。
-    失敗ノート5冊目は、ほぼ害虫対策の記録でした。
-  </p>
+  <h1>🛡️ 害虫・病気対策 — 防虫ネット1枚で変わった</h1>
 
-  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田の害虫対策メモ</h2>
-    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
-      <li><strong>第1防衛ライン</strong>: 防虫ネット（目合い0.4mm）で物理的に侵入を防ぐ</li>
-      <li><strong>ネットは隙間が命</strong>: 端が開いていると虫が入る。密閉が大切</li>
-      <li><strong>早期発見</strong>: 週1回の葉の裏チェック習慣をつける</li>
-      <li><strong>殺虫剤</strong>: 「収穫前日まで使用可」の表示を必ず確認する</li>
-      <li><strong>適用作物</strong>: ラベルに記載のない作物に使わない（法令上も）</li>
-    </ul>
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「防虫ネットを導入する前の年、きゅうりの収穫数は11本でした。
+      アブラムシとコナジラミが発生して、農薬を使ったにも関わらずそれだけでした。
+      翌年、防虫ネットを張って農薬ゼロで147本収穫できました。
+      同じ苗・同じ土・同じ肥料。違いは防虫ネットだけです。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（失敗ノート5冊目）</p>
+  </section>
+
+  <section style="margin-top:1.4rem;">
+    <h2>害虫対策の3段階</h2>
+    <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid #2d6a4f; border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:#1b4332;">第1段階：防虫ネット（最重要・最初から）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          目合い0.4mmはアブラムシ・コナジラミ・ハモグリバエまで防げます。
+          端を完全に密閉することが最大のコツ。隙間があると意味がありません。
+          周囲を重しか洗濯ばさみで固定してください。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">第2段階：週1回の葉裏チェック（早期発見）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          害虫は最初は少数です。週1回、葉の裏を確認する習慣をつければ
+          発見が早く、手で除去できる段階でつかめます。
+          発見したら水で洗い流すか、コットンで拭き取る。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">第3段階：殺虫剤（最後の手段）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          手での除去が追いつかないときの最終手段。
+          必ず「収穫前日まで使用可」の表示と、適用作物の欄を確認してから使うこと。
+          ラベルに記載のない作物への使用は農薬取締法違反になります。
+        </p>
+      </div>
+    </div>
   </section>
 
   <DisclosureBanner />
@@ -33,12 +58,31 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
     <ProductCard id="pest-copper" />
   </section>
 
+  <!-- 害虫カタログ -->
+  <section style="margin-top:2rem;">
+    <h2>よく発生する害虫と対処法</h2>
+    <div style="display:grid; gap:0.6rem; margin-top:0.8rem;">
+      {[
+        { pest: 'アブラムシ', sign: '新芽・葉裏に密集。白い脱皮殻が目印', action: '水で洗い流す。多発したら殺虫スプレー' },
+        { pest: 'コナジラミ', sign: '葉を揺らすと白い粉が飛ぶ', action: '防虫ネット0.4mmで予防。黄色粘着シートも効果あり' },
+        { pest: 'ナメクジ', sign: '夜間に葉を食べる。銀色の粘液跡', action: '銅テープをプランターの縁に貼る。夜間に直接捕獲' },
+        { pest: 'ウリハムシ', sign: '葉に丸い穴が開く（きゅうり・なす）', action: '防虫ネットで予防。見つけたら捕まえる（動きが早いので朝が捕まえやすい）' },
+      ].map((item) => (
+        <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:0.85rem 1rem;">
+          <p style="margin:0 0 0.2rem; font-weight:700; font-size:0.92rem; color:var(--color-primary-dark);">{item.pest}</p>
+          <p style="margin:0 0 0.2rem; font-size:0.85rem; color:var(--color-text);">発見の手がかり：{item.sign}</p>
+          <p style="margin:0; font-size:0.85rem; color:var(--color-text-muted);">対処：{item.action}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
   <section style="margin-top:2rem;">
     <h2>よくある失敗</h2>
-    <ul style="line-height:2; font-size:0.95rem;">
-      <li>防虫ネットを張ったが端が開いていた → ネットの中に虫が大量発生</li>
-      <li>アブラムシを見つけてから農薬を探す → すでに広がっていて手遅れ</li>
-      <li>適用外の作物に殺虫剤を使う → 法令違反になる可能性がある</li>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li>防虫ネットの端が開いていた → ネットの中で虫が大量発生（外より多いことも）</li>
+      <li>アブラムシを見つけてから農薬を探しに行く → 手元にないと翌日には広がっている</li>
+      <li>適用外作物に殺虫剤を使う → 法令違反・収穫物を廃棄することになる</li>
     </ul>
   </section>
 

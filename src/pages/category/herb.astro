@@ -4,24 +4,52 @@ import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
 ---
 <BaseLayout
-  title="ベランダで育てるハーブ — バジル・シソ・ミント"
-  description="バジル・大葉（シソ）・ミントのプランター栽培のコツ。初心者が失敗しやすいポイントと品種選びを解説。"
+  title="ベランダで育てるハーブ — バジル・シソ・ミントの失敗しない育て方"
+  description="ミントをバジルと一緒に植えてバジルが消えた失敗から学んだ、ハーブの1鉢1品種ルールと品種別のポイント。"
 >
-  <h1>🌿 ハーブ — ベランダで育てやすい品種から</h1>
-  <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.8rem;">
-    ハーブは収穫サイクルが早く、初めてのプランター菜園に向いています。
-    ただし品種によって性質が全く違うので、まとめて植えないことが大切です。
-  </p>
+  <h1>🌿 ハーブ — まず1品種1鉢から始める</h1>
 
-  <section style="margin-top:1.2rem; background:#f0f7ee; border-radius:10px; padding:1.2rem 1.3rem; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.6rem; font-size:1.05rem;">増田のハーブ栽培メモ</h2>
-    <ul style="font-size:0.92rem; line-height:2; padding-left:1.2rem;">
-      <li><strong>バジル</strong>: 20℃以上で播種。低温に弱く秋に枯れる。1プランター1株が基本</li>
-      <li><strong>大葉（シソ）</strong>: 半日陰でも育つ。水切れすると葉が固くなる</li>
-      <li><strong>ミント</strong>: 必ず単独プランターで。他の野菜と一緒に植えると占領される</li>
-      <li><strong>共通ポイント</strong>: 花が咲く前に摘んで収穫量を増やす</li>
-      <li><strong>水やり</strong>: 土の表面が乾いたらたっぷり。過湿より乾燥気味が安全</li>
-    </ul>
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「ハーブを始めた最初の年、バジルとミントとシソを1つのプランターに植えました。
+      翌月にはミントがプランター全体を占領して、バジルとシソが消えていました。
+      失敗ノート1冊目の最初のページに書いてあります：
+      "ミントは単独プランター必須"。これだけで最初の失敗は防げました。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.4rem;">
+    <h2>ハーブ別 栽培ポイント</h2>
+    <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-size:1rem;">🌿 <strong>バジル</strong></p>
+        <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:1.9; color:var(--color-text-muted);">
+          <li>播種は気温20℃以上になってから（5月中旬〜）</li>
+          <li>種からなら1袋400円前後で20〜30株分</li>
+          <li>花が咲く前に摘む → 葉の成長を続けさせる</li>
+          <li>9月末に気温が下がると急速に枯れる。早めに大量収穫してペーストに</li>
+        </ul>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-size:1rem;">🍃 <strong>大葉（シソ）</strong></p>
+        <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:1.9; color:var(--color-text-muted);">
+          <li>半日陰でも育てられる稀な野菜</li>
+          <li>水切れで葉が固くなるのが早い。夏は朝晩の水やりが基本</li>
+          <li>下の葉から順に収穫すると長く使える</li>
+          <li>1袋の種から1シーズンに100枚以上収穫できることもある</li>
+        </ul>
+      </div>
+      <div style="background:white; border:1px solid #d9534f; border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-size:1rem;">🌱 <strong>ミント ⚠️ 必ず単独プランターで</strong></p>
+        <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:1.9; color:var(--color-text-muted);">
+          <li>他の野菜と同じプランターに植えると占領される（経験済み）</li>
+          <li>その繁殖力を逆手に取れば、一度植えると何年も収穫できる</li>
+          <li>こまめに収穫するほど葉が増える</li>
+          <li>根は地下を横に伸びる。プランターなら広がりを制御できる</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <DisclosureBanner />
@@ -33,12 +61,48 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
     <ProductCard id="herb-mint-plant" />
   </section>
 
+  <section style="margin-top:2rem; padding:1rem 1.1rem; background:#fff8e8; border:1px solid #f0d9a8; border-radius:10px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:#8b5e3c;">📅 ハーブの播種・収穫タイミング（目安）</p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.4rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #f0d9a8;">
+            <th style="padding:0.4rem 0.6rem; text-align:left;">品種</th>
+            <th style="padding:0.4rem 0.6rem; text-align:left;">播種</th>
+            <th style="padding:0.4rem 0.6rem; text-align:left;">初収穫の目安</th>
+            <th style="padding:0.4rem 0.6rem; text-align:left;">収穫期間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0d9a8;">
+            <td style="padding:0.4rem 0.6rem;">バジル</td>
+            <td style="padding:0.4rem 0.6rem;">5月中旬〜6月</td>
+            <td style="padding:0.4rem 0.6rem;">播種後7〜8週</td>
+            <td style="padding:0.4rem 0.6rem;">7月〜9月</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0d9a8;">
+            <td style="padding:0.4rem 0.6rem;">シソ（大葉）</td>
+            <td style="padding:0.4rem 0.6rem;">4月下旬〜5月</td>
+            <td style="padding:0.4rem 0.6rem;">播種後6〜8週</td>
+            <td style="padding:0.4rem 0.6rem;">7月〜10月</td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.6rem;">ミント（苗）</td>
+            <td style="padding:0.4rem 0.6rem;">3月〜5月（苗植え）</td>
+            <td style="padding:0.4rem 0.6rem;">定植後3〜4週</td>
+            <td style="padding:0.4rem 0.6rem;">5月〜10月</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section style="margin-top:2rem;">
     <h2>よくある失敗</h2>
-    <ul style="line-height:2; font-size:0.95rem;">
-      <li>ミントをバジルと一緒のプランターに植える → ミントが全体を占拠した</li>
-      <li>バジルを4月に播種する → 気温が低くて発芽しない。5月中旬以降が目安</li>
-      <li>花が咲いたまま放置する → 葉の成長が止まり収穫量が激減する</li>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li>ミントをバジルと同じプランターに植える → ミントが全体を占領してバジルが消える（最多の失敗）</li>
+      <li>バジルを4月に播く → 気温15℃以下では発芽しない。1粒も芽が出なかった年がある</li>
+      <li>花が咲いたまま放置 → 種作りに養分が取られて葉が固くなる。咲く前に花芽を摘む</li>
     </ul>
   </section>
 

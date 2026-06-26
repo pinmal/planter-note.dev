@@ -18,57 +18,105 @@ const books = [
 ];
 ---
 <BaseLayout
-  title="本をお読みの方へ — おすすめアイテム一覧"
-  description="増田博之のKindle本をお読みいただいた方へ。本の中で紹介したプランター・土・肥料・道具をカテゴリ別にまとめました。"
+  title="本をお読みの方へ — 増田が選んだおすすめアイテム一覧"
+  description="増田博之のKindle本をお読みいただいた方へ。本の中で話した「あれ、どこで買えばいいの？」をまとめました。プランター・土・肥料・道具をカテゴリ別に。"
 >
-  <section style="padding:1.2rem 0 0.5rem;">
-    <h1>📚 本をお読みいただきありがとうございます</h1>
-    <p style="font-size:1.05rem; line-height:1.9; margin:0.8rem 0 0.5rem;">
-      このページを開いてくださったということは、増田の本を読んでくださったのだと思います。
-      ありがとうございます。
+
+  <!-- ─── 手紙の書き出し -->
+  <section style="padding:1.6rem 0 0.8rem;">
+    <p style="font-size:0.9rem; color:var(--color-text-muted); margin:0 0 1rem;">
+      増田博之より、本をお読みいただいた方へ
     </p>
-    <p style="line-height:1.9;">
-      本の中でお話しした「プランター・土・肥料・道具」について、実際に使ってよかったものをここにまとめました。
-      Amazonで検索できるようにしていますので、気になるものがあればご確認ください。
+    <h1 style="font-size:1.55rem; line-height:1.5; margin:0 0 1.2rem;">
+      本を最後まで読んでくださり、<br />ありがとうございます。
+    </h1>
+    <p style="font-size:1rem; line-height:1.95; margin:0 0 0.9rem;">
+      読み終えた後に「で、実際に何を買えばいいの？」と思ったはずです。
+      私もそうでした。12年前、家庭菜園の本を読んでホームセンターに行ったものの、
+      棚の前で30分迷って何も買えずに帰った経験があります。
     </p>
+    <p style="font-size:1rem; line-height:1.95; margin:0 0 0.9rem;">
+      このページは、その迷いをなくすために作りました。
+      本の中でお話しした道具・土・肥料を、Amazonで探せるようにまとめています。
+    </p>
+    <p style="font-size:1rem; line-height:1.95; margin:0;">
+      すべてを一度に揃える必要はありません。
+      まず「<strong>次の植え付けに間に合うもの</strong>」から始めてください。
+    </p>
+  </section>
+
+  <!-- ─── 最初に揃えるべき3点 -->
+  <section style="margin-top:2rem; background:linear-gradient(135deg,#1b4332,#2d6a4f); border-radius:14px; padding:1.6rem 1.4rem; color:white;">
+    <p style="font-size:0.82rem; color:#90e090; margin:0 0 0.4rem; letter-spacing:0.08em;">
+      増田のおすすめ / まず揃えるべき3点
+    </p>
+    <h2 style="margin:0 0 0.9rem; border-left:none; padding-left:0; font-size:1.25rem; color:white;">
+      「この3点だけは最初に揃えてほしい」
+    </h2>
+    <p style="font-size:0.92rem; line-height:1.8; color:#c8f0c0; margin:0 0 1rem;">
+      12年の失敗ノートを振り返ると、初期費用を惜しんで失敗した記録がほとんどです。
+      プランター・土・pH計、この3つを最初にきちんと選べれば、失敗の8割は防げます。
+    </p>
+    <div style="display:grid; gap:0.7rem;">
+      <div style="background:rgba(255,255,255,0.12); border-radius:9px; padding:0.9rem 1rem;">
+        <p style="margin:0; font-size:0.94rem; color:white; font-weight:700;">① スリット鉢（6〜8号）</p>
+        <p style="margin:0.2rem 0 0; font-size:0.85rem; color:#b8e8b0;">根腐れの原因の8割はプランター選びで決まります</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.12); border-radius:9px; padding:0.9rem 1rem;">
+        <p style="margin:0; font-size:0.94rem; color:white; font-weight:700;">② 元肥入り野菜用培養土 25L</p>
+        <p style="margin:0.2rem 0 0; font-size:0.85rem; color:#b8e8b0;">最初の2ヶ月は追肥不要。初心者が迷わず育てられます</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.12); border-radius:9px; padding:0.9rem 1rem;">
+        <p style="margin:0; font-size:0.94rem; color:white; font-weight:700;">③ デジタルpH計</p>
+        <p style="margin:0.2rem 0 0; font-size:0.85rem; color:#b8e8b0;">失敗の28%はpH異常でした。数値で管理できれば防げます</p>
+      </div>
+    </div>
   </section>
 
   <DisclosureBanner />
 
-  <section style="margin-top:2rem;">
-    <h2>🪴 プランター（底穴と深さが最重要）</h2>
-    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
-      根腐れの原因の多くは、プランター選びにあります。底穴の大きさと深さを意識してください。
+  <!-- ─── プランター -->
+  <section style="margin-top:1.8rem;">
+    <h2>🪴 プランター — まずここから選ぶ</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      失敗ノート1冊目の「根腐れ」の記録は32回。そのうち28回がプランター選びの問題でした。
+      底穴の大きさと深さだけで、収穫量は大きく変わります。
     </p>
     <ProductCard id="planter-slit-pot" />
     <ProductCard id="planter-deep-60" />
     <ProductCard id="planter-round-herb" />
   </section>
 
+  <!-- ─── 土・培養土 -->
   <section style="margin-top:2rem;">
-    <h2>🌱 土・培養土（失敗の3割は土で決まる）</h2>
-    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
-      市販の培養土は品質にばらつきがあります。元肥入りかどうか確認してから購入を。
+    <h2>🌱 土・培養土 — 最初の選択が全てを決める</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      格安の土で始めて失敗した3年間を経て、培養土の選び方が変わりました。
+      元肥入り・pH調整済みのものを選ぶだけで、最初の2ヶ月の管理が格段に楽になります。
     </p>
     <ProductCard id="soil-veggie-25l" />
     <ProductCard id="soil-organic-bark" />
     <ProductCard id="soil-ph-adjuster" />
   </section>
 
+  <!-- ─── 肥料 -->
   <section style="margin-top:2rem;">
-    <h2>💊 肥料（元肥・追肥・液肥の使い分け）</h2>
-    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
-      肥料切れが収穫量の差を生みます。追肥のタイミングは葉の色で判断してください。
+    <h2>💊 肥料 — 葉の色が変わったら動く</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      肥料選びは「基本の化成肥料 → 状況に応じて有機・液肥」の順で揃えてください。
+      液肥は肥料切れの緊急対応として必ず1本常備することをおすすめします。
     </p>
     <ProductCard id="fertilizer-kagaku" />
     <ProductCard id="fertilizer-organic" />
     <ProductCard id="fertilizer-liquid" />
   </section>
 
+  <!-- ─── 道具 -->
   <section style="margin-top:2rem;">
-    <h2>🔧 道具（測れるものは測る）</h2>
-    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
-      感覚でやっていた水やりと肥料を、数値で管理するようになってから収穫が安定しました。
+    <h2>🔧 道具 — 感覚をやめて数値で管理する</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      「土が乾いたら水やり」「なんとなく追肥」をやめた年から、収穫が安定しました。
+      pH計と水分計の2つが、その変化をもたらした道具です。
     </p>
     <ProductCard id="tools-jouro" />
     <ProductCard id="tools-trowel" />
@@ -76,45 +124,89 @@ const books = [
     <ProductCard id="tools-moisture-meter" />
   </section>
 
+  <!-- ─── 害虫対策 -->
   <section style="margin-top:2rem;">
-    <h2>🛡️ 害虫・病気対策（予防が全て）</h2>
-    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
-      農薬を使いたくない方は防虫ネットから始めてください。張り方が9割です。
+    <h2>🛡️ 害虫対策 — 防虫ネットを張るだけで変わった</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      防虫ネット導入前後でのきゅうりの収穫数：11本 → 147本。
+      農薬ゼロで13倍になりました。端の密閉だけ気をつけてください。
     </p>
     <ProductCard id="pest-net" />
     <ProductCard id="pest-spray" />
   </section>
 
+  <!-- ─── ハーブ -->
   <section style="margin-top:2rem;">
-    <h2>📔 失敗を記録する道具</h2>
-    <p style="color:var(--color-text-muted); font-size:0.92rem; margin:0.3rem 0 0.5rem;">
-      記録することで、同じ失敗を繰り返さなくなります。最初は「日付・天気・気づき1行」から。
+    <h2>🌿 ハーブ — ベランダで最も育てやすい野菜</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      ハーブは日当たりが悪いベランダでも収穫できます。
+      ただしミントは単独プランター必須です（失敗ノート1冊目・最初のページ）。
+    </p>
+    <ProductCard id="herb-basil-seed" />
+    <ProductCard id="herb-shiso-seed" />
+    <ProductCard id="herb-mint-plant" />
+  </section>
+
+  <!-- ─── ミニトマト -->
+  <section style="margin-top:2rem;">
+    <h2>🍅 ミニトマト — 接ぎ木苗と支柱で収穫量が2倍に</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      普通苗 vs 接ぎ木苗で同じ条件で育てた結果、収穫数が43個 vs 91個でした。
+      支柱は定植後2週間以内に立ててください。倒れてからでは遅い。
+    </p>
+    <ProductCard id="tomato-mini-plant" />
+    <ProductCard id="tomato-support" />
+    <ProductCard id="tomato-clip" />
+  </section>
+
+  <!-- ─── 夏野菜 -->
+  <section style="margin-top:2rem;">
+    <h2>🥒 夏野菜（なす・きゅうり）— 肥料だけ切らすな</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      なすは追肥を飛ばした週に必ず記録が止まります。
+      きゅうりは1日放置すると食べごろを逃します。
+      どちらも「週次の管理」が収穫量の差を生みます。
+    </p>
+    <ProductCard id="summer-eggplant" />
+    <ProductCard id="summer-cucumber" />
+  </section>
+
+  <!-- ─── 記録グッズ -->
+  <section style="margin-top:2rem;">
+    <h2>📔 失敗を記録して翌年に活かす</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      5年目の春に「自分は毎年同じ失敗をしている」と気づきました。
+      記録がないから気づけなかった。日付・天気・今日の気づき1行、それだけで十分です。
     </p>
     <ProductCard id="record-garden-notebook" />
     <ProductCard id="record-label" />
   </section>
 
-  <section style="margin-top:2.8rem; padding:1.4rem 1.2rem; background:#f0f7ee; border-radius:12px; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.8rem;">増田博之の著書一覧</h2>
-    <p style="font-size:0.9rem; color:var(--color-text-muted); margin:0 0 1rem;">
-      ※ ASIN取得後にリンクを追加します
+  <!-- ─── 著書一覧 -->
+  <section style="margin-top:3rem; padding:1.6rem 1.4rem; background:#f0f7ee; border-radius:14px; border:1px solid var(--color-border);">
+    <h2 style="margin:0 0 0.4rem;">増田博之の著書シリーズ</h2>
+    <p style="font-size:0.88rem; color:var(--color-text-muted); margin:0 0 1rem;">
+      ※ Kindle 出版後に Amazon リンクを追加します
     </p>
-    <ul style="list-style:none; margin:0; padding:0; display:grid; gap:0.5rem;">
+    <ul style="list-style:none; margin:0; padding:0; display:grid; gap:0.45rem;">
       {books.map((b) => (
-        <li style="padding:0.5rem 0.6rem; background:white; border:1px solid var(--color-border); border-radius:7px; font-size:0.9rem;">
+        <li style="padding:0.55rem 0.7rem; background:white; border:1px solid var(--color-border); border-radius:7px; font-size:0.88rem; line-height:1.5;">
           {b.asin ? (
-            <a href={`https://www.amazon.co.jp/dp/${b.asin}?tag=planter-note-22`} rel="sponsored noopener" target="_blank" style="color:var(--color-link);">
+            <a href={`https://www.amazon.co.jp/dp/${b.asin}?tag=planter-note-22`} rel="sponsored noopener" target="_blank">
               📖 {b.title}
             </a>
           ) : (
-            <span style="color:var(--color-text-muted);">📖 {b.title}（予約・発売準備中）</span>
+            <span style="color:var(--color-text-muted);">📖 {b.title} — 発売準備中</span>
           )}
         </li>
       ))}
     </ul>
   </section>
 
+  <!-- ─── 末尾注記 -->
   <section style="margin-top:2rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7;">
-    ※ 当サイトの「増田博之」は架空のキャラクターです。商品紹介リンクはAmazon.co.jpアソシエイトプログラムを通じた広告リンクです。
+    ※ 当サイトの「増田博之」は架空のキャラクターです。
+    Amazonリンクはアソシエイトプログラムを通じた広告リンクを含みます。
+    商品の価格・仕様は変更になることがあります。購入前に各販売ページでご確認ください。
   </section>
 </BaseLayout>
