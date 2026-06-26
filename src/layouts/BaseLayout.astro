@@ -12,7 +12,7 @@ interface Props {
 }
 const { title, description, noindex = false, canonical, ogType = 'website' } = Astro.props;
 const SITE_NAME = 'プランターノート';
-const SITE_URL = 'https://planter-note.dev';
+const SITE_URL = 'https://planter-note.pages.dev';
 const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
 const url = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
 const ogImageUrl = `${SITE_URL}/og-default.png`;

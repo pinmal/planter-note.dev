@@ -15,8 +15,8 @@
 2. **Google検索** → カテゴリページ（長期的な収益源）
 
 ### 重要 URL
-- トップ: `https://planter-note.dev/`
-- 巻末LP: `https://planter-note.dev/kindle-guide/`
+- トップ: `https://planter-note.pages.dev/`
+- 巻末LP: `https://planter-note.pages.dev/kindle-guide/`
 
 ## アフィリエイト詳細
 
