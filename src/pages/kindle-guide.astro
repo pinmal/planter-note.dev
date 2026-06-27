@@ -16,10 +16,23 @@ const books = [
   { id: 'book264', short: '30品種',     title: 'マンションベランダで年30品種育てる菜園計画',                      asin: '' },
   { id: 'book265', short: '7ルール',    title: '家庭菜園の失敗ノートからわかった 野菜を枯らさない7つのルール',    asin: '' },
 ];
+
+const categories = [
+  { id: 'all',        label: 'すべて' },
+  { id: 'planter',   label: '🪴 プランター' },
+  { id: 'soil',      label: '🌱 土' },
+  { id: 'fertilizer',label: '💊 肥料' },
+  { id: 'tools',     label: '🔧 道具' },
+  { id: 'pest',      label: '🛡️ 害虫' },
+  { id: 'herb',      label: '🌿 ハーブ' },
+  { id: 'tomato',    label: '🍅 トマト' },
+  { id: 'summer',    label: '🥒 夏野菜' },
+  { id: 'record',    label: '📔 記録' },
+];
 ---
 <BaseLayout
   title="本をお読みの方へ — 増田が選んだおすすめアイテム一覧"
-  description="増田博之のKindle本をお読みいただいた方へ。本の中で話したアイテムをまとめました。読んだ本で絞り込めます。"
+  description="増田博之のKindle本をお読みいただいた方へ。読んだ本とアイテムカテゴリで絞り込めます。"
 >
 
   <!-- ─── 手紙の書き出し -->
@@ -40,21 +53,48 @@ const books = [
     </p>
   </section>
 
-  <!-- ─── 本フィルタータブ -->
+  <!-- ─── 2段フィルター -->
   <section style="margin-top:1.4rem; padding:1rem 1.1rem; background:#f0f7ee; border-radius:12px; border:1px solid var(--color-border);">
-    <p style="font-size:0.84rem; color:var(--color-text-muted); margin:0 0 0.65rem; font-weight:600;">
-      📖 読んだ本を選ぶと、関連アイテムだけ表示します
+
+    <!-- 本フィルター -->
+    <p style="font-size:0.82rem; color:var(--color-text-muted); margin:0 0 0.5rem; font-weight:600;">
+      📖 読んだ本
     </p>
-    <div id="bookTabs" style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:0.3rem; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
-      <button class="btab" data-book="all" style="white-space:nowrap; padding:0.42rem 0.85rem; border-radius:20px; border:2px solid var(--color-primary); background:var(--color-primary); color:white; font-size:0.82rem; cursor:pointer; flex-shrink:0; font-weight:700;">すべて</button>
+    <div id="bookTabs" style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:0.4rem; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+      <button class="btab book-tab" data-book="all"
+        style="white-space:nowrap; padding:0.4rem 0.8rem; border-radius:18px; border:2px solid var(--color-primary); background:var(--color-primary); color:white; font-size:0.8rem; cursor:pointer; flex-shrink:0; font-weight:700;">
+        すべて
+      </button>
       {books.map((b) => (
-        <button class="btab" data-book={b.id} title={b.title} style="white-space:nowrap; padding:0.42rem 0.85rem; border-radius:20px; border:2px solid var(--color-border); background:white; color:var(--color-text); font-size:0.82rem; cursor:pointer; flex-shrink:0;">{b.short}</button>
+        <button class="btab book-tab" data-book={b.id} title={b.title}
+          style="white-space:nowrap; padding:0.4rem 0.8rem; border-radius:18px; border:2px solid var(--color-border); background:white; color:var(--color-text); font-size:0.8rem; cursor:pointer; flex-shrink:0;">
+          {b.short}
+        </button>
       ))}
     </div>
+
+    <!-- カテゴリフィルター -->
+    <p style="font-size:0.82rem; color:var(--color-text-muted); margin:0.9rem 0 0.5rem; font-weight:600;">
+      📦 アイテムカテゴリ
+    </p>
+    <div id="catTabs" style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:0.2rem; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+      {categories.map((c) => (
+        <button class="ctab cat-tab" data-cat={c.id}
+          style={`white-space:nowrap; padding:0.4rem 0.8rem; border-radius:18px; border:2px solid ${c.id === 'all' ? 'var(--color-accent)' : 'var(--color-border)'}; background:${c.id === 'all' ? 'var(--color-accent)' : 'white'}; color:${c.id === 'all' ? 'white' : 'var(--color-text)'}; font-size:0.8rem; cursor:pointer; flex-shrink:0;${c.id === 'all' ? ' font-weight:700;' : ''}`}>
+          {c.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- 結果なし表示（JS制御） -->
+    <p id="noResults" style="display:none; margin:1rem 0 0; font-size:0.88rem; color:var(--color-text-muted); text-align:center;">
+      その本ではこのカテゴリのアイテムに言及していません。<br />カテゴリを「すべて」に戻してご確認ください。
+    </p>
   </section>
 
   <!-- ─── まず3点（汎用本向け） -->
-  <section data-books="all book05 book260 book263 book264 book265" style="margin-top:1.6rem; background:linear-gradient(135deg,#1b4332,#2d6a4f); border-radius:14px; padding:1.6rem 1.4rem; color:white;">
+  <section data-books="all book05 book260 book263 book264 book265" data-category="meta"
+    style="margin-top:1.6rem; background:linear-gradient(135deg,#1b4332,#2d6a4f); border-radius:14px; padding:1.6rem 1.4rem; color:white;">
     <p style="font-size:0.82rem; color:#90e090; margin:0 0 0.4rem; letter-spacing:0.08em;">
       増田のおすすめ / まず揃えるべき3点
     </p>
@@ -81,16 +121,15 @@ const books = [
     </div>
   </section>
 
-  <div data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265">
+  <div data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" data-category="meta">
     <DisclosureBanner />
   </div>
 
   <!-- ─── プランター -->
-  <section data-books="all book05 book257 book259 book260 book261 book262 book264 book265" style="margin-top:1.2rem;">
+  <section data-books="all book05 book257 book259 book260 book261 book262 book264 book265" data-category="planter" style="margin-top:1.2rem;">
     <h2>🪴 プランター — まずここから選ぶ</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
       失敗ノート1冊目の「根腐れ」の記録は32回。そのうち28回がプランター選びの問題でした。
-      底穴の大きさと深さだけで、収穫量は大きく変わります。
     </p>
     <ProductCard id="planter-slit-pot" />
     <ProductCard id="planter-deep-60" />
@@ -98,11 +137,11 @@ const books = [
   </section>
 
   <!-- ─── 土・培養土 -->
-  <section data-books="all book05 book258 book260 book264 book265" style="margin-top:2rem;">
+  <section data-books="all book05 book258 book260 book264 book265" data-category="soil" style="margin-top:2rem;">
     <h2>🌱 土・培養土 — 最初の選択が全てを決める</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
       格安の土で始めて失敗した3年間を経て、培養土の選び方が変わりました。
-      元肥入り・pH調整済みのものを選ぶだけで、最初の2ヶ月の管理が格段に楽になります。
+      元肥入り・pH調整済みのものを選ぶだけで管理が格段に楽になります。
     </p>
     <ProductCard id="soil-veggie-25l" />
     <ProductCard id="soil-organic-bark" />
@@ -110,11 +149,10 @@ const books = [
   </section>
 
   <!-- ─── 肥料 -->
-  <section data-books="all book05 book258 book260 book263 book264 book265" style="margin-top:2rem;">
+  <section data-books="all book05 book258 book260 book263 book264 book265" data-category="fertilizer" style="margin-top:2rem;">
     <h2>💊 肥料 — 葉の色が変わったら動く</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
       肥料選びは「基本の化成肥料 → 状況に応じて有機・液肥」の順で揃えてください。
-      液肥は肥料切れの緊急対応として必ず1本常備することをおすすめします。
     </p>
     <ProductCard id="fertilizer-kagaku" />
     <ProductCard id="fertilizer-organic" />
@@ -122,11 +160,10 @@ const books = [
   </section>
 
   <!-- ─── 道具 -->
-  <section data-books="all book05 book256 book260 book263 book264 book265" style="margin-top:2rem;">
+  <section data-books="all book05 book256 book260 book263 book264 book265" data-category="tools" style="margin-top:2rem;">
     <h2>🔧 道具 — 感覚をやめて数値で管理する</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
-      「土が乾いたら水やり」「なんとなく追肥」をやめた年から、収穫が安定しました。
-      pH計と水分計の2つが、その変化をもたらした道具です。
+      pH計と水分計の2つが、収穫を安定させた道具です。
     </p>
     <ProductCard id="tools-jouro" />
     <ProductCard id="tools-trowel" />
@@ -135,22 +172,20 @@ const books = [
   </section>
 
   <!-- ─── 害虫対策 -->
-  <section data-books="all book259 book261 book264 book265" style="margin-top:2rem;">
+  <section data-books="all book259 book261 book264 book265" data-category="pest" style="margin-top:2rem;">
     <h2>🛡️ 害虫対策 — 防虫ネットを張るだけで変わった</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
-      防虫ネット導入前後でのきゅうりの収穫数：11本 → 147本。
-      農薬ゼロで13倍になりました。端の密閉だけ気をつけてください。
+      防虫ネット導入前後でのきゅうりの収穫数：11本 → 147本（農薬ゼロ）。
     </p>
     <ProductCard id="pest-net" />
     <ProductCard id="pest-spray" />
   </section>
 
   <!-- ─── ハーブ -->
-  <section data-books="all book262 book264" style="margin-top:2rem;">
+  <section data-books="all book262 book264" data-category="herb" style="margin-top:2rem;">
     <h2>🌿 ハーブ — ベランダで最も育てやすい野菜</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
-      ハーブは日当たりが悪いベランダでも収穫できます。
-      ただしミントは単独プランター必須です（失敗ノート1冊目・最初のページ）。
+      ミントは単独プランター必須です（失敗ノート1冊目・最初のページ）。
     </p>
     <ProductCard id="herb-basil-seed" />
     <ProductCard id="herb-shiso-seed" />
@@ -158,10 +193,9 @@ const books = [
   </section>
 
   <!-- ─── ミニトマト -->
-  <section data-books="all book257 book264" style="margin-top:2rem;">
+  <section data-books="all book257 book264" data-category="tomato" style="margin-top:2rem;">
     <h2>🍅 ミニトマト — 脇芽をかくだけで収穫5個→78個になった</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
-      脇芽を放置して実が5個しかつかなかった失敗から変えた道具を紹介します。
       支柱は定植後2週間以内に立ててください。倒れてからでは遅い。
     </p>
     <ProductCard id="tomato-support" />
@@ -169,29 +203,29 @@ const books = [
   </section>
 
   <!-- ─── 夏野菜 -->
-  <section data-books="all book259 book264" style="margin-top:2rem;">
+  <section data-books="all book259 book264" data-category="summer" style="margin-top:2rem;">
     <h2>🥒 夏野菜（なす・きゅうり）— 肥料だけ切らすな</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
       なすは追肥を飛ばした週に必ず記録が止まります。
-      きゅうりは1日放置すると食べごろを逃します。
     </p>
     <ProductCard id="summer-eggplant" />
     <ProductCard id="summer-cucumber" />
   </section>
 
   <!-- ─── 記録グッズ -->
-  <section data-books="all book260 book263 book264 book265" style="margin-top:2rem;">
+  <section data-books="all book260 book263 book264 book265" data-category="record" style="margin-top:2rem;">
     <h2>📔 失敗を記録して翌年に活かす</h2>
     <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
       5年目の春に「自分は毎年同じ失敗をしている」と気づきました。
-      記録がないから気づけなかった。日付・天気・今日の気づき1行、それだけで十分です。
+      記録がないから気づけなかった。
     </p>
     <ProductCard id="record-garden-notebook" />
     <ProductCard id="record-label" />
   </section>
 
   <!-- ─── 著書一覧 -->
-  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" style="margin-top:3rem; padding:1.6rem 1.4rem; background:#f0f7ee; border-radius:14px; border:1px solid var(--color-border);">
+  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" data-category="meta"
+    style="margin-top:3rem; padding:1.6rem 1.4rem; background:#f0f7ee; border-radius:14px; border:1px solid var(--color-border);">
     <h2 style="margin:0 0 0.4rem;">増田博之の著書シリーズ</h2>
     <p style="font-size:0.88rem; color:var(--color-text-muted); margin:0 0 1rem;">
       ※ Kindle 出版後に Amazon リンクを追加します
@@ -212,7 +246,8 @@ const books = [
   </section>
 
   <!-- ─── 末尾注記 -->
-  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" style="margin-top:2rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7;">
+  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" data-category="meta"
+    style="margin-top:2rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7;">
     ※ 当サイトの「増田博之」は架空のキャラクターです。
     Amazonリンクはアソシエイトプログラムを通じた広告リンクを含みます。
     商品の価格・仕様は変更になることがあります。購入前に各販売ページでご確認ください。
@@ -221,32 +256,72 @@ const books = [
 </BaseLayout>
 
 <script>
-  const tabs = document.querySelectorAll<HTMLButtonElement>('.btab');
+  const bookTabs = document.querySelectorAll<HTMLButtonElement>('.book-tab');
+  const catTabs  = document.querySelectorAll<HTMLButtonElement>('.cat-tab');
   const sections = document.querySelectorAll<HTMLElement>('[data-books]');
+  const noResults = document.getElementById('noResults');
 
-  tabs.forEach((tab) => {
+  let activeBook = 'all';
+  let activeCat  = 'all';
+
+  const PRIMARY = 'var(--color-primary)';
+  const ACCENT  = 'var(--color-accent)';
+  const BORDER  = 'var(--color-border)';
+
+  function applyFilter() {
+    let visibleCount = 0;
+
+    sections.forEach((section) => {
+      const books = (section.dataset.books ?? '').split(' ');
+      const cat   = section.dataset.category ?? 'meta';
+
+      const bookMatch = activeBook === 'all' || books.includes(activeBook);
+      // meta sections (green box, disclosure, book list, footer) are always shown when book matches
+      const catMatch  = cat === 'meta' || activeCat === 'all' || cat === activeCat;
+
+      const visible = bookMatch && catMatch;
+      section.style.display = visible ? '' : 'none';
+      if (visible && cat !== 'meta') visibleCount++;
+    });
+
+    if (noResults) {
+      noResults.style.display = (visibleCount === 0 && activeCat !== 'all') ? 'block' : 'none';
+    }
+  }
+
+  bookTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      // タブの見た目を更新
-      tabs.forEach((t) => {
+      activeBook = tab.dataset.book ?? 'all';
+      bookTabs.forEach((t) => {
         t.style.background = 'white';
         t.style.color = '';
-        t.style.borderColor = 'var(--color-border)';
+        t.style.borderColor = BORDER;
         t.style.fontWeight = '';
       });
-      tab.style.background = 'var(--color-primary)';
+      tab.style.background = PRIMARY;
       tab.style.color = 'white';
-      tab.style.borderColor = 'var(--color-primary)';
+      tab.style.borderColor = PRIMARY;
       tab.style.fontWeight = '700';
-
-      // セクションのフィルタリング
-      const book = tab.dataset.book ?? 'all';
-      sections.forEach((section) => {
-        const books = (section.dataset.books ?? '').split(' ');
-        section.style.display = books.includes(book) ? '' : 'none';
-      });
-
-      // タブが見えるようにスクロール
       tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      applyFilter();
+    });
+  });
+
+  catTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activeCat = tab.dataset.cat ?? 'all';
+      catTabs.forEach((t) => {
+        t.style.background = 'white';
+        t.style.color = '';
+        t.style.borderColor = BORDER;
+        t.style.fontWeight = '';
+      });
+      tab.style.background = ACCENT;
+      tab.style.color = 'white';
+      tab.style.borderColor = ACCENT;
+      tab.style.fontWeight = '700';
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      applyFilter();
     });
   });
 </script>
