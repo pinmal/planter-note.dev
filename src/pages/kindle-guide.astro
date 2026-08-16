@@ -15,6 +15,7 @@ const books = [
   { id: 'book263', short: '収穫倍増',   title: 'プランター菜園の収穫量を倍にする管理術',                          asin: '' },
   { id: 'book264', short: '30品種',     title: 'マンションベランダで年30品種育てる菜園計画',                      asin: '' },
   { id: 'book265', short: '7ルール',    title: '家庭菜園の失敗ノートからわかった 野菜を枯らさない7つのルール',    asin: '' },
+  { id: 'book286', short: '防鳥対策',   title: 'ヒヨドリとカラスから果実を守る防鳥対策実践ガイド',                asin: 'B0HFFG3HF7' },
 ];
 
 const categories = [
@@ -24,6 +25,7 @@ const categories = [
   { id: 'fertilizer',label: '💊 肥料' },
   { id: 'tools',     label: '🔧 道具' },
   { id: 'pest',      label: '🛡️ 害虫' },
+  { id: 'bird',      label: '🐦 防鳥' },
   { id: 'herb',      label: '🌿 ハーブ' },
   { id: 'tomato',    label: '🍅 トマト' },
   { id: 'summer',    label: '🥒 夏野菜' },
@@ -31,14 +33,14 @@ const categories = [
 ];
 ---
 <BaseLayout
-  title="本をお読みの方へ — 増田が選んだおすすめアイテム一覧"
-  description="増田博之のKindle本をお読みいただいた方へ。読んだ本とアイテムカテゴリで絞り込めます。"
+  title="本をお読みの方へ — 著者が選んだおすすめアイテム一覧"
+  description="増田博之・星野千夏のKindle本をお読みいただいた方へ。読んだ本とアイテムカテゴリで絞り込めます。"
 >
 
   <!-- ─── 手紙の書き出し -->
   <section style="padding:1.6rem 0 0.8rem;">
     <p style="font-size:0.9rem; color:var(--color-text-muted); margin:0 0 1rem;">
-      増田博之より、本をお読みいただいた方へ
+      増田博之・星野千夏より、本をお読みいただいた方へ
     </p>
     <h1 style="font-size:1.55rem; line-height:1.5; margin:0 0 1.2rem;">
       本を最後まで読んでくださり、<br />ありがとうございます。
@@ -121,7 +123,7 @@ const categories = [
     </div>
   </section>
 
-  <div data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" data-category="meta">
+  <div data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265 book286" data-category="meta">
     <DisclosureBanner />
   </div>
 
@@ -181,6 +183,17 @@ const categories = [
     <ProductCard id="pest-spray" />
   </section>
 
+  <!-- ─── 防鳥対策 -->
+  <section data-books="all book286" data-category="bird" style="margin-top:2rem;">
+    <h2>🐦 防鳥対策 — ネットは「かぶせる」のではなく「囲う」</h2>
+    <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.8; margin:0.3rem 0 0.2rem;">
+      目合いを細かくし、支柱で骨組みを作ってから囲う。この2点を変えただけで、鳥に出し抜かれる回数が大きく減りました。
+    </p>
+    <ProductCard id="bird-net-fine" />
+    <ProductCard id="bird-net-stakes" />
+    <ProductCard id="bird-net-ties" />
+  </section>
+
   <!-- ─── ハーブ -->
   <section data-books="all book262 book264" data-category="herb" style="margin-top:2rem;">
     <h2>🌿 ハーブ — ベランダで最も育てやすい野菜</h2>
@@ -224,9 +237,9 @@ const categories = [
   </section>
 
   <!-- ─── 著書一覧 -->
-  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" data-category="meta"
+  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265 book286" data-category="meta"
     style="margin-top:3rem; padding:1.6rem 1.4rem; background:#f0f7ee; border-radius:14px; border:1px solid var(--color-border);">
-    <h2 style="margin:0 0 0.4rem;">増田博之の著書シリーズ</h2>
+    <h2 style="margin:0 0 0.4rem;">著者の本一覧（増田博之・星野千夏）</h2>
     <p style="font-size:0.88rem; color:var(--color-text-muted); margin:0 0 1rem;">
       ※ Kindle 出版後に Amazon リンクを追加します
     </p>
@@ -246,9 +259,9 @@ const categories = [
   </section>
 
   <!-- ─── 末尾注記 -->
-  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265" data-category="meta"
+  <section data-books="all book05 book256 book257 book258 book259 book260 book261 book262 book263 book264 book265 book286" data-category="meta"
     style="margin-top:2rem; font-size:0.8rem; color:var(--color-text-muted); line-height:1.7;">
-    ※ 当サイトの「増田博之」は架空のキャラクターです。
+    ※ 当サイトの「増田博之」「星野千夏」は架空のキャラクターです。
     Amazonリンクはアソシエイトプログラムを通じた広告リンクを含みます。
     商品の価格・仕様は変更になることがあります。購入前に各販売ページでご確認ください。
   </section>
