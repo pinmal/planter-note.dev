@@ -42,6 +42,27 @@ npm run build   静的ビルド → dist/
 - 1ページ3〜6個まで
 - Amazon + 楽天の2ASP並列（楽天はPhase 2）
 
+## デプロイ前 自動ガード（2026-08-25導入）
+
+`git push` 時に `.git/hooks/pre-push` が自動起動し、
+**書籍 × Web 記事の齟齬 (cross_site_check.py --scan-all) を実行**。
+星野千夏・増田博之の書籍の `forbidden_in_web` フレーズが本文に出現
+していると CRITICAL となり push がブロックされる（tsuri-camp/shibainu-techo/jitan-kenkoと同型）。
+
+### 手動チェック
+```cmd
+cd C:\claude2\web\planter-note.dev
+npm run check:books
+```
+
+### hookの復元（git clone後）
+`npm install` で自動復元（`scripts/install-hooks.js`）。手動復元は `node scripts/install-hooks.js`。
+
+### 緊急時バイパス（原則禁止）
+```cmd
+git push --no-verify   # 齟齬チェックをスキップしてpush
+```
+
 ## デプロイ後の義務
 - Cloudflare Pages に git push で自動デプロイ
 - F12 Console 監査（CSP・JS エラー確認）
