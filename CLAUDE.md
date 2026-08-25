@@ -68,6 +68,9 @@ git push --no-verify   # 齟齬チェックをスキップしてpush
 - F12 Console 監査（CSP・JS エラー確認）
 - ← 詳細: claudecode1/CLAUDE.md §Webサイトデプロイ後F12監査ルール
 
+## 🚫 独自ドメイン `planter-note.dev` は未購入（2026-08-13発覚・I-270）
+`site:` 設定・巻末リンクとも、**実際に稼働しているのは `https://planter-note.pages.dev` のみ**。`planter-note.dev` はCloudflareにDNS登録されておらず、このURLへのリンクは読者が踏んでも到達不能。過去に紛れ込んでいた57冊分の死んだ巻末リンクは是正済み（詳細: `Knowledge/infra/i270-planter-note-dev-unregistered-custom-domain-dead-backmatter-link.md`）。**新規に巻末URL・kindle-guideリンクを書くときは必ず `planter-note.pages.dev` を使うこと**（独自ドメインを取得しない限り `planter-note.dev` は書かない）。
+
 ## 後処理（サイト公開後・claudecode1 側で実施）
-book256〜265 の巻末URLを `https://planter-note.dev/kindle-guide/` に差し替えてEPUB再生成。
+book256〜265 の巻末URLを `https://planter-note.pages.dev/kindle-guide/` に差し替えてEPUB再生成。
 詳細: `claudecode1/CPO/specs/spec-masuda-engei-site.md §12`
