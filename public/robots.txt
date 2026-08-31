@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://planter-note.pages.dev/sitemap.xml
