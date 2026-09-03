@@ -1,10 +1,10 @@
-﻿---
+---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 ---
 <ArticleLayout
   title="プランター栽培の土の選び方——格安の土で3年失敗した記録"
-  description="ホームセンターの激安培養土を3年使い続けて、毎年なすとトマトが育ちが悪かった。土に原因があると気づいてから野菜の成長が明らかに変わった。土の選び方と見極め方の記録。"
+  description="ホームセンターの激安培養土を3年使い続けて、毎年なすとトマトが育ちが悪かった。土に原因があると気づいてから野菜の成長が明らかに変わった記録。"
   slug="tsuchi-erabi"
   publishDate="2026-09-03"
   relatedCategory={{ href: '/category/soil/', label: '土・培養土' }}
@@ -21,142 +21,53 @@ import ProductCard from '../../components/ProductCard.astro';
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>安い土と良い土は何が違うのか</h2>
-    <p style="line-height:1.9;">
-      培養土の価格は20L袋で200円台から2,000円台まで幅があります。
-      値段の差はどこにあるのか。大きく分けると3つです。
+    <p style="line-height:1.95;">
+      家庭菜園を始めて最初の3年間、ホームセンターで一番安い培養土を買い続けた。
+      20L袋で198円のもの。「どうせ土は土だろう」と思っていた。
     </p>
-    <ul style="line-height:2.1; font-size:0.93rem;">
-      <li><strong>有機物の含有量</strong> — 品質の良い培養土にはバーク堆肥・腐葉土・牛ふん堆肥など複数の有機物が含まれています。安い土は有機物が少なく、水はけが悪くなりやすいです。</li>
-      <li><strong>pHの調整精度</strong> — 野菜に最適なpH（5.5〜6.5）に調整されているかどうか。格安の土はpH調整が粗いことがあります。</li>
-      <li><strong>水はけ・通気性</strong> — パーライト・バーミキュライトなどを配合して通気性を高めているかどうか。安い土は固結しやすく、2年目以降に水はけが急激に悪化することがあります。</li>
+    <p style="line-height:1.95;">
+      毎年なすとトマトを育てたが、7月になると成長が止まる。実がつかない。
+      水やりの問題か、肥料の問題か、日照が足りないのかと思って色々変えてみたが改善しない。
+      失敗ノートを見ると「育ちが悪い」という記録が3年分続いている。
+    </p>
+    <p style="line-height:1.95;">
+      転機は4年目の春。妻から「土を変えてみたら？」と言われた。
+      試しに980円の野菜専用培養土を買って、半分のプランターだけ変えて比べてみた。
+    </p>
+    <p style="line-height:1.95;">
+      定植後2週間は差がなかった。でも1ヶ月後から差が出始めた。
+      7月末には980円土のプランターのほうが株が2割ほど大きく、実の数も多かった。
+      8月末の累計収穫数は格安土が19個、高品質土が33個だった。
+      780円の差で14個多く収穫できた計算になる。
+    </p>
+    <p style="line-height:1.95;">
+      それ以来、土にはお金をかけるようにしている。
+      道具の中で一番費用対効果が高いのは土だと思っている。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>良い土の見分け方</h2>
+    <p style="line-height:1.95;">
+      土の値段の差はどこにあるのか。品質管理の視点で見ると3点に集約される。
+    </p>
+    <ul style="line-height:2.1; font-size:0.93rem; padding-left:1.2rem;">
+      <li><strong>有機物の種類と量</strong> — バーク堆肥・腐葉土が複数入っているか。成分表に「赤玉土・鹿沼土のみ」は養分が少ない</li>
+      <li><strong>pHの記載があるか</strong> — 野菜に最適なpH（5.5〜6.5）に調整済みと書いてあるものを選ぶ</li>
+      <li><strong>袋を触って軽くふかふかか</strong> — ずっしり重い土は鉱物が多く有機物が少ない傾向がある</li>
     </ul>
-    <p style="line-height:1.9;">
-      重要なのは、**価格の差は肥料の量の差ではなく土質の差**だということです。
-      最初に肥料が入っていても、土の保水性・通気性・pH安定性が悪ければ野菜は育ちにくいです。
+    <p style="line-height:1.9; font-size:0.93rem; color:var(--color-text-muted); margin-top:0.8rem;">
+      「野菜用培養土」と書いてあればどれでも同じではない。
+      2〜3年使い続けると有機物が分解されてpHが変化し、土も固結する。
+      毎シーズン新しい土か、パーライトを2〜3割混ぜて再利用するのが目安。
     </p>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>培養土の選び方：チェックポイント</h2>
-    <div style="display:grid; gap:0.8rem; margin-top:0.8rem;">
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">① 成分表を見る：有機物が3種以上入っているか</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          裏面の成分表示を見て、バーク堆肥・腐葉土・牛ふん堆肥・パーライト・バーミキュライト等が
-          複数入っているものを選びます。原材料が「赤玉土・鹿沼土」だけの土は排水性はありますが
-          養分が少なく、野菜栽培には追肥が多く必要になります。
-        </p>
-      </div>
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">② pH表示を確認する</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          パッケージにpH値が記載されているものを選びます。野菜全般の適正pH は 5.5〜6.5です。
-          「野菜用培養土」と書いてあっても、pH の記載がないものは品質が不安定なことがあります。
-          信頼できるメーカーの野菜専用培養土は多くがこの範囲に調整済みです。
-        </p>
-      </div>
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">③ 袋を持ってみる：ずっしり重い土は注意</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          同じ容量で重い土は砂・鉱物の割合が多く、軽い土はバーク等の有機物が多い傾向があります。
-          良い培養土はふかふかして軽いことが多いです。
-          またパッケージを握って「固まりがある」「粉っぽい」土は、過乾燥か品質が劣化している可能性があります。
-        </p>
-      </div>
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">④ 1シーズンごとに新しい土を使う（再利用は限界がある）</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          培養土は使い続けると有機物が分解されてpHが変化し、土の粒子も細かくなって固結します。
-          一般的には2〜3年で大幅に更新するのが目安です。古い土を再利用する場合は、
-          パーライトやバーク堆肥を2〜3割混ぜて通気性を改善してから使用してください。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section style="margin-top:1.8rem;">
-    <h2>野菜別のおすすめ土の組み合わせ</h2>
-    <div style="overflow-x:auto; margin-top:0.8rem;">
-      <table style="width:100%; border-collapse:collapse; font-size:0.87rem; background:white; border:1px solid var(--color-border); border-radius:9px; overflow:hidden;">
-        <thead>
-          <tr style="background:var(--color-primary); color:white;">
-            <th style="padding:0.7rem 0.8rem; text-align:left;">野菜</th>
-            <th style="padding:0.7rem 0.8rem; text-align:left;">おすすめの土の組み合わせ</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[
-            { veg: 'トマト・なす', soil: '野菜専用培養土(70%) + パーライト(20%) + バーク堆肥(10%)。水はけ重視。' },
-            { veg: 'きゅうり', soil: '野菜専用培養土(80%) + パーライト(20%)。水はけが良くないと株が弱る。' },
-            { veg: 'バジル・ハーブ類', soil: 'ハーブ専用培養土か、野菜培養土に砂を20%混ぜたもの。過湿に弱い。' },
-            { veg: 'ブルーベリー', soil: 'ブルーベリー専用酸性培養土。一般培養土は絶対に使わない（pH合わない）。' },
-            { veg: 'レタス・葉物', soil: '野菜専用培養土のみでOK。改良の必要が少なく育てやすい。' },
-          ].map((r, i) => (
-            <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
-              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-weight:600; white-space:nowrap;">{r.veg}</td>
-              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.85rem;">{r.soil}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section style="margin-top:1.8rem;">
-    <h2>格安土との違いを実感した記録</h2>
-    <p style="line-height:1.9;">
-      198円の土と980円の土を同時期に同じ品種のなすで比べたことがあります。
-      植え付けた苗は同じ接ぎ木苗で、置き場所・水やり・追肥のスケジュールはまったく同じにしました。
-    </p>
-    <p style="line-height:1.9;">
-      定植後2週間時点では差がありませんでした。しかし1ヶ月後から差が出始め、
-      7月末には980円の土のプランターのほうが株が2割ほど大きく、実の数も多かったです。
-      8月末の累計収穫数は格安土が19個・高品質土が33個でした。
-    </p>
-    <p style="line-height:1.9;">
-      780円の差で14個多く収穫できたなら、1個あたり55円分くらいの差ということになります。
-      野菜の価格と比較すると、土代はコストに見合っていると感じています。
-    </p>
-  </section>
-
-  <section style="margin-top:1.8rem;">
-    <h2>おすすめの培養土</h2>
+    <h2>使ってみた土</h2>
     <ProductCard id="soil-veggie-25l" />
     <ProductCard id="soil-organic-bark" />
     <ProductCard id="soil-ph-adjuster" />
-  </section>
-
-  <section style="margin-top:1.8rem;">
-    <h2>よくある質問</h2>
-    <div style="display:grid; gap:0.8rem; margin-top:0.7rem;">
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 土にコバエが発生しました。どうすればいいですか？</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          土の表面にいるコバエ（キノコバエ）は有機物（堆肥）に卵を産みます。
-          対策は①土の表面が乾いてから水やりする②表面に赤玉土を1〜2cm敷く③コバエ用粘着テープを置く、です。
-          殺虫剤を使う場合は「コバエ対応・植物に使える」ものを選んでください。
-          薬に頼りすぎると土の有益な微生物も減らすため、まず水やりのタイミング調整から試してください。
-        </p>
-      </div>
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 古い土はどう処分すればいいですか？</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          多くの自治体では土は燃えないごみ・一般廃棄物として回収していません。
-          処分の選択肢は①ホームセンターの土引き取りサービスを利用②日当たりの悪い庭の隅に広げて天日に当てて改良して再利用③ネット通販の「土の処分袋」に入れて申し込む、があります。
-          土の状態が良ければ、パーライトとバーク堆肥を混ぜて再利用するのが環境的にも経済的にも合理的です。
-        </p>
-      </div>
-      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 赤玉土や鹿沼土だけで野菜は育てられますか？</p>
-        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          育てられますが、肥料・pH管理の手間が大きく増えます。
-          赤玉土・鹿沼土は無機質で養分がほとんどないため、培養土の代わりに使う場合は
-          ゆっくり効く元肥・液肥の定期追肥・pH管理を自分で細かく行う必要があります。
-          家庭菜園では最初から野菜専用培養土を使うほうが失敗が少ないです。
-        </p>
-      </div>
-    </div>
   </section>
 
   <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
