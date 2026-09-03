@@ -66,7 +66,7 @@ const categories = [
     <p style="font-size:0.82rem; color:var(--color-text-muted); margin:0 0 0.5rem; font-weight:600;">
       📖 読んだ本
     </p>
-    <div id="bookTabs" style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:0.4rem; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+    <div id="bookTabs" style="display:flex; flex-wrap:wrap; gap:0.4rem; padding-bottom:0.4rem;">
       <button class="btab book-tab" data-book="all"
         style="white-space:nowrap; padding:0.4rem 0.8rem; border-radius:18px; border:2px solid var(--color-primary); background:var(--color-primary); color:white; font-size:0.8rem; cursor:pointer; flex-shrink:0; font-weight:700;">
         すべて
@@ -83,7 +83,7 @@ const categories = [
     <p style="font-size:0.82rem; color:var(--color-text-muted); margin:0.9rem 0 0.5rem; font-weight:600;">
       📦 アイテムカテゴリ
     </p>
-    <div id="catTabs" style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:0.2rem; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+    <div id="catTabs" style="display:flex; flex-wrap:wrap; gap:0.4rem; padding-bottom:0.2rem;">
       {categories.map((c) => (
         <button class="ctab cat-tab" data-cat={c.id}
           style={`white-space:nowrap; padding:0.4rem 0.8rem; border-radius:18px; border:2px solid ${c.id === 'all' ? 'var(--color-accent)' : 'var(--color-border)'}; background:${c.id === 'all' ? 'var(--color-accent)' : 'white'}; color:${c.id === 'all' ? 'white' : 'var(--color-text)'}; font-size:0.8rem; cursor:pointer; flex-shrink:0;${c.id === 'all' ? ' font-weight:700;' : ''}`}>

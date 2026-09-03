@@ -3,65 +3,136 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout
   title="About — 増田博之とこのサイトについて"
-  description="プランターノートの運営者・増田博之のプロフィールと、サイトの目的についてご説明します。"
+  description="プランターノートの運営者・増田博之のプロフィールと、サイトのコンセプトについてご説明します。"
 >
-  <h1>About</h1>
+  <div style="text-align:center; font-size:2rem; margin-bottom:0.5rem;">🌱🥦🍅</div>
+  <h1 style="text-align:center; margin-top:0;">こんにちは、増田です。</h1>
 
-  <section style="margin-top:1rem; padding:1.2rem; background:#fff8f0; border:1px solid #f0d9b5; border-radius:10px;">
-    <h3 style="margin:0 0 0.6rem; color:var(--color-accent);">⚠️ キャラクター開示</h3>
-    <p style="font-size:0.9rem; line-height:1.8; margin:0; color:var(--color-text-muted);">
-      「増田博之」は架空のキャラクターです。実在する人物ではありません。
-      プランター菜園の知見・商品紹介・コメントは実際の栽培情報とメーカー公開データに基づいていますが、
-      特定の個人の体験談ではなく、サイト運営者が作成した情報です。
+  <p style="line-height:1.9; margin-top:0.8rem;">
+    千葉のマンション8階ベランダで、プランターとにらめっこしている58歳です。
+    食品メーカーの品質管理部門に30年間いたせいか、野菜が育たないと「原因は何か」「どうすれば再発しないか」を
+    考えてしまう体質になりました。
+    2020年からは市民農園も借りて、年間30品種以上を栽培しています。
+  </p>
+
+  <section style="margin-top:2rem;">
+    <h2>このサイトのコンセプト</h2>
+    <p style="line-height:1.9;">
+      このサイトは、プランター菜園の実用情報とアイテムレビューをまとめたブログです。
+      「なぜ失敗したか」を記録して次に活かす——品質管理部門で身についた習慣を、そのまま家庭菜園に持ち込んでいます。
+    </p>
+    <p style="line-height:1.9;">
+      「プランター菜園 × 品質管理思考」という視点で、失敗の原因と対策を素直に書いていきます。
+    </p>
+    <ul style="line-height:2.1; font-size:0.95rem;">
+      <li>ベランダの強風でミニトマトが毎年倒れていた→支柱の刺し方を変えたら解決</li>
+      <li>スリット鉢に変えた年から根腐れがゼロになった</li>
+      <li>pH計を買うまで「肥料が効かない」の原因に2シーズン気づかなかった</li>
+    </ul>
+    <p style="line-height:1.9;">
+      「ちゃんと育てるために何を買えばいいか」を、失敗した経験と実際のデータをもとに書いています。
+      農業専門家のように断言もしないし、「いかがでしたか？」も言いません。
     </p>
   </section>
 
-  <section style="margin-top:1.4rem;">
-    <h2>増田博之 プロフィール</h2>
-    <div style="background:white; border:1px solid var(--color-border); border-radius:12px; padding:1.4rem 1.5rem; margin-top:0.8rem;">
-      <p style="font-size:1rem; font-weight:700; margin:0 0 0.6rem; color:var(--color-primary-dark);">
-        増田 博之（58歳）
-      </p>
-      <ul style="font-size:0.95rem; line-height:2; color:var(--color-text); padding-left:1.2rem;">
-        <li>品質管理の仕事に30年従事</li>
-        <li>家庭菜園歴12年（ベランダプランター専門）</li>
-        <li>失敗ノート累計6冊</li>
-        <li>育てた野菜の種類：36品種以上</li>
-        <li>最初の3年間は失敗続き、4年目から安定収穫</li>
+  <section style="margin-top:2rem;">
+    <h2>このサイトの情報について</h2>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li>紹介している商品のスペック・価格・使用感は、実際の栽培情報と製品の公開データをもとに掲載しています</li>
+      <li>「これは買って良かった」「正直、これは微妙でした」も素直に書きます</li>
+      <li>農薬・肥料の量・pH数値などは、私が実際に記録したノートの値です</li>
+      <li>植物の状態・気候条件はベランダや農園によって異なります。参考程度にお使いください</li>
+    </ul>
+    <div style="margin-top:1rem; padding:0.8rem 1rem; background:#fef3f2; border-left:3px solid #e5534b; border-radius:6px; font-size:0.88rem; line-height:1.8;">
+      <strong style="color:#c0392b;">創作</strong>
+      「増田博之」は架空のキャラクターです。プロフィール・エピソード・失敗談は、
+      栽培情報・製品確認・各種資料をもとにした創作であり、運営者本人の実体験ではありません。
+      紹介している商品のスペック・価格は実在のものを確認して掲載していますが、
+      「買って良かった」「この土は微妙でした」という体験談部分は、
+      増田博之というキャラクターを通じた表現です。
+    </div>
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>増田博之について</h2>
+    <div style="background:white; border:1px solid var(--color-border); border-radius:12px; padding:1.4rem 1.5rem;">
+      <ul style="line-height:2.1; font-size:0.95rem; color:var(--color-text); padding-left:1.2rem; margin:0;">
+        <li>58歳、千葉県市川市在住（東京都心から電車30分）</li>
+        <li>食品メーカー・品質管理部門に30年勤務。定年後も同社で嘱託勤務中</li>
+        <li>趣味はプランター菜園（ベランダ）と市民農園（15㎡）</li>
+        <li>得意なのはトマト・なす・きゅうり・バジル・シソ</li>
+        <li>今も苦手なのはネギ類（3年連続全滅中）</li>
+        <li>失敗ノートは現在6冊目</li>
+        <li>口グセは「原因は3つに絞られる」「記録しておけばよかった」</li>
       </ul>
     </div>
-
-    <blockquote style="margin-top:1.2rem;">
-      「品質管理の仕事で染みついた習慣は、<br />
-      なぜ失敗したかを記録して、次に活かすことです。<br />
-      家庭菜園でも、同じことをやり続けてきました。」
-    </blockquote>
   </section>
 
   <section style="margin-top:2rem;">
-    <h2>このサイトについて</h2>
+    <h2>12年の菜園歴とプランターの話</h2>
     <p style="line-height:1.9;">
-      プランターノートは、増田博之のKindle本（家庭菜園シリーズ）の読者の方に向けて、
-      本の中で紹介したアイテムをオンラインでも確認できるよう作ったサイトです。
+      2014年、食品メーカーに勤めて24年目のことです。
+      妻が「ベランダで何か育てたい」と言い出して、100円ショップのプランターにバジルを植えたのが最初でした。
     </p>
     <p style="line-height:1.9;">
-      紹介するアイテムは、実際の栽培情報・製品仕様・各種レビューをもとに「失敗が減る」根拠があると判断したものを掲載しています。
-      良い点だけでなく、気になった点や向いていない使い方も正直に書いています。
+      最初の3年間はほとんどうまくいきませんでした。
+      日当たりの良い8階だから問題ないと思っていましたが、強風と直射日光でミニトマトはみるみる萎れ、
+      水やりを毎日すると根腐れ、少なくすると乾燥死。
+      食品メーカーにいながら、植物の育て方を何も知らなかったことに50近くなって初めて気づきました。
     </p>
     <p style="line-height:1.9;">
-      商品リンクはAmazon.co.jpアソシエイトプログラムを利用しており、
-      リンクを経由してご購入いただくとサイト運営の手数料が発生します。
-      紹介商品の選定・コメントは実際の栽培データと製品の公開情報にもとづいており、
+      転機は2016年、市川市の農業センターが開いたベランダ菜園の講座でした。
+      70代の農家の方から「失敗の原因はたいてい土か水か日光のどれか」という言葉を聞いて、
+      「品質管理と同じだ」と腑に落ちた。それから、失敗のたびに原因を記録するようになりました。
+    </p>
+    <p style="line-height:1.9;">
+      培養土はホームセンターの198円の袋を3年使い続けていましたが、
+      980円のものに変えたら同じ品種・同じプランターで明らかに成長が違いました。
+      最初から土にお金をかければよかったと思いましたが、
+      逆に言うと、道具次第でこれだけ変わるということでもあります。
+    </p>
+    <p style="line-height:1.9;">
+      道具に使ってきたお金はそれなりのものです。プランターはスリット鉢に変えた年から根腐れがゼロになり、
+      pH計を買ってpHを測ったら「肥料が効かない」原因がわかり、
+      防虫ネットを張るようにしたらきゅうりの収穫が11本から147本になりました。
+      「もっと早く買えばよかった」と思った道具ばかりです。
+    </p>
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>これまでの主な失敗集 <span style="font-size:0.8rem; color:var(--color-text-muted); font-weight:400;">（創作）</span></h2>
+    <ul style="line-height:2.2; font-size:0.93rem; padding-left:1.2rem;">
+      <li>🪣 100円ショップのプランターを3年使い続けて10鉢以上を根腐れさせた（底穴が小さかった）</li>
+      <li>🍅 ミニトマトが赤くなりかけた段階で収穫して味がなかった。完熟の判断を覚えるまで3シーズンかかった</li>
+      <li>🐛 「無農薬にこだわる」とアブラムシの初期対応を遅らせ、バジル一株を2日で全滅させた夏</li>
+      <li>🧅 ネギ類（長ネギ・玉ねぎ）は3年挑戦して毎回失敗。今年で4年目</li>
+      <li>💧 妻に水やりを手伝ってもらったらやりすぎで根腐れした。菜園は1人でやるか、ルールを共有してからにした方がいい</li>
+    </ul>
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>このサイトを楽しむヒント</h2>
+    <ul style="line-height:2.2; font-size:0.93rem; padding-left:1.2rem;">
+      <li>🛒 各記事の末尾に紹介している商品は、実在する売れ筋・信頼できるものを選んでいます</li>
+      <li>📊 pH・水やり頻度・収穫数などの数字は、失敗ノートに記録した実際の値をもとにしています（創作の設定値です）</li>
+      <li>🌿 土・プランター・防虫ネットのカテゴリから読むと、失敗が少なくなりやすい基礎情報が揃っています</li>
+      <li>📝 「記事がない野菜・道具を知りたい」という場合はお問い合わせください</li>
+    </ul>
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>運営者情報・免責事項</h2>
+    <p style="line-height:1.9; font-size:0.93rem; color:var(--color-text-muted);">
+      運営：プランターノート編集部<br />
+      商品リンクはAmazon.co.jpアソシエイトプログラムのアフィリエイトを含みます。
+      リンクを経由してご購入いただくと、サイト運営の手数料が発生します。
+      紹介商品の選定・コメントは実際の栽培情報と製品の公開データにもとづいており、
       特定メーカーから掲載料等は受け取っていません。
     </p>
-  </section>
-
-  <section style="margin-top:2rem;">
-    <h2>お問い合わせ</h2>
-    <p style="line-height:1.9; color:var(--color-text-muted);">
-      サイトの内容に関するご意見・ご指摘は、
+    <p style="line-height:1.9; font-size:0.93rem; color:var(--color-text-muted);">
+      内容に関するご意見・誤情報のご指摘は
       <a href="mailto:appdevelopernagatomo@outlook.jp">appdevelopernagatomo@outlook.jp</a>
-      までお送りください。
+      からどうぞ。
     </p>
   </section>
 </BaseLayout>
