@@ -30,6 +30,7 @@ export type Product = {
   category: ProductCategory;
   shopComment: string;
   asin?: string;
+  imageUrl?: string;
   searchKeyword?: string;
   rakutenKeyword?: string;
 };
@@ -69,6 +70,8 @@ export const products: Product[] = [
     category: 'planter',
     shopComment:
       '失敗ノート1冊目を振り返ると、「根腐れ」という文字が32回出てきます。そのうち28回が底穴の小さいプランターが原因でした。スリット型に変えた年から根腐れはゼロになりました。12年経ったいまも毎年使っているのは、それだけで理由として十分だからです。ただし軽いので、ベランダの強風時には倒れます。受け皿か重しで固定してください。',
+    asin: 'B0CPPZSHM4',
+    imageUrl: 'https://m.media-amazon.com/images/I/71Yqf58Aw-L._SL160_.jpg',
     searchKeyword: 'スリット鉢 プランター 6号',
   },
   {
@@ -95,6 +98,8 @@ export const products: Product[] = [
     category: 'soil',
     shopComment:
       '「どの土を買えばいいですか」は、家庭菜園を始めた人が最初に聞いてくる質問です。迷っているなら元肥入りの野菜用培養土を選んでください。植え付けから2ヶ月は追肥なしで育てられます。私が最初の3年間に犯した失敗の半分は、格安の培養土から始めたことが根本原因でした。ただし余った土は密閉しないとコバエが発生します。ジッパー付きの袋に入れて保管してください。',
+    asin: 'B0CMQL7RBF',
+    imageUrl: 'https://m.media-amazon.com/images/I/81miP8JIK1L._SL160_.jpg',
     searchKeyword: '野菜用培養土 25L 元肥入り',
   },
   {
@@ -103,6 +108,8 @@ export const products: Product[] = [
     category: 'soil',
     shopComment:
       '失敗ノート2冊目に「水が土の表面を転がって浸みない」という記録が何度も出てきます。原因は土の固結です。バーク堆肥入りに変えてから、この問題が消えました。通気性が上がり根が伸びやすくなったため、同じ野菜でも収穫量が1.3〜1.5倍になっています。価格は一般的な培養土の1.5倍ほどします。トマト・なす・きゅうりなど長期栽培の野菜に優先して使うのが費用対効果の高い使い方です。',
+    asin: 'B00IERHB94',
+    imageUrl: 'https://m.media-amazon.com/images/I/81s4p00JndL._SL160_.jpg',
     searchKeyword: '有機培養土 バーク堆肥 プランター',
   },
   {
@@ -111,6 +118,8 @@ export const products: Product[] = [
     category: 'soil',
     shopComment:
       '4年目の夏、きゅうりに肥料を十分与えているのに葉が黄色くなり続けました。pH計で測ったら5.2。酸性が強すぎて肥料が根から吸えない状態でした。苦土石灰で6.0まで戻したら、2週間後に葉の色が戻り始めました。市販の培養土は最初からpH調整済みですが、2年以上使い続けた土には必ずpH計測をおすすめします。ただし一度に大量に入れると上がりすぎます。少量ずつ混ぜてpH計で確認しながら使ってください。',
+    asin: 'B00JLWNDHU',
+    imageUrl: 'https://m.media-amazon.com/images/I/71Vzcpy-ftL._SL160_.jpg',
     searchKeyword: '苦土石灰 pH調整 家庭菜園',
   },
 
@@ -121,6 +130,8 @@ export const products: Product[] = [
     category: 'fertilizer',
     shopComment:
       '肥料売り場に行くと何十種類もあって選べない、という相談をよく受けます。最初の1本はこれで十分です。N（葉）・P（実）・K（根）が均等に入った8-8-8は、すべての野菜に使える「標準品」です。品質管理の現場で言えばオールマイティな汎用スペック品。ただし即効性がないため、肥料切れのサインが出てから与えても効果が出るまで数日かかります。葉の色が薄くなったら液肥を先に使って、化成肥料はその後に追加するのが私のやり方です。',
+    asin: 'B0D3QFYFQ1',
+    imageUrl: 'https://m.media-amazon.com/images/I/816cTBjqpeL._SL160_.jpg',
     searchKeyword: '化成肥料 8-8-8 家庭菜園',
   },
   {
@@ -137,7 +148,9 @@ export const products: Product[] = [
     category: 'fertilizer',
     shopComment:
       '葉が黄色くなってから動ける手段は液肥しかありません。水やりと同時に与えられる即効性が、他の肥料にない最大の強みです。私は毎週金曜日の水やりをすべてハイポネックス薄め液にしています。この習慣にしてから肥料切れによる成長停止がなくなりました。希釈倍率は必ず守ること。原液のまま与えると根が焼けます（失敗ノート3冊目に記録があります）。開封後は直射日光を避けて保管してください。',
-    asin: 'B001DBXNPK',
+    asin: 'B0027WPD7O',
+    imageUrl: 'https://m.media-amazon.com/images/I/6100huHPt9L._SL160_.jpg',
+    searchKeyword: 'ハイポネックス 液体肥料 原液 800ml',
   },
 
   // ─── 道具
@@ -171,6 +184,8 @@ export const products: Product[] = [
     category: 'tools',
     shopComment:
       '失敗ノート4冊目に「なぜ育たないのか原因の内訳」をまとめたページがあります。水やり過多：23%、肥料切れ：31%、pH異常：28%、原因不明：18%。pH異常が3割近くを占めていると気づいたとき、pH計を買いました。それ以来、pH異常が原因の失敗はゼロです。デジタル式は読み取りが明確で、目盛りを読み間違えることがありません。ただし水に濡れたまま放置すると壊れます。使用後は必ず拭いて保管してください。',
+    asin: 'B0DF4TB93J',
+    imageUrl: 'https://m.media-amazon.com/images/I/61UgGNX3GmL._SL160_.jpg',
     searchKeyword: '土壌pH計 デジタル プランター',
   },
   {
@@ -179,6 +194,8 @@ export const products: Product[] = [
     category: 'tools',
     shopComment:
       '「土が乾いたら水をあげる」という感覚的な水やりをやめて、水分計の数値で判断するようにしてから、根腐れと水切れの両方が激減しました。特に室内栽培は土の表面だけ見ていても中の状態がわからないため、このツールの恩恵が大きい。過湿による根腐れは発見が遅れると手の施しようがなくなるので、早期発見に役立てています。電池不要のシンプルタイプは壊れにくく、5年以上使っています。ただし精度は目安程度と考えてください。',
+    asin: 'B0C7QX56LX',
+    imageUrl: 'https://m.media-amazon.com/images/I/41VbFEhAFiL._SL160_.jpg',
     searchKeyword: '土壌水分計 プランター 家庭菜園',
   },
 
@@ -189,6 +206,8 @@ export const products: Product[] = [
     category: 'pest-control',
     shopComment:
       '農薬を使わずに過ごした最初の夏、きゅうり1株から収穫できたのは11本だけでした。アブラムシとコナジラミが大発生していました。翌年から防虫ネットを張って、147本収穫できました。同じ苗・同じ土・同じ肥料で収穫量が13倍以上になった理由は防虫ネットだけです。ただし端の固定が甘いとネットの中に虫が侵入します。周囲を重しや洗濯ばさみでしっかり密閉することが、効果を出す唯一のコツです。',
+    asin: 'B0HBVTLPW4',
+    imageUrl: 'https://m.media-amazon.com/images/I/61dVEu1abdL._SL160_.jpg',
     searchKeyword: '防虫ネット 0.4mm 家庭菜園',
   },
   {
@@ -197,6 +216,8 @@ export const products: Product[] = [
     category: 'pest-control',
     shopComment:
       '防虫ネットをくぐり抜けた虫が発生したとき、手で取り除く作業に30分かけて結局取りきれなかった経験があります。殺虫剤は「最後の手段」ですが、常備しておくべき手段です。必ず「収穫前日まで使用可」の表示があるものを選んでください。表示がないものは農薬登録の内容が異なります。ラベルに記載の適用作物欄を確認することも忘れずに。きゅうりに使える殺虫剤でも、トマトには使えない場合があります。',
+    asin: 'B00BMZD5W2',
+    imageUrl: 'https://m.media-amazon.com/images/I/81ZrpcxC-mL._SL160_.jpg',
     searchKeyword: '家庭菜園 殺虫剤 収穫前日 スプレー',
   },
   {
@@ -293,6 +314,8 @@ export const products: Product[] = [
     category: 'tomato',
     shopComment:
       '普通の苗と接ぎ木苗を同じプランターで育て比べた年があります。8月末の収穫数は普通苗が43個、接ぎ木苗が91個でした。2倍以上の差がついた理由は病気への抵抗力だと思っています。接ぎ木苗は値段が2〜3倍しますが、収穫量を考えると逆に安上がりです。品種は「アイコ」か「千果」が育てやすく、初年度から大量収穫を実感できます。植え付けはゴールデンウィーク前後が目安で、霜の心配がなくなってから定植してください。',
+    asin: 'B0BDFXF9H6',
+    imageUrl: 'https://m.media-amazon.com/images/I/6197zWvCX9L._SL160_.jpg',
     searchKeyword: 'ミニトマト 苗 アイコ 接ぎ木',
   },
   {
@@ -301,6 +324,8 @@ export const products: Product[] = [
     category: 'tomato',
     shopComment:
       'ミニトマトは放置すると9月には2mを超えます。支柱を立てるのが遅れて茎が折れた年は、そこで収穫が終わりました。品質管理で言う「予防保全」の考え方そのもので、問題が起きる前に手を打つのが正解です。定植後2週間を目安に立ててください。ただしベランダでは床の防水シートを傷つけないよう、直接土に差し込まず専用のプランタースタンドか受け皿を使ってください。シートに穴を開けると防水の修繕費用が発生します。',
+    asin: 'B0GJRM7X16',
+    imageUrl: 'https://m.media-amazon.com/images/I/71GunZqAAYL._SL160_.jpg',
     searchKeyword: '支柱 180cm トマト 家庭菜園',
   },
   {
@@ -309,6 +334,8 @@ export const products: Product[] = [
     category: 'tomato',
     shopComment:
       '麻ひもで茎を縛っていた頃、締め付けすぎて茎が傷み、そこから病気が入ったことがあります。クリップ式は圧力を分散させるので茎を傷めません。着脱も簡単なので、茎が成長して詰まってきたら上のクリップをゆるめる微調整ができます。誘引ひもと違って何度も再利用できるので、長い目で見るとコストも下がります。ただし茎が太くなる8月以降は小さいクリップでは挟めなくなるので、大中小サイズをセットで持っておくと安心です。',
+    asin: 'B0F9Y1FK8J',
+    imageUrl: 'https://m.media-amazon.com/images/I/71T7xwvYH+L._SL160_.jpg',
     searchKeyword: '誘引クリップ トマト きゅうり 支柱',
   },
 
@@ -319,6 +346,8 @@ export const products: Product[] = [
     category: 'summer-vege',
     shopComment:
       'なすの収穫が止まるたびに失敗ノートを開くと、決まって「追肥を飛ばした週」がある。週次の追肥記録をつけ始めてから、収穫が止まらなくなりました。今年の夏は1株から68個収穫できました。なすは「肥料食い」と言われますが、正確には「肥料切れを嫌う」野菜です。2週間に一度の追肥を守れば、8月の更新剪定（半分に切り戻し）で9月まで収穫が続きます。プランターは最低30L。これより小さいと根が詰まって成長が止まります。',
+    asin: 'B0GZPQMWL3',
+    imageUrl: 'https://m.media-amazon.com/images/I/71n-vtW-5wL._SL160_.jpg',
     searchKeyword: 'なす 苗 千両二号 家庭菜園',
   },
   {
