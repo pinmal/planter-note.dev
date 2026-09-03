@@ -1,0 +1,114 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="プランターで根腐れが起きる原因と対策"
+  description="失敗ノートに「根腐れ」が32回出てきた。そのうち28回はプランターの底穴の問題だった。スリット鉢に変えただけで根腐れがゼロになった記録。"
+  slug="negusar-genin"
+  publishDate="2026-09-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>プランターで根腐れが起きる原因と対策</h1>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「失敗ノート1冊目を振り返ると、"根腐れ"という文字が32回出てきます。
+      そのうち28回がプランターの底穴の問題でした。
+      スリット型に変えた年から根腐れはゼロになりました。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>根腐れとは何か</h2>
+    <p style="line-height:1.9;">
+      根腐れとは、土の中の酸素が不足した状態が続くことで根が傷み、やがて腐る現象です。
+      根が機能を失うと水分・養分を吸えなくなり、葉がしおれ、最終的に株が枯れます。
+      原因を知らずに水やりを増やすと症状が悪化するため、早期の原因特定が重要です。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>根腐れが起きる3つの主要原因</h2>
+
+    <div style="display:grid; gap:0.8rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">① 底穴が小さいプランター（原因の87.5%）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          底穴が1〜2個しかなく小さいプランターでは、水やりのたびに土の中に水が残ります。
+          酸素が入れない環境が続くと、嫌気性細菌が繁殖して根を傷めます。
+          32回の根腐れ記録のうち28回（87.5%）がこれが原因でした。
+          スリット鉢（側面・底面に複数の切れ目）に変えてから根腐れはゼロになりました。
+        </p>
+      </div>
+
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">② 受け皿に水が溜まり続ける</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          受け皿（トレー）に排水が溜まったまま放置すると、底穴から水が逆流して土の下層が常時過湿になります。
+          夏場は水やり後3日で根腐れが始まることがあります。
+          水やりのたびに受け皿の水を捨てるか、脚付きスタンドで底面に空間を作ることで防げます。
+        </p>
+      </div>
+
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">③ 水はけの悪い土（主に再利用土）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          庭土や3年以上使い続けた培養土は、土の粒子が細かくなって固結します。
+          水が土の表面を転がって底まで浸みなくなり、一部だけが過湿になります。
+          再利用する場合は必ずpH計測と土の状態確認を行い、パーライトやバーク堆肥を混ぜて通気性を改善してから使用してください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>根腐れのサイン——早期発見のチェックリスト</h2>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li>水やりを減らしても葉がしおれる → 根が水を吸えない状態</li>
+      <li>葉が黄色くなり、下の葉から順に枯れてくる → 根からの養分供給が止まっている</li>
+      <li>土から酸っぱい・腐ったにおいがする → 嫌気性細菌の繁殖</li>
+      <li>株を引っ張ると抵抗なく抜ける → 根が機能を失っている</li>
+    </ul>
+    <p style="font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+      これらのサインが出た場合、株を取り出して根の状態を確認してください。
+      茶色く変色して柔らかくなっている根が根腐れです。
+      腐った部分をハサミで切り取り、新しい土に植え替えることで回復することがあります。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>根腐れを防ぐプランターの選び方</h2>
+
+    <ProductCard id="planter-slit-pot" />
+    <ProductCard id="planter-deep-60" />
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>よくある質問</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.7rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 一度根腐れした株は復活しますか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          初期段階なら復活できます。腐った根をすべて切り取り（清潔なハサミを使うこと）、
+          新しい培養土に植え替えて、しばらく直射日光を避けた場所で管理してください。
+          ただし根が大半腐っている場合は廃棄して、同じシーズンに新しい苗を植え直す判断も必要です。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. スリット鉢にすると土が乾くのが早すぎませんか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          確かに通気性が上がるため土は乾きやすくなります。ただし根腐れによる植物の死と、水やり頻度が増えることを比べると、水やり増加のほうがはるかに対処しやすい問題です。
+          真夏は朝晩2回の水やりが必要になることもありますが、スリット鉢への切り替えによる根腐れゼロの効果はそれを上回ります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/tsuchi-erabi/">土の選び方——格安の土で3年失敗した記録</a><br />
+    <a href="/articles/ph-kanri/">pH管理——肥料が効かない原因の28%はpH異常だった</a>
+  </nav>
+</ArticleLayout>

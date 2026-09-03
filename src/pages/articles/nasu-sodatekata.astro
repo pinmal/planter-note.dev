@@ -1,0 +1,106 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="なすプランター栽培で実がつかない原因——週次追肥記録で解決した方法"
+  description="収穫が止まるたびに失敗ノートを開くと「追肥を飛ばした週」がある。週次追肥の習慣を作ってから1株68個収穫できた。なすプランター栽培の全手順。"
+  slug="nasu-sodatekata"
+  publishDate="2026-09-03"
+  relatedCategory={{ href: '/category/summer-vege/', label: '夏野菜' }}
+>
+  <h1>なすプランター栽培で実がつかない原因——週次追肥記録で解決した方法</h1>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「なすの収穫が止まるたびに失敗ノートを開くと、決まって"追肥を飛ばした週"がある。
+      週次の追肥記録をつけ始めてから、収穫が止まらなくなりました。
+      今年の夏は1株から68個収穫できました。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>なすの最大の特徴——「肥料切れを嫌う野菜」</h2>
+    <p style="line-height:1.9;">
+      なすは「肥料食い」と言われますが、より正確には「<strong>肥料切れを嫌う野菜</strong>」です。
+      肥料が少ない状態が数日続くと、実の成長が止まり、花が落ちます。
+      それに気づいて慌てて追肥しても、すぐには回復しません。
+    </p>
+    <p style="line-height:1.9;">
+      重要なのは「なくなる前に与え続ける」こと。
+      2週間に1回の追肥ルールを記録として管理するのが最も確実な方法です。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>実がつかない・収穫が止まる3つの原因</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">① 追肥の間隔が空きすぎ</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          なすは気温の高い7〜8月に急速に成長し、肥料の消費が速まります。
+          月1回の追肥では不十分で、「なんか元気がないな」と感じる前に肥料が切れています。
+          週次または2週間ごとの追肥を、カレンダーに記録して管理してください。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">② プランターが小さすぎる</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          なすの根は広く深く張ります。プランターは最低30L（深さ35cm以上）が必要です。
+          これより小さいと根が詰まり、いくら追肥しても吸収が追いつかなくなります。
+          なすが実をつけずに枯れた2回の経験は、どちらも浅いプランターが原因でした。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">③ 更新剪定を行わない（8月中旬）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          8月中旬にすべての枝を半分程度切り戻す「更新剪定」を行うと、9月から10月にかけて再び収穫できます。
+          更新剪定をしないと、8月末には株が老化して収穫が終わります。
+          剪定直後はしおれますが、2週間ほどで新しい枝が伸びて復活します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>なす栽培カレンダー（関東の目安）</h2>
+    <div style="overflow-x:auto; margin-top:0.8rem;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; background:white; border:1px solid var(--color-border); border-radius:9px; overflow:hidden;">
+        <thead>
+          <tr style="background:var(--color-primary); color:white;">
+            <th style="padding:0.7rem 0.8rem; text-align:left;">時期</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">作業</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { period: '5月上旬', task: '定植（最低気温15℃以上になってから）' },
+            { period: '5〜6月', task: '支柱立て・誘引・わき芽管理・2週間ごとの追肥' },
+            { period: '7〜8月', task: '最盛期。週1回の液肥を追加。収穫は若取り（色が濃くなったらすぐ）' },
+            { period: '8月中旬', task: '更新剪定（全枝を半分に切り戻し）・追肥でリセット' },
+            { period: '9〜10月', task: '秋なすを収穫。10月末の気温低下で終了' },
+          ].map((r, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-weight:600;">{r.period}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border);">{r.task}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>なす栽培おすすめ商品</h2>
+    <ProductCard id="summer-eggplant" />
+    <ProductCard id="fertilizer-liquid" />
+    <ProductCard id="fertilizer-kagaku" />
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/minitomato-sodatekata/">ミニトマト栽培ガイド——接ぎ木苗と支柱で収穫量が変わる</a><br />
+    <a href="/articles/bougai-net/">防虫ネット——きゅうりの収穫が11本→147本になった話</a>
+  </nav>
+</ArticleLayout>

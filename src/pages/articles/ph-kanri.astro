@@ -1,0 +1,105 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="プランター菜園のpH管理——肥料が効かない原因の28%はpH異常だった"
+  description="肥料を十分与えているのに葉が黄色くなり続けた。pH計で計測したら5.2。苦土石灰で6.0に戻したら2週間で葉色が回復した。pH管理の具体的な手順。"
+  slug="ph-kanri"
+  publishDate="2026-09-03"
+  relatedCategory={{ href: '/category/tools/', label: '道具（pH計・水分計）' }}
+>
+  <h1>プランター菜園のpH管理——肥料が効かない原因の28%はpH異常だった</h1>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「失敗ノート4冊目に、なぜ育たないかの原因内訳をまとめたページがあります。
+      水やり過多：23%、肥料切れ：31%、pH異常：28%、原因不明：18%。
+      pH異常が3割近くを占めていると気づいたとき、初めてpH計を買いました。
+      それ以来、pH異常が原因の失敗はゼロです。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>pH（ペーハー）とは何か</h2>
+    <p style="line-height:1.9;">
+      pHは土の酸性・アルカリ性の度合いを示す数値です。0〜14のスケールで、7が中性、7より小さいと酸性、大きいとアルカリ性です。
+      ほとんどの野菜の適正範囲は<strong>pH 6.0〜6.5</strong>（弱酸性）です。
+    </p>
+    <p style="line-height:1.9;">
+      この範囲を外れると、土の中に肥料成分があっても植物が吸収できなくなります。
+      肥料が足りないのではなく、pHのせいで肥料が「使えない」状態になっているのです。
+      「肥料をやっているのに葉が黄色い」場合、まずpHを疑ってください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>なぜプランターの土は酸性になるのか</h2>
+    <p style="line-height:1.9;">
+      水道水は弱酸性（pH 6.0〜7.5程度）です。水やりを繰り返すと、土に含まれるアルカリ成分が流れ出て、
+      土が少しずつ酸性に傾きます。市販の培養土はpH調整済みで出荷されますが、
+      <strong>2年以上使い続けると必ず酸性化が進みます</strong>。
+    </p>
+    <p style="line-height:1.9;">
+      ベランダのプランターは庭と違って土の量が少なく、水やりの影響を受けやすいため酸性化のスピードが速い。
+      毎年新しい土に交換するのが理想ですが、再利用する場合は必ずpH計測が必要です。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>pH管理の手順</h2>
+    <ol style="line-height:2.2; font-size:0.93rem; padding-left:1.4rem;">
+      <li><strong>pH計で現在の値を計測する</strong>（土を水で湿らせた状態で計測するとより正確）</li>
+      <li>pH 5.5以下なら苦土石灰を投入。少量（1L の土に対して小さじ1杯程度）から始める</li>
+      <li>よく混ぜて1週間後に再計測。pH 6.0〜6.5になるまで繰り返す</li>
+      <li>目標値になったら植え付け。その後は月に1回程度計測して管理する</li>
+    </ol>
+    <p style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:0.8rem 1rem; font-size:0.9rem; line-height:1.8;">
+      ⚠️ 苦土石灰の入れすぎに注意。一度に大量に投入するとpHが7.5を超え、逆に植え付けできない状態になります（実際に経験済みの失敗です）。少量ずつ調整してください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>pH管理に必要な道具</h2>
+    <ProductCard id="tools-ph-meter" />
+    <ProductCard id="soil-ph-adjuster" />
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>野菜別の適正pH一覧</h2>
+    <div style="overflow-x:auto; margin-top:0.8rem;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; background:white; border:1px solid var(--color-border); border-radius:9px; overflow:hidden;">
+        <thead>
+          <tr style="background:var(--color-primary); color:white;">
+            <th style="padding:0.7rem 0.8rem; text-align:left;">野菜</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">適正pH</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { veg: 'ミニトマト', ph: '6.0〜6.5', note: '最もポピュラーな適正範囲' },
+            { veg: 'なす', ph: '6.0〜6.5', note: '肥料吸収はpHに敏感' },
+            { veg: 'きゅうり', ph: '5.5〜6.5', note: 'やや酸性に強い' },
+            { veg: 'バジル・ハーブ', ph: '6.0〜7.0', note: '比較的広い範囲で育つ' },
+            { veg: 'ほうれん草', ph: '6.5〜7.0', note: '酸性に弱い。石灰投入が必要なことが多い' },
+            { veg: 'ブルーベリー', ph: '4.0〜5.0', note: '強酸性が必要。専用土推奨' },
+          ].map((r, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border);">{r.veg}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border);">{r.ph}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.84rem; color:var(--color-text-muted);">{r.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/tsuchi-erabi/">土の選び方——格安の土で3年失敗した記録</a><br />
+    <a href="/articles/negusar-genin/">根腐れの原因と対策——スリット鉢で解決した話</a>
+  </nav>
+</ArticleLayout>

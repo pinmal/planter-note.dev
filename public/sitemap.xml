@@ -51,6 +51,41 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://planter-note.pages.dev/articles/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://planter-note.pages.dev/articles/negusar-genin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://planter-note.pages.dev/articles/tsuchi-erabi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://planter-note.pages.dev/articles/ph-kanri/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://planter-note.pages.dev/articles/bougai-net/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://planter-note.pages.dev/articles/minitomato-sodatekata/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://planter-note.pages.dev/articles/nasu-sodatekata/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://planter-note.pages.dev/about/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

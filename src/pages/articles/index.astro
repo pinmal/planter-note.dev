@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const articles = [
+  {
+    href: '/articles/negusar-genin/',
+    title: 'プランターで根腐れが起きる原因と対策',
+    desc: '失敗ノートに"根腐れ"が32回出てきた。そのうち28回は底穴の問題だった。スリット鉢に変えただけで根腐れはゼロになった話。',
+    tag: 'プランター',
+  },
+  {
+    href: '/articles/tsuchi-erabi/',
+    title: 'プランター菜園の土の選び方——格安の土で3年失敗して学んだこと',
+    desc: '最初の3年間に犯した失敗の半分は、格安の培養土を使い続けたことが根本原因だった。元肥・pH・バーク堆肥の3点で選ぶ。',
+    tag: '土・培養土',
+  },
+  {
+    href: '/articles/ph-kanri/',
+    title: 'プランター菜園のpH管理——肥料が効かない原因の28%はpH異常だった',
+    desc: '肥料を十分与えているのに葉が黄色くなり続けた。pH計で測ったら5.2だった。苦土石灰で6.0に戻したら2週間で葉色が回復した話。',
+    tag: '土・道具',
+  },
+  {
+    href: '/articles/bougai-net/',
+    title: '防虫ネット1枚できゅうりの収穫が11本→147本になった話',
+    desc: '農薬ゼロの夏、きゅうりが11本しか収穫できなかった。翌年から防虫ネットを張ったら147本になった。端の密閉だけがコツ。',
+    tag: '害虫対策',
+  },
+  {
+    href: '/articles/minitomato-sodatekata/',
+    title: 'ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が変わる',
+    desc: '普通苗43個 vs 接ぎ木苗91個。同じ条件で2倍以上の差がついた理由と、支柱を定植後2週間以内に立てる理由。',
+    tag: 'ミニトマト',
+  },
+  {
+    href: '/articles/nasu-sodatekata/',
+    title: 'なすプランター栽培で実がつかない原因——週次追肥記録で解決した方法',
+    desc: '収穫が止まるたびに失敗ノートを開くと「追肥を飛ばした週」がある。週次追肥の習慣を作ってから1株68個収穫できた。',
+    tag: '夏野菜',
+  },
+];
+---
+<BaseLayout
+  title="記事一覧 — プランターノート"
+  description="プランター菜園の失敗と解決策をまとめた記事一覧。根腐れ・土の選び方・pH管理・ミニトマト・なす・防虫ネットなど。"
+>
+  <h1>📝 記事一覧</h1>
+  <p style="margin-top:0.5rem; line-height:1.9; color:var(--color-text-muted); font-size:0.95rem;">
+    失敗ノート6冊から生まれた「なぜ失敗したか」「どう解決したか」の記録です。
+  </p>
+
+  <ul style="list-style:none; padding:0; margin-top:1.4rem; display:grid; gap:1rem;">
+    {articles.map((a) => (
+      <li>
+        <a href={a.href} style="display:block; background:white; border:1px solid var(--color-border); border-radius:10px; padding:1.1rem 1.2rem; text-decoration:none; color:inherit;">
+          <span style="font-size:0.78rem; font-weight:700; color:var(--color-primary-dark); background:var(--color-bg-card); padding:0.15rem 0.55rem; border-radius:20px; margin-bottom:0.4rem; display:inline-block;">{a.tag}</span>
+          <p style="margin:0.3rem 0 0.4rem; font-weight:700; font-size:1rem; color:var(--color-text);">{a.title}</p>
+          <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">{a.desc}</p>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">商品を探す</p>
+    <a href="/category/planter/">プランター</a> ·
+    <a href="/category/soil/">土・培養土</a> ·
+    <a href="/category/fertilizer/">肥料</a> ·
+    <a href="/category/tools/">道具</a> ·
+    <a href="/category/pest-control/">害虫対策</a>
+  </nav>
+</BaseLayout>

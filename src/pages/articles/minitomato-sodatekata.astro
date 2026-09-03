@@ -1,0 +1,104 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が変わる"
+  description="普通苗43個 vs 接ぎ木苗91個。同じプランター・土・肥料で2倍以上の差が出た理由。支柱を定植後2週間以内に立てる理由と、ミニトマト栽培の基本手順。"
+  slug="minitomato-sodatekata"
+  publishDate="2026-09-03"
+  relatedCategory={{ href: '/category/tomato/', label: 'ミニトマト' }}
+>
+  <h1>ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が変わる</h1>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「普通の苗と接ぎ木苗を同じプランターで育て比べた年があります。
+      8月末の収穫数は普通苗が43個、接ぎ木苗が91個でした。
+      2倍以上の差がついた理由は病気への抵抗力だと思っています。
+      接ぎ木苗は値段が2〜3倍しますが、収穫量を考えると逆に安上がりです。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>プランター栽培の基本条件</h2>
+    <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">プランターのサイズ</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          深さ30cm以上、容量15〜20L以上が必要です。これより小さいと根が詰まって8月以降に成長が止まります。
+          スリット鉢（底穴が多いタイプ）が根腐れ防止に最適です。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">置き場所と日当たり</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          1日6時間以上の直射日光が必要です。日当たりが不足すると果実に糖度が乗りません。
+          南向きのベランダが理想ですが、東向きでも午前中に十分な日光が当たれば栽培できます。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">植え付け時期</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          ゴールデンウィーク前後（5月上旬〜中旬）が関東の目安です。
+          最低気温が10℃を下回る時期に定植すると苗が傷みます。
+          霜の心配がなくなってから植え付けてください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>接ぎ木苗を選ぶべき理由</h2>
+    <p style="line-height:1.9;">
+      ミニトマトの苗は「普通苗」と「接ぎ木苗」があります。
+      接ぎ木苗は病気に強い台木（カボチャや別品種のトマト）に、収穫用の穂木を接着したものです。
+      土壌病害（萎ちょう病・青枯れ病など）に対する抵抗力が大幅に高く、長期間収穫を続けられます。
+    </p>
+    <p style="line-height:1.9;">
+      1株500〜800円と普通苗の2〜3倍の価格ですが、夏に株が病気で枯れるリスクを考えると、
+      接ぎ木苗への投資は費用対効果が高いです。
+      品種は「アイコ」か「千果」が初心者にも育てやすくおすすめです。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>おすすめの苗と支柱</h2>
+    <ProductCard id="tomato-mini-plant" />
+    <ProductCard id="tomato-support" />
+    <ProductCard id="tomato-clip" />
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>支柱は定植後2週間以内に立てる</h2>
+    <p style="line-height:1.9;">
+      ミニトマトは放置すると9月には2mを超えます。
+      支柱を立てるのが遅れると茎が太くなって曲げにくくなり、無理に誘引すると折れます。
+      定植直後は小さくて支柱が不要に見えますが、<strong>定植後2週間を目安に立てる</strong>のが正解です。
+    </p>
+    <p style="line-height:1.9;">
+      ベランダのコンクリートに直接支柱を差し込むと防水シートを傷めます。
+      専用のプランタースタンドか、支柱の足元に受け皿を敷いて使ってください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>わき芽摘みと追肥の基本</h2>
+    <p style="line-height:1.9;">
+      <strong>わき芽摘み</strong>：茎と葉の間から出るわき芽は、小さいうちに手で摘み取ります。
+      大きくなると株のエネルギーが分散されて実が小さくなります。週1回の確認を習慣にしてください。
+    </p>
+    <p style="line-height:1.9;">
+      <strong>追肥</strong>：最初の実が大きくなり始めた頃（第一果膨大期）から週1回の液肥が必要です。
+      これを怠ると8月以降の実が急に小さく・少なくなります。
+      化成肥料と液肥の組み合わせで、株の成長に応じて調整してください。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/bougai-net/">防虫ネット——きゅうりの収穫が11本→147本になった話</a><br />
+    <a href="/articles/negusar-genin/">根腐れの原因と対策——スリット鉢で解決した話</a>
+  </nav>
+</ArticleLayout>
