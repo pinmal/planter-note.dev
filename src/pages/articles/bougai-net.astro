@@ -3,67 +3,138 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 ---
 <ArticleLayout
-  title="防虫ネット1枚できゅうりの収穫が11本→147本になった話"
-  description="農薬を使わずに過ごした最初の夏、きゅうりは11本しか収穫できなかった。翌年から防虫ネットを張ったら147本になった。効果を出すための端の密閉方法。"
+  title="プランター防虫ネットの使い方——きゅうりの収穫が11本→147本になった話"
+  description="防虫ネットを張るまで、きゅうりは害虫で毎年11本前後しか収穫できなかった。ネットを張った年から147本になった。防虫ネットの選び方・張り方と、害虫種類別の対策を記録する。"
   slug="bougai-net"
   publishDate="2026-09-03"
-  relatedCategory={{ href: '/category/pest-control/', label: '害虫・病気対策' }}
+  relatedCategory={{ href: '/category/pest-control/', label: '防虫・害虫対策' }}
 >
-  <h1>防虫ネット1枚できゅうりの収穫が11本→147本になった話</h1>
+  <h1>プランター防虫ネットの使い方——きゅうりの収穫が11本→147本になった話</h1>
 
   <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
     <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
-      「農薬を使わずに過ごした最初の夏、きゅうり1株から収穫できたのは11本だけでした。
-      アブラムシとコナジラミが大発生していました。
-      翌年から防虫ネットを張って、147本収穫できました。
-      同じ苗・同じ土・同じ肥料で収穫量が13倍以上になった理由は防虫ネットだけです。」
+      「防虫ネットを張るまで、きゅうりはウリハムシに毎年食われ続けた。
+      葉が穴だらけになり、8月前に株が枯れる。収穫は11本程度でシーズンが終わっていた。
+      防虫ネットを定植直後から張った年、収穫は147本だった。ネットを買えばよかったと思ったが、
+      逆に言うと道具次第でこれだけ変わるということでもある。」
     </p>
     <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>なぜ防虫ネットがこれほど効果的なのか</h2>
+    <h2>ベランダ・プランター栽培で遭遇する主要害虫</h2>
     <p style="line-height:1.9;">
-      アブラムシ・コナジラミ・アオムシなどの害虫は、放置すると植物の汁液を吸って成長を阻害し、さらにウイルス病を媒介します。
-      農薬を使えば即効性はありますが、益虫も殺し、収穫間際には使用できない制限もあります。
+      ベランダ栽培でも害虫の被害を受けます。「マンションだから大丈夫」は通じません。
+      アブラムシは3〜4階程度なら普通に飛来します。
+      ウリハムシは5〜6階でも来ることがあります。
     </p>
-    <p style="line-height:1.9;">
-      防虫ネットは<strong>害虫が「そもそも侵入できない」物理バリア</strong>を作ります。
-      薬を使わずにすむため、収穫前日まで制限なく対応できます。
-      目合い0.4mm以下のネットはアブラムシ・コナジラミの侵入を防ぎます。
-    </p>
+    <div style="overflow-x:auto; margin-top:0.8rem;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.87rem; background:white; border:1px solid var(--color-border); border-radius:9px; overflow:hidden;">
+        <thead>
+          <tr style="background:var(--color-primary); color:white;">
+            <th style="padding:0.7rem 0.8rem; text-align:left;">害虫</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">対象野菜</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">発生時期</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">対策</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { pest: 'アブラムシ', target: 'ほぼ全野菜', season: '4〜11月', countermeasure: '防虫ネット・天敵誘致・薬剤' },
+            { pest: 'ウリハムシ', target: 'きゅうり・ゴーヤ・かぼちゃ', season: '5〜10月', countermeasure: '防虫ネット（最重要）' },
+            { pest: 'コナジラミ', target: 'トマト・なす・ピーマン', season: '5〜9月', countermeasure: '反射マルチ・黄色粘着テープ' },
+            { pest: 'アオムシ（チョウの幼虫）', target: 'キャベツ・ブロッコリー・小松菜', season: '4〜6月 / 9〜11月', countermeasure: '防虫ネット・手で取る' },
+            { pest: 'アザミウマ', target: 'トマト・なす・花類', season: '4〜11月', countermeasure: '防虫ネット（目合い0.4mm以下）' },
+            { pest: 'ナメクジ', target: 'レタス・葉物・ハーブ', season: '3〜11月（雨天）', countermeasure: '銅テープ・誘引剤' },
+          ].map((r, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-weight:600;">{r.pest}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.85rem;">{r.target}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.85rem; white-space:nowrap;">{r.season}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.85rem;">{r.countermeasure}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>防虫ネットを効かせる唯一のコツ——端の密閉</h2>
+    <h2>防虫ネットの目合い（メッシュサイズ）の選び方</h2>
     <p style="line-height:1.9;">
-      防虫ネットが効果を出せない最大の理由は「端に隙間がある」ことです。
-      ネットをかけても、裾が浮いていれば害虫はそこから入ります。
-      特に風で動く部分・プランターの縁との接続部分・ネット同士のつなぎ目が弱点です。
+      防虫ネットはメッシュの目の細かさ（目合い）が重要です。
+      目合いが粗すぎると小さい虫が入り込み、細かすぎると風通しが悪くなります。
     </p>
     <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
       <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">端を固定する3つの方法</p>
-        <ul style="margin:0; font-size:0.9rem; line-height:1.9; color:var(--color-text-muted); padding-left:1.2rem;">
-          <li>重しを置く（石・鉢・レンガなど。風であおられても動かない重さ）</li>
-          <li>洗濯ばさみでプランターの縁に固定する（簡単で効果的）</li>
-          <li>裾を地面（ベランダの床）に這わせてテープで留める</li>
-        </ul>
+        <p style="margin:0 0 0.25rem; font-weight:700; color:var(--color-primary-dark);">目合い1.0mm — ウリハムシ・アオムシ・チョウ・ガに有効</p>
+        <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">
+          体が大きい害虫を防ぎます。通気性が良く、夏の高温時でも蒸れにくいです。
+          きゅうり・ゴーヤ・かぼちゃ等のウリ科野菜に最適です。
+          アブラムシ・コナジラミは通過するため、それらが問題な場合はより細かい目合いが必要です。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.25rem; font-weight:700; color:var(--color-primary-dark);">目合い0.6mm — アブラムシ・コナジラミにも有効</p>
+        <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">
+          中型害虫に加えてアブラムシ・コナジラミも防げます。
+          トマト・なす・ピーマンのコナジラミ対策に使います。
+          1.0mmより蒸れやすいため、夏場は換気に注意が必要です。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.25rem; font-weight:700; color:var(--color-primary-dark);">目合い0.4mm以下 — アザミウマにも有効</p>
+        <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">
+          アザミウマはとても小さい害虫で、0.6mmのネットでも通過します。
+          アザミウマによる被害（花が落ちる・新芽の奇形）が続く場合は0.4mm以下の目合いが必要です。
+          ただし通気性が大幅に低下するため、温度管理に注意が必要です。
+        </p>
       </div>
     </div>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>防虫ネットを使い始めるタイミング</h2>
+    <h2>防虫ネットを張るタイミングと張り方</h2>
     <p style="line-height:1.9;">
-      定植直後からネットをかけることをおすすめします。「害虫が出てからかける」では遅いです。
-      アブラムシは一度株に定着すると急速に増殖し、1週間で全株に広がります。
-      予防として最初から張っておくことが、最も低コストの害虫対策です。
+      防虫ネットを張るのは<strong>定植直後（植え付けと同時）</strong>が正解です。
+      「虫が来てから張る」では遅いです。
     </p>
     <p style="line-height:1.9;">
-      受粉が必要な野菜（トマト・なす・きゅうりなど）は、開花時期に昼間だけネットを外すか、
-      人工受粉（花と花を軽くこすり合わせる）で対応してください。
+      特にウリハムシはきゅうり・ゴーヤの苗を見つけるのが非常に早く、
+      定植後2〜3日で来ることがあります。
+      最初に来て食害された葉はネットを張っても戻りません。
     </p>
+    <div style="display:grid; gap:0.65rem; margin-top:0.8rem;">
+      {[
+        { step: '1', title: '定植と同日にネットを準備', body: '苗を植えたら、その日のうちにネットを張ります。後回しにするほど虫が来るリスクが上がります。' },
+        { step: '2', title: '土との隙間をなくす', body: 'ネットの端を土に埋めるか、洗濯ばさみや石で固定します。隙間から虫が入り込むと効果がなくなります。' },
+        { step: '3', title: '花が咲いたら受粉のため日中は開ける（開花期）', body: 'きゅうり・なす・ピーマン等は受粉が必要です。開花期は日中ネットを開けて虫が入れるようにし、夜は閉めます。または人工授粉を行います。' },
+        { step: '4', title: '収穫の都度確認', body: '収穫のためにネットを開けるたびに、隙間からの侵入がないか確認します。アブラムシが1〜2匹見つかった段階で薬剤を使うと広がりを防げます。' },
+      ].map(s => (
+        <div style="display:flex; gap:0.8rem; background:white; border:1px solid var(--color-border); border-radius:9px; padding:0.9rem 1rem;">
+          <div style="width:28px; height:28px; border-radius:50%; background:var(--color-primary); color:white; font-weight:700; font-size:0.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;">{s.step}</div>
+          <div>
+            <p style="margin:0 0 0.25rem; font-weight:700; font-size:0.91rem;">{s.title}</p>
+            <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">{s.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>防虫ネットだけでは防げない害虫と補完策</h2>
+    <p style="line-height:1.9;">
+      防虫ネットは万能ではありません。土の中に潜む害虫（ネキリムシ・コガネムシ幼虫）は
+      ネットでは防げず、すでに土の中にいる場合は対処が必要です。
+    </p>
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li><strong>アブラムシが大発生</strong>→ 牛乳スプレー（牛乳を水で2倍に薄める）か薬剤スプレー（ベニカX）</li>
+      <li><strong>コナジラミ</strong>→ 黄色い粘着テープ（色に誘引される）を株の近くに置く</li>
+      <li><strong>ナメクジ</strong>→ プランターの下に銅テープを巻く。電気の刺激で忌避する</li>
+      <li><strong>コガネムシ幼虫（土の中）</strong>→ 土を換える・殺虫剤を土に混ぜる。根の食害は発見が遅れやすい</li>
+    </ul>
+    <ProductCard id="pest-spray" />
   </section>
 
   <section style="margin-top:1.8rem;">
@@ -72,18 +143,39 @@ import ProductCard from '../../components/ProductCard.astro';
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>ネットをくぐり抜けた虫への対処</h2>
-    <p style="line-height:1.9;">
-      完全に密閉してもごく少数の虫が侵入することがあります。
-      その場合は殺虫スプレーを使いますが、「収穫前日まで使用可」の表示があるものを選んでください。
-      ラベルの「適用作物欄」を確認することも忘れずに。きゅうりに使えてもトマトには使えない製品があります。
-    </p>
-    <ProductCard id="pest-spray" />
+    <h2>よくある質問</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.7rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 防虫ネットを張ると日当たりが悪くなりませんか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          透光率の高い防虫ネット（80〜90%程度）であれば、日当たりへの影響は軽微です。
+          遮光目的ではなく防虫専用のネットを選べば、晴れた日はほとんど気になりません。
+          ただし密閉した空間が蒸れやすくなるため、水やりや収穫時に換気を心がけてください。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. ネットを張っているのにアブラムシがいます</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          目合いが粗すぎるか（1.0mm以上だとアブラムシは通過します）、隙間から侵入している可能性があります。
+          また苗自体に卵が産みつけられていて、定植後に孵化することもあります。
+          ネットを張る前に株全体をよく観察し、アブラムシを見つけたら水で洗い流してからネットを張ってください。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. ネットはどこで買えますか？何メートル必要ですか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          ホームセンターや農業資材専門店、Amazonで購入できます。
+          プランター1〜2つを覆う場合、幅1m×長さ2〜3mあれば十分です。
+          ロールで購入して必要な長さにカットして使うとコスパが良いです。
+          価格は1mあたり100〜300円程度（品質による）。何年も使えるため、最初に良いものを買うほうがおすすめです。
+        </p>
+      </div>
+    </div>
   </section>
 
   <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
     <a href="/articles/minitomato-sodatekata/">ミニトマト栽培ガイド——接ぎ木苗と支柱で収穫量が変わる</a><br />
-    <a href="/articles/nasu-sodatekata/">なすの実がつかない原因——週次追肥記録で解決した方法</a>
+    <a href="/articles/nasu-sodatekata/">なすプランター栽培——追肥記録で1株68個になった話</a>
   </nav>
 </ArticleLayout>

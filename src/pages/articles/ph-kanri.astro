@@ -3,67 +3,78 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 ---
 <ArticleLayout
-  title="プランター菜園のpH管理——肥料が効かない原因の28%はpH異常だった"
-  description="肥料を十分与えているのに葉が黄色くなり続けた。pH計で計測したら5.2。苦土石灰で6.0に戻したら2週間で葉色が回復した。pH管理の具体的な手順。"
+  title="プランターのpH管理——肥料が効かないときの28%はpH異常だった"
+  description="液肥を週1回やり続けているのに葉が黄色くなる。追肥の問題ではなく、土のpHが狂っていることに気づくのに2シーズンかかった。pH管理の基本と、測り方・調整方法の記録。"
   slug="ph-kanri"
   publishDate="2026-09-03"
-  relatedCategory={{ href: '/category/tools/', label: '道具（pH計・水分計）' }}
+  relatedCategory={{ href: '/category/soil/', label: '土・培養土' }}
 >
-  <h1>プランター菜園のpH管理——肥料が効かない原因の28%はpH異常だった</h1>
+  <h1>プランターのpH管理——肥料が効かないときの28%はpH異常だった</h1>
 
   <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
     <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
-      「失敗ノート4冊目に、なぜ育たないかの原因内訳をまとめたページがあります。
-      水やり過多：23%、肥料切れ：31%、pH異常：28%、原因不明：18%。
-      pH異常が3割近くを占めていると気づいたとき、初めてpH計を買いました。
-      それ以来、pH異常が原因の失敗はゼロです。」
+      「液肥を週1回欠かさず与えているのに、ピーマンの葉だけが黄色くなり続けた。
+      水やり・肥料・日照。原因として考えられることをすべて試したが変わらない。
+      pH計を買って計ってみると7.8。アルカリ性に傾きすぎていた。
+      培養土のpHが問題だったと気づくのに2シーズンかかった。」
     </p>
     <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>pH（ペーハー）とは何か</h2>
+    <h2>pHとは何か、なぜ重要か</h2>
     <p style="line-height:1.9;">
-      pHは土の酸性・アルカリ性の度合いを示す数値です。0〜14のスケールで、7が中性、7より小さいと酸性、大きいとアルカリ性です。
-      ほとんどの野菜の適正範囲は<strong>pH 6.0〜6.5</strong>（弱酸性）です。
+      pH（ペーハー）は土の酸性・アルカリ性の強さを示す指標です。
+      0〜14の数値で表し、7が中性、7より低いと酸性、7より高いとアルカリ性です。
     </p>
     <p style="line-height:1.9;">
-      この範囲を外れると、土の中に肥料成分があっても植物が吸収できなくなります。
-      肥料が足りないのではなく、pHのせいで肥料が「使えない」状態になっているのです。
-      「肥料をやっているのに葉が黄色い」場合、まずpHを疑ってください。
+      野菜の多くは弱酸性（pH 6.0〜6.5）を好みます。
+      この範囲から外れると、土の中に肥料の成分があっても野菜が吸収できなくなります。
+      「肥料がなじんでいない」「根がうまく張れない」といった状態を生みます。
+    </p>
+    <p style="line-height:1.9;">
+      肥料が効かないと感じるときの原因を記録すると、28%ほどはpHの異常が関わっていました。
+      つまり、追肥を増やしても解決しない問題の約3割はpHの問題です。
+      水やりをどれだけ工夫しても、施肥量を増やしても、pHが合っていなければ無意味です。
     </p>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>なぜプランターの土は酸性になるのか</h2>
+    <h2>pH異常のサイン</h2>
     <p style="line-height:1.9;">
-      水道水は弱酸性（pH 6.0〜7.5程度）です。水やりを繰り返すと、土に含まれるアルカリ成分が流れ出て、
-      土が少しずつ酸性に傾きます。市販の培養土はpH調整済みで出荷されますが、
-      <strong>2年以上使い続けると必ず酸性化が進みます</strong>。
+      葉の見た目でpH異常を疑う手がかりがあります。
+      ただしこれらは他の原因でも起きるため、あくまで「疑いのきっかけ」として使ってください。
     </p>
-    <p style="line-height:1.9;">
-      ベランダのプランターは庭と違って土の量が少なく、水やりの影響を受けやすいため酸性化のスピードが速い。
-      毎年新しい土に交換するのが理想ですが、再利用する場合は必ずpH計測が必要です。
+    <ul style="line-height:2.1; font-size:0.93rem;">
+      <li><strong>葉が黄色くなる（葉脈は緑のまま）</strong>→ アルカリ性過多による鉄分欠乏（クロロシス）の可能性</li>
+      <li><strong>下葉から順に黄変・落葉</strong>→ 窒素欠乏のサイン（酸性すぎると窒素が使えなくなる）</li>
+      <li><strong>葉の縁が茶色く焼けたように枯れる</strong>→ カリウム欠乏（pH7.5以上で出やすい）</li>
+      <li><strong>新芽が小さく縮れる</strong>→ カルシウム・マグネシウム欠乏（酸性過多）</li>
+    </ul>
+    <p style="font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+      これらの症状が出たら、まず追肥の前にpHを計ることをおすすめします。
+      pH計がない場合は市販のpH測定キット（指示薬液）で代用できます。
     </p>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>pH管理の手順</h2>
-    <ol style="line-height:2.2; font-size:0.93rem; padding-left:1.4rem;">
-      <li><strong>pH計で現在の値を計測する</strong>（土を水で湿らせた状態で計測するとより正確）</li>
-      <li>pH 5.5以下なら苦土石灰を投入。少量（1L の土に対して小さじ1杯程度）から始める</li>
-      <li>よく混ぜて1週間後に再計測。pH 6.0〜6.5になるまで繰り返す</li>
-      <li>目標値になったら植え付け。その後は月に1回程度計測して管理する</li>
-    </ol>
-    <p style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:0.8rem 1rem; font-size:0.9rem; line-height:1.8;">
-      ⚠️ 苦土石灰の入れすぎに注意。一度に大量に投入するとpHが7.5を超え、逆に植え付けできない状態になります（実際に経験済みの失敗です）。少量ずつ調整してください。
-    </p>
-  </section>
-
-  <section style="margin-top:1.8rem;">
-    <h2>pH管理に必要な道具</h2>
-    <ProductCard id="tools-ph-meter" />
-    <ProductCard id="soil-ph-adjuster" />
+    <h2>pH計の使い方（ステップバイステップ）</h2>
+    <div style="display:grid; gap:0.65rem; margin-top:0.8rem;">
+      {[
+        { step: '1', title: 'タイミング：水やり後30分以上たってから', body: '水やり直後に測ると水に影響されて正確な値が出ません。水やり後30分〜1時間後、土が湿った状態で測ります。' },
+        { step: '2', title: '測定深さ：土の表面から5〜10cm', body: '表面の土だけ測っても意味がありません。根が集まっている深さ（5〜10cm）に探針を差し込みます。' },
+        { step: '3', title: '複数箇所で測る', body: 'プランターの端と中央では値が違うことがあります。2〜3箇所測って平均値を参考にします。' },
+        { step: '4', title: '測定後は水洗い', body: '土が探針に残ると次回の測定値が狂います。使用後は水で洗って乾かしてから収納します。' },
+      ].map(s => (
+        <div style="display:flex; gap:0.8rem; background:white; border:1px solid var(--color-border); border-radius:9px; padding:0.9rem 1rem;">
+          <div style="width:28px; height:28px; border-radius:50%; background:var(--color-primary); color:white; font-weight:700; font-size:0.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;">{s.step}</div>
+          <div>
+            <p style="margin:0 0 0.25rem; font-weight:700; font-size:0.91rem;">{s.title}</p>
+            <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">{s.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
   </section>
 
   <section style="margin-top:1.8rem;">
@@ -74,26 +85,93 @@ import ProductCard from '../../components/ProductCard.astro';
           <tr style="background:var(--color-primary); color:white;">
             <th style="padding:0.7rem 0.8rem; text-align:left;">野菜</th>
             <th style="padding:0.7rem 0.8rem; text-align:left;">適正pH</th>
-            <th style="padding:0.7rem 0.8rem; text-align:left;">備考</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">特記</th>
           </tr>
         </thead>
         <tbody>
           {[
-            { veg: 'ミニトマト', ph: '6.0〜6.5', note: '最もポピュラーな適正範囲' },
-            { veg: 'なす', ph: '6.0〜6.5', note: '肥料吸収はpHに敏感' },
-            { veg: 'きゅうり', ph: '5.5〜6.5', note: 'やや酸性に強い' },
-            { veg: 'バジル・ハーブ', ph: '6.0〜7.0', note: '比較的広い範囲で育つ' },
-            { veg: 'ほうれん草', ph: '6.5〜7.0', note: '酸性に弱い。石灰投入が必要なことが多い' },
-            { veg: 'ブルーベリー', ph: '4.0〜5.0', note: '強酸性が必要。専用土推奨' },
+            { veg: 'トマト・ミニトマト', ph: '6.0〜6.5', note: '弱酸性を好む。酸性すぎると尻腐れ症が出やすい' },
+            { veg: 'なす', ph: '6.0〜6.5', note: 'pH5.5以下では実がつきにくくなる' },
+            { veg: 'きゅうり', ph: '5.5〜6.5', note: '比較的pH耐性が広い' },
+            { veg: 'ピーマン', ph: '6.0〜6.5', note: 'アルカリ性に特に弱い' },
+            { veg: 'レタス', ph: '6.0〜7.0', note: '中性よりでもOK' },
+            { veg: 'バジル', ph: '5.5〜7.0', note: 'やや耐性が広い' },
+            { veg: 'ブルーベリー', ph: '4.5〜5.5', note: '強酸性を好む。一般培養土はNG' },
+            { veg: 'スイカ', ph: '5.0〜6.0', note: '酸性寄りを好む' },
           ].map((r, i) => (
             <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
-              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border);">{r.veg}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-weight:600;">{r.veg}</td>
               <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border);">{r.ph}</td>
               <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.84rem; color:var(--color-text-muted);">{r.note}</td>
             </tr>
           ))}
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>pH調整の方法</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.8rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">酸性すぎる場合（pH 5.5以下）→ アルカリ性に調整</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          苦土石灰（くどせっかい）か消石灰を土に混ぜます。
+          苦土石灰はマグネシウムも含んでいるため、プランター栽培には苦土石灰が推奨です。
+          散布量の目安は1m²あたり100〜150g（プランター20Lなら大さじ1〜2杯程度）。
+          混ぜた後は1〜2週間置いてからpHを再測定してください。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">アルカリ性すぎる場合（pH 7.0以上）→ 酸性に調整</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          ピートモスを混ぜます。酸性素材なのでpHを下げる効果があります。
+          硫酸アンモニウム（肥料の一種）も効果がありますが、プランターでは量の調整が難しいため
+          ピートモスのほうが扱いやすいです。
+          土壌酸性化材も市販されており、ブルーベリー栽培向けのものが酸性化に効果的です。
+        </p>
+      </div>
+    </div>
+    <p style="font-size:0.87rem; line-height:1.8; color:var(--color-text-muted); margin-top:0.8rem;">
+      ※ pH調整剤を一度に大量に使うと逆効果になります。少量ずつ加え、1〜2週間後に再測定して
+      少しずつ目標pHに近づけてください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>pH計と酸性化調整資材</h2>
+    <ProductCard id="tools-ph-meter" />
+    <ProductCard id="soil-ph-adjuster" />
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>よくある質問</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.7rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 市販の培養土を使えばpHは問題ないですか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          多くの培養土はpH 5.5〜6.5に調整済みなので、新しい土を使う場合は問題ないことが多いです。
+          ただし2〜3年使い続けると、水やりのたびにカルシウムが溶出してアルカリ性に傾きます。
+          同じ土を複数年使い回す場合は、毎シーズン開始前にpHを確認することをおすすめします。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. pH計は安いものと高いもので差がありますか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          家庭菜園レベルなら1,000〜2,000円のもので十分です。
+          大切なのは「同じ機種・同じ条件で継続して測る」ことで、絶対値の精度より相対的な変化を
+          把握することに意義があります。高いものほど精度が高いですが、±0.5程度の誤差は
+          家庭菜園では問題になりません。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 水道水のpHが高いとプランターのpHに影響しますか？</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          影響はあります。日本の水道水はおおむねpH 5.8〜8.6の範囲で、地域によって異なります。
+          特にカルキ（塩素）が多い水道水は長期的にアルカリ性に傾かせる傾向があります。
+          毎年pHを確認して、必要に応じて土の入れ替えや調整を行うのが根本的な解決策です。
+        </p>
+      </div>
     </div>
   </section>
 

@@ -3,46 +3,52 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 ---
 <ArticleLayout
-  title="ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が変わる"
-  description="普通苗43個 vs 接ぎ木苗91個。同じプランター・土・肥料で2倍以上の差が出た理由。支柱を定植後2週間以内に立てる理由と、ミニトマト栽培の基本手順。"
+  title="ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が2倍変わる"
+  description="普通の苗43個 vs 接ぎ木苗91個。同じプランター・同じ土・同じ肥料で2倍以上の差が出た理由。定植から収穫まで、ミニトマト栽培の全手順と失敗しないためのコツ。"
   slug="minitomato-sodatekata"
   publishDate="2026-09-03"
   relatedCategory={{ href: '/category/tomato/', label: 'ミニトマト' }}
 >
-  <h1>ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が変わる</h1>
+  <h1>ミニトマトのプランター栽培ガイド——接ぎ木苗と支柱で収穫量が2倍変わる</h1>
 
   <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
     <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
       「普通の苗と接ぎ木苗を同じプランターで育て比べた年があります。
       8月末の収穫数は普通苗が43個、接ぎ木苗が91個でした。
-      2倍以上の差がついた理由は病気への抵抗力だと思っています。
-      接ぎ木苗は値段が2〜3倍しますが、収穫量を考えると逆に安上がりです。」
+      苗の価格は接ぎ木のほうが3倍高かったが、収穫量が2倍以上になるなら投資する価値があると思っています。」
     </p>
     <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之（架空のキャラクター）</p>
   </section>
 
   <section style="margin-top:1.8rem;">
     <h2>プランター栽培の基本条件</h2>
+    <p style="line-height:1.9;">
+      ミニトマトは日照と温度が揃えば比較的育てやすい野菜です。
+      ただしプランターで安定した収穫を続けるためには、最初のプランター選びと苗選びが重要です。
+      ここを省略すると7月以降に「育ちが悪い」「実が少ない」という状況になりやすいです。
+    </p>
     <div style="display:grid; gap:0.7rem; margin-top:0.8rem;">
       <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">プランターのサイズ</p>
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">プランターのサイズ：深さ30cm以上・容量15L以上</p>
         <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          深さ30cm以上、容量15〜20L以上が必要です。これより小さいと根が詰まって8月以降に成長が止まります。
-          スリット鉢（底穴が多いタイプ）が根腐れ防止に最適です。
+          これより小さいと根が詰まって8月以降に成長が止まります。
+          「トマト専用プランター」として売られているものはほぼこの基準を満たしています。
+          スリット鉢（底穴・側面穴が多いタイプ）が根腐れ防止に最適です。
         </p>
       </div>
       <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">置き場所と日当たり</p>
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">置き場所：1日6時間以上の直射日光</p>
         <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          1日6時間以上の直射日光が必要です。日当たりが不足すると果実に糖度が乗りません。
+          ミニトマトは日光が不足すると実に糖度が乗りません。
           南向きのベランダが理想ですが、東向きでも午前中に十分な日光が当たれば栽培できます。
+          「日当たりが足りないかも」と思う場所では、どんなに手をかけても味が薄い実しかできません。
         </p>
       </div>
       <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
-        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">植え付け時期</p>
+        <p style="margin:0 0 0.3rem; font-weight:700; color:var(--color-primary-dark);">植え付け時期：最低気温10℃以上になってから</p>
         <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
-          ゴールデンウィーク前後（5月上旬〜中旬）が関東の目安です。
-          最低気温が10℃を下回る時期に定植すると苗が傷みます。
+          関東では5月上旬〜中旬（ゴールデンウィーク前後）が目安です。
+          早く植えたくなる気持ちはわかりますが、最低気温が10℃を下回る時期に定植すると苗が傷みます。
           霜の心配がなくなってから植え付けてください。
         </p>
       </div>
@@ -52,15 +58,53 @@ import ProductCard from '../../components/ProductCard.astro';
   <section style="margin-top:1.8rem;">
     <h2>接ぎ木苗を選ぶべき理由</h2>
     <p style="line-height:1.9;">
-      ミニトマトの苗は「普通苗」と「接ぎ木苗」があります。
-      接ぎ木苗は病気に強い台木（カボチャや別品種のトマト）に、収穫用の穂木を接着したものです。
-      土壌病害（萎ちょう病・青枯れ病など）に対する抵抗力が大幅に高く、長期間収穫を続けられます。
+      ミニトマトの苗は「普通苗（自根苗）」と「接ぎ木苗」があります。
+      価格は普通苗が150〜300円、接ぎ木苗が500〜800円程度です。
     </p>
     <p style="line-height:1.9;">
-      1株500〜800円と普通苗の2〜3倍の価格ですが、夏に株が病気で枯れるリスクを考えると、
-      接ぎ木苗への投資は費用対効果が高いです。
-      品種は「アイコ」か「千果」が初心者にも育てやすくおすすめです。
+      接ぎ木苗は、病気に強い台木（カボチャや別品種のトマト）に収穫用の穂木を接着して育てたものです。
+      土壌病害（萎ちょう病・青枯れ病など）に対する抵抗力が大幅に高く、
+      同じ土を使い回している場合でも株が病気で途中枯れするリスクが下がります。
     </p>
+    <p style="line-height:1.9;">
+      収穫数の差（普通苗43個 vs 接ぎ木苗91個）は「病気で株が弱る時期の差」です。
+      普通苗は7月下旬から株が弱り始め8月中旬には収穫が止まりました。
+      接ぎ木苗は9月まで収穫が続きました。期間が長い分、収穫数も多くなります。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>品種の選び方</h2>
+    <p style="line-height:1.9;">
+      ミニトマトの品種は多く、選び方に迷いやすいです。
+      初心者には「アイコ」か「千果（ちか）」をおすすめします。
+    </p>
+    <div style="overflow-x:auto; margin-top:0.8rem;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.87rem; background:white; border:1px solid var(--color-border); border-radius:9px; overflow:hidden;">
+        <thead>
+          <tr style="background:var(--color-primary); color:white;">
+            <th style="padding:0.7rem 0.8rem; text-align:left;">品種</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">特徴</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">難易度</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { variety: 'アイコ（赤・黄）', feature: '楕円形・肉厚・甘みと酸味のバランスが良い。裂果しにくい', level: '入門向き' },
+            { variety: '千果（ちか）', feature: '丸い・糖度が高い。実が多くつく。裂果やや多め', level: '入門向き' },
+            { variety: 'こあまちゃん', feature: '糖度が高い・甘さ重視の品種。実が小さめ', level: '入門向き' },
+            { variety: 'スイートミニ（黄色系）', feature: '黄色で見た目が良い・マイルドな甘さ', level: '普通' },
+            { variety: '大型福寿（調理用）', feature: '完熟すると旨味が強い。生食よりソース向き', level: '上級者向き' },
+          ].map((r, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-weight:600;">{r.variety}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.85rem;">{r.feature}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border);">{r.level}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section style="margin-top:1.8rem;">
@@ -71,34 +115,92 @@ import ProductCard from '../../components/ProductCard.astro';
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>支柱は定植後2週間以内に立てる</h2>
+    <h2>支柱・誘引・わき芽摘みの手順</h2>
     <p style="line-height:1.9;">
-      ミニトマトは放置すると9月には2mを超えます。
       支柱を立てるのが遅れると茎が太くなって曲げにくくなり、無理に誘引すると折れます。
-      定植直後は小さくて支柱が不要に見えますが、<strong>定植後2週間を目安に立てる</strong>のが正解です。
+      <strong>定植後2週間を目安に立てる</strong>のが正解です。定植直後は小さくて不要に見えても、早く立てておいてください。
     </p>
-    <p style="line-height:1.9;">
-      ベランダのコンクリートに直接支柱を差し込むと防水シートを傷めます。
-      専用のプランタースタンドか、支柱の足元に受け皿を敷いて使ってください。
-    </p>
+    <div style="display:grid; gap:0.65rem; margin-top:0.8rem;">
+      {[
+        { step: '支柱立て', body: '定植後2週間以内に1.5〜1.8mの支柱を立てる。ベランダのコンクリートに直接差し込まず、プランタースタンドを使うか底に受け皿を敷く。' },
+        { step: 'わき芽摘み', body: '主茎と葉の分岐部（葉腋）から出るわき芽を、小さいうちに手で摘む。大きくなると株のエネルギーが分散して実が小さくなる。週1回確認する。' },
+        { step: '誘引', body: 'トマトクリップや誘引テープで茎を支柱に固定する。強く縛りすぎると茎が傷む。茎が成長するにつれて追加で誘引する。' },
+        { step: '追肥（第一果膨大期から）', body: '最初の実が大きくなり始めた頃（6月下旬〜）から週1回の液肥を追加する。化成肥料と液肥を組み合わせるのがベター。' },
+      ].map(s => (
+        <div style="display:flex; gap:0.8rem; background:white; border:1px solid var(--color-border); border-radius:9px; padding:0.9rem 1rem;">
+          <div style="min-width:72px; padding:0.2rem 0.6rem; height:fit-content; background:var(--color-primary); color:white; border-radius:5px; font-size:0.8rem; font-weight:700; text-align:center;">{s.step}</div>
+          <p style="margin:0; font-size:0.88rem; line-height:1.8; color:var(--color-text);">{s.body}</p>
+        </div>
+      ))}
+    </div>
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>わき芽摘みと追肥の基本</h2>
-    <p style="line-height:1.9;">
-      <strong>わき芽摘み</strong>：茎と葉の間から出るわき芽は、小さいうちに手で摘み取ります。
-      大きくなると株のエネルギーが分散されて実が小さくなります。週1回の確認を習慣にしてください。
-    </p>
-    <p style="line-height:1.9;">
-      <strong>追肥</strong>：最初の実が大きくなり始めた頃（第一果膨大期）から週1回の液肥が必要です。
-      これを怠ると8月以降の実が急に小さく・少なくなります。
-      化成肥料と液肥の組み合わせで、株の成長に応じて調整してください。
-    </p>
+    <h2>月別管理カレンダー（関東・5〜10月）</h2>
+    <div style="overflow-x:auto; margin-top:0.8rem;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; background:white; border:1px solid var(--color-border); border-radius:9px; overflow:hidden;">
+        <thead>
+          <tr style="background:var(--color-primary); color:white;">
+            <th style="padding:0.7rem 0.8rem; text-align:left;">時期</th>
+            <th style="padding:0.7rem 0.8rem; text-align:left;">主な作業</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { month: '5月', task: '定植・支柱立て・わき芽摘み開始。水やりは土が乾いてから。' },
+            { month: '6月', task: '第一果着色・追肥開始。開花が増えるため受粉を確認。水やり頻度を増やす。' },
+            { month: '7月', task: '本格的な収穫開始。週1液肥。わき芽摘みを欠かさない。夏の高温で土が乾きやすい。' },
+            { month: '8月', task: '収穫のピーク。朝晩2回の水やりが必要な日も。アブラムシ・コナジラミを確認。' },
+            { month: '9月', task: '気温が落ち着き、再び実がつきやすくなる。秋のミニトマトは甘さが増す。' },
+            { month: '10月', task: '最低気温10℃を下回ったら終了の準備。株を整理して土の処理を行う。' },
+          ].map((r, i) => (
+            <tr style={`background:${i % 2 === 0 ? '#fafcf9' : 'white'};`}>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-weight:700; white-space:nowrap;">{r.month}</td>
+              <td style="padding:0.65rem 0.8rem; border-top:1px solid var(--color-border); font-size:0.86rem;">{r.task}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>よくある失敗と対処</h2>
+    <div style="display:grid; gap:0.8rem; margin-top:0.7rem;">
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 実が裂けてしまいます（裂果）</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          土が乾いている状態が続いた後に大雨や大量の水やりをすると、実が急に水分を吸収して皮が割れます。
+          対策は「土の乾燥と過湿の繰り返しを避ける」こと。毎日一定量の水やりを続け、
+          雨が予報されている日は受け皿を外すか軒下に移動させます。
+          裂果しにくい品種（アイコ等）を選ぶのも有効です。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 花が咲いても実にならない</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          受粉不良か高温障害の可能性があります。35℃以上の高温が続くと受粉が失敗しやすくなります。
+          開花時に花を軽く揺らして人工授粉を試みてください。
+          また第一果（最初の実）がつかないと、その後の実もつきにくい傾向があります。
+          第一果の時期の水やり・追肥を特に丁寧に行ってください。
+        </p>
+      </div>
+      <div style="background:white; border:1px solid var(--color-border); border-radius:9px; padding:1rem 1.1rem;">
+        <p style="margin:0 0 0.4rem; font-weight:700; font-size:0.92rem;">Q. 実が小さくて甘くない</p>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; color:var(--color-text-muted);">
+          日照不足か水やり過多が主な原因です。
+          日が1日6時間以上当たっているか確認してください。
+          また水やりを多めにしすぎると糖度が薄まります。
+          収穫前1〜2週間、意識的に水やりを少し控えると甘さが増すことがあります（水ストレス法）。
+        </p>
+      </div>
+    </div>
   </section>
 
   <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
     <a href="/articles/bougai-net/">防虫ネット——きゅうりの収穫が11本→147本になった話</a><br />
-    <a href="/articles/negusar-genin/">根腐れの原因と対策——スリット鉢で解決した話</a>
+    <a href="/articles/negusar-genin/">根腐れの原因と対策——スリット鉢で解決した話</a><br />
+    <a href="/articles/nasu-sodatekata/">なすプランター栽培——追肥記録で1株68個になった話</a>
   </nav>
 </ArticleLayout>
