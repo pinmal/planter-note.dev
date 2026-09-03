@@ -1,0 +1,133 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="プランター選びで失敗しない——底穴とサイズの選択で根腐れ頻度が変わった記録"
+  description="底穴1個の安いプランターを使っていた3年間、根腐れが毎年繰り返された。スリット型への切り替えと深さ30cm以上の確保だけで、根腐れがゼロになった。"
+  slug="purantar-erabi"
+  publishDate="2026-09-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター・鉢' }}
+  prevArticle={{ href: '/articles/kyuuri-sodatekata/', title: 'きゅうり栽培——摘芯を知らなかった5年間と知ってからの記録' }}
+  nextArticle={{ href: '/articles/mizuyari-kihon/', title: '水やりの失敗——毎朝に変えてから根腐れと枯れが同時に減った' }}
+>
+  <h1>プランター選びで失敗しない——底穴とサイズの選択で根腐れ頻度が変わった記録</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>スリット型と普通の底穴の違いと、根腐れ頻度への影響</li>
+      <li>野菜別の最低プランター深さ（ミニトマト・きゅうり・なすの目安）</li>
+      <li>プラスチックと素焼きの使い分け方</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「菜園1年目から3年目まで、根腐れが毎年何度も起きた。
+      植え付けた株が夏前に突然萎れ、引き抜くと根が茶色く腐っている。
+      土のせいか、水のやりすぎか、とずっと考えていたが、プランターそのものが原因だった。
+      底穴が1個の安いプランターは水が抜けにくい。スリット型に変えた4年目から根腐れはゼロになった。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      プランターの底穴が1〜2個だと、土が締まってくると水が抜けにくくなる。
+      水やりのたびに土の中に水が溜まり、根が常に湿った状態になる。
+      これが根腐れの直接の原因だ。
+    </p>
+    <p style="line-height:1.95;">
+      スリット型は側面と底部に細い切れ込み（スリット）が複数入っており、
+      余分な水が複数箇所から排出される。根が空気に触れやすく、蒸れにくい。
+      品質管理で言えば「排出口を1点に集中させると詰まる、分散させると詰まらない」という設計思想だ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>サイズは野菜の根の深さで決まる</h2>
+    <p style="line-height:1.95;">
+      「ちょっと小さいかも」という感覚で選んだプランターは、必ず後悔する。
+      根が底に達すると成長が止まり、真夏に株が消耗して収穫量が激減する。
+    </p>
+    <div style="margin-top:1rem; overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+        <thead>
+          <tr style="background:#f0f7ee;">
+            <th style="padding:0.5rem 0.8rem; text-align:left; border-bottom:2px solid var(--color-border);">野菜</th>
+            <th style="padding:0.5rem 0.8rem; text-align:left; border-bottom:2px solid var(--color-border);">最低深さ</th>
+            <th style="padding:0.5rem 0.8rem; text-align:left; border-bottom:2px solid var(--color-border);">推奨容量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">バジル・レタス</td>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">15cm以上</td>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">5L〜</td>
+          </tr>
+          <tr>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">きゅうり・ミニトマト</td>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">25〜30cm</td>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">15〜25L</td>
+          </tr>
+          <tr>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">なす・ピーマン</td>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">30〜35cm</td>
+            <td style="padding:0.5rem 0.8rem; border-bottom:1px solid var(--color-border);">20〜30L以上</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="line-height:1.9; font-size:0.93rem; color:var(--color-text-muted); margin-top:0.8rem;">
+      なすが3年目から6月で成長が止まった原因が深さ22cmのプランターだったことは、
+      引き抜いてみるまで気づかなかった。プランターのサイズだけは数値で確認して選ぶこと。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>プラスチックか素焼きか</h2>
+    <p style="line-height:1.95;">
+      素焼き（テラコッタ）は通気性が高く根が蒸れにくい反面、水分の蒸発が早いため、
+      夏場は1日2回の水やりが必要になることがある。
+      重さもプラスチックの2〜3倍あり、ベランダの荷重制限に引っかかりやすい。
+    </p>
+    <p style="line-height:1.95;">
+      私はスリット型のプラスチックでほぼ統一している。
+      軽くて扱いやすく、水はけもスリットで確保できる。
+      見た目を気にするよりも「毎年使いやすいか」を優先した結果だ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使っているプランターと土</h2>
+    <ProductCard id="planter-slit-pot" />
+    <ProductCard id="planter-deep-60" />
+    <ProductCard id="soil-veggie-25l" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">受け皿を使ってもいいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">使ってかまいませんが、水やり後に受け皿に溜まった水は30分以内に捨ててください。溜めたままにすると底穴から水が戻って過湿になり、根腐れの原因になります。外出が多い場合や夏の強日差しでの蒸発対策には役立ちますが、こまめに確認する必要があります。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">去年使ったプランターをそのまま使っていいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">同じ野菜を続けて植えると「連作障害」が起きやすくなります。少なくとも土の入れ替えか、天日干しによる除菌をおすすめします。プランター本体も水洗いして乾かしてから使うと、前年の病原菌を減らせます。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">腐葉土を多めに混ぜれば水はけが改善しますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">有機質を増やすと土がほぐれて水はけが改善することはありますが、それより先にプランターの底穴を確認するのが先決です。どれだけ良い土を使っても、排水口が詰まっているプランターでは水はけは改善しません。底穴が詰まっていないか、スリット型かどうかを先に確認してください。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/negusar-genin/">根腐れの原因と対策——スリット鉢で解決した話</a><br />
+    <a href="/articles/tsuchi-erabi/">格安の土で3年失敗して学んだ土の選び方</a><br />
+    <a href="/articles/nasu-sodatekata/">なすプランター栽培——追肥記録で1株68個になった話</a>
+  </nav>
+</ArticleLayout>
