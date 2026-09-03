@@ -83,8 +83,29 @@ const categories = [
     </div>
   </section>
 
-  <!-- ─── 記事一覧 -->
+  <!-- ─── よく読まれている記事 -->
   <section style="margin-top:2rem;">
+    <h2 style="margin-bottom:0.8rem;">よく読まれている記事</h2>
+    <div style="display:grid; gap:0.6rem;">
+      {[
+        { rank: 1, href: '/articles/bougai-net/', emoji: '🛡️', title: '防虫ネット1枚できゅうりの収穫が11本→147本になった話', tag: '害虫対策' },
+        { rank: 2, href: '/articles/minitomato-sodatekata/', emoji: '🍅', title: '接ぎ木苗と支柱で収穫量が2倍になった話', tag: 'ミニトマト' },
+        { rank: 3, href: '/articles/negusar-genin/', emoji: '🪴', title: '失敗ノート32回の根腐れはプランターが原因だった', tag: 'プランター' },
+      ].map((r) => (
+        <a href={r.href} style="display:flex; gap:0.9rem; align-items:center; background:white; border:1px solid var(--color-border); border-radius:10px; padding:0.8rem 1rem; text-decoration:none; color:inherit;">
+          <span style={`font-size:1.4rem; font-weight:900; flex-shrink:0; min-width:1.8rem; text-align:center; color:${r.rank === 1 ? '#c9a227' : r.rank === 2 ? '#8d9094' : '#b05a34'};`}>{r.rank}</span>
+          <span style="font-size:1.4rem; flex-shrink:0;">{r.emoji}</span>
+          <div style="min-width:0;">
+            <span style="font-size:0.72rem; font-weight:700; color:var(--color-primary-dark); background:var(--color-bg-card); padding:0.1rem 0.45rem; border-radius:20px; display:inline-block; margin-bottom:0.2rem;">{r.tag}</span>
+            <p style="margin:0; font-weight:700; font-size:0.92rem; color:var(--color-text); line-height:1.4;">{r.title}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─── 記事一覧 -->
+  <section style="margin-top:2.4rem;">
     <h2 style="margin-bottom:1rem;">失敗ノートの記録</h2>
     <div style="display:grid; gap:1rem;">
       {articles.map((a) => (
