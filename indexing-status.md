@@ -1,6 +1,6 @@
 # planter-note.dev — Search Console インデックス申請状況
 
-> 最終更新: 2026-09-05（自動更新）
+> 最終更新: 2026-09-19（自動更新）
 
 ## 背景（2026-08-31追記）
 このファイルは公開時のテンプレート（「未申請/未公開」のプレースホルダー行）のまま放置され、
@@ -13,11 +13,6 @@
 ### Tier1
 | URL | 優先度 | 理由 |
 |---|---|---|
-| https://planter-note.pages.dev/articles/kyuuri-sodatekata/ | 高 | 2026-09-05スクリプト漏れ・未申請 |
-| https://planter-note.pages.dev/articles/purantar-erabi/ | 高 | 2026-09-05スクリプト漏れ・未申請 |
-| https://planter-note.pages.dev/articles/mizuyari-kihon/ | 高 | 2026-09-05スクリプト漏れ・未申請 |
-| https://planter-note.pages.dev/articles/piiman-sodatekata/ | 高 | 2026-09-17新規公開 |
-| https://planter-note.pages.dev/articles/hiryou-tsuihi/ | 高 | 2026-09-17新規公開 |
 
 ### Tier2
 | URL | 優先度 | 理由 |
@@ -80,3 +75,18 @@
 
 | https://planter-note.pages.dev/articles/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
+
+
+
+
+
+
+| https://planter-note.pages.dev/articles/hiryou-tsuihi/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/piiman-sodatekata/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/mizuyari-kihon/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/purantar-erabi/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/kyuuri-sodatekata/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
