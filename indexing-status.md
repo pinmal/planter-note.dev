@@ -1,6 +1,6 @@
 # planter-note.dev — Search Console インデックス申請状況
 
-> 最終更新: 2026-09-19（自動更新）
+> 最終更新: 2026-09-22（自動更新）
 
 ## 背景（2026-08-31追記）
 このファイルは公開時のテンプレート（「未申請/未公開」のプレースホルダー行）のまま放置され、
@@ -13,6 +13,16 @@
 ### Tier1
 | URL | 優先度 | 理由 |
 |---|---|---|
+| https://planter-note.pages.dev/kindle-guide/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/planter/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/soil/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/fertilizer/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/tools/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/pest-control/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/herb/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/tomato/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/category/summer-vege/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
+| https://planter-note.pages.dev/about/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
 
 ### Tier2
 | URL | 優先度 | 理由 |
@@ -34,25 +44,15 @@
 
 
 
-| https://planter-note.pages.dev/about/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/summer-vege/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/tomato/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/herb/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/pest-control/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/tools/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/fertilizer/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/soil/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/category/planter/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/kindle-guide/ | 2026-09-02 | 申請済み | - | 自動申請 by script |
 
 
 
