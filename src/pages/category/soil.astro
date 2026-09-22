@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="プランター菜園の土・培養土 選び方とおすすめ — pH管理の基本"
-  description="格安の土で3年失敗した経験から選んだ培養土。元肥入り・バーク堆肥入り・pH調整の3ステップで失敗を防ぐ。"
+  description="プランター菜園の土・培養土の選び方。格安の培養土で3年失敗した経験から選んだ、元肥入り・バーク堆肥入り・pH調整の3ステップ。pH計で測って初めて分かったことも記録しています。"
 >
   <h1>🌱 土・培養土 — 失敗の3割は土で決まる</h1>
 
@@ -87,6 +88,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>余った土を袋のまま野外放置 → コバエが大量発生、翌年には使えなかった</li>
     </ul>
   </section>
+
+  <CategoryArticles category="soil" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>

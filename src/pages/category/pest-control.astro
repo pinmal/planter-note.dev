@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="家庭菜園の害虫・病気対策 — 防虫ネットで収穫量13倍になった話"
-  description="農薬ゼロでキュウリの収穫が11本→147本に。防虫ネットの張り方と、やむを得ない殺虫剤の選び方を解説。"
+  description="プランター菜園の害虫・病気対策。農薬ゼロできゅうりの収穫が11本から147本になった防虫ネットの張り方と、やむを得ず殺虫剤を使うときの選び方を失敗記録つきで解説します。"
 >
   <h1>🛡️ 害虫・病気対策 — 防虫ネット1枚で変わった</h1>
 
@@ -85,6 +86,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>適用外作物に殺虫剤を使う → 法令違反・収穫物を廃棄することになる</li>
     </ul>
   </section>
+
+  <CategoryArticles category="pest-control" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>

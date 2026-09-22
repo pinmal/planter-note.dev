@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="プランター菜園の肥料 — 元肥・追肥・液肥の使い分けと選び方"
-  description="失敗ノートの肥料切れ記録31%から学んだ、化成・有機・液肥の使い分けと追肥タイミングのコツ。"
+  description="プランター菜園の肥料の選び方。失敗ノートの肥料切れ記録31%から学んだ化成肥料・有機肥料・液肥の使い分けと、追肥のタイミングを実際の栽培記録つきで解説します。"
 >
   <h1>💊 肥料 — 肥料切れを葉の色で判断する</h1>
 
@@ -83,6 +84,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>追肥を月1回だと思い込んでいた → 2週間ごとが正しい。1ヶ月空くと確実に肥料切れになる</li>
     </ul>
   </section>
+
+  <CategoryArticles category="fertilizer" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>

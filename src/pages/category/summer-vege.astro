@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="プランターで夏野菜（きゅうり・なす・ピーマン）— 防虫ネット前後の収穫比較"
-  description="きゅうりが防虫ネット導入前11本→導入後147本になった記録。夏野菜3種の深型プランター・追肥・収穫タイミング解説。"
+  description="プランターで育てる夏野菜（きゅうり・なす・ピーマン・オクラ）の育て方。防虫ネット導入前11本から導入後147本になった記録と、深型プランター・追肥・収穫タイミングの実例をまとめました。"
 >
   <h1>🌽 夏野菜 — プランターの深さと防虫ネットが決め手</h1>
 
@@ -100,6 +101,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>なすの更新剪定をしない → 7月末〜8月で収穫が終わる。剪定すると10月まで続く</li>
     </ul>
   </section>
+
+  <CategoryArticles category="summer-vege" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>

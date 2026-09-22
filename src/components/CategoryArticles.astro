@@ -1,0 +1,39 @@
+---
+/**
+ * カテゴリページから該当記事への内部リンクセクション。
+ *
+ * 背景: カテゴリ8ページは商品カードだけの行き止まりページで、記事への発リンクが
+ * 0件だった（2026-09-22 監査）。クロールが流入しても記事へ流れず、
+ * 「薄いアフィリエイトページ」の体裁になっていた。
+ */
+import { articlesInCategory, articleHref, type ArticleCategory } from '../data/articles';
+
+interface Props {
+  category: ArticleCategory;
+  heading?: string;
+}
+const { category, heading = 'このカテゴリの関連記事' } = Astro.props;
+const list = articlesInCategory(category);
+---
+{list.length > 0 && (
+  <section style="margin-top:2.2rem;">
+    <h2>{heading}</h2>
+    <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.8; margin:0.6rem 0 1rem;">
+      道具の前に、まず何をどう失敗したかを読んでおくと選びやすくなります。
+    </p>
+    <div style="display:grid; gap:0.6rem;">
+      {list.map((a) => (
+        <a href={articleHref(a.slug)} style="display:flex; gap:0.9rem; align-items:flex-start; background:white; border:1px solid var(--color-border); border-radius:10px; padding:0.85rem 1rem; text-decoration:none; color:inherit;">
+          <span style="font-size:1.5rem; line-height:1; flex-shrink:0; margin-top:0.1rem;">{a.emoji}</span>
+          <div style="min-width:0;">
+            <p style="margin:0 0 0.25rem; font-weight:700; font-size:0.93rem; color:var(--color-text); line-height:1.45;">{a.cardTitle}</p>
+            <p style="margin:0; font-size:0.84rem; line-height:1.7; color:var(--color-text-muted);">{a.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+    <p style="margin-top:1rem; font-size:0.9rem;">
+      <a href="/articles/" style="color:var(--color-primary-dark);">→ 記事一覧をすべて見る</a>
+    </p>
+  </section>
+)}

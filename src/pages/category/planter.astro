@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="プランター選びのポイントとおすすめ — スリット鉢・深型・サイズ比較"
-  description="根腐れ32回の失敗ノートから導いた「プランターの選び方」。底穴・深さ・素材の3つで8割の失敗は防げます。"
+  description="プランターの選び方とおすすめ。失敗ノートに根腐れが32回出た経験から導いた、底穴・深さ・素材の3つの基準。スリット鉢に変えただけで根腐れがゼロになった記録もまとめています。"
 >
   <h1>🪴 プランター — 底穴と深さが最初の選択</h1>
 
@@ -98,6 +99,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>黒いプランターを直射日光の下に置く → 土温が40℃を超えて根が傷んだ</li>
     </ul>
   </section>
+
+  <CategoryArticles category="planter" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>

@@ -1,0 +1,51 @@
+---
+// Cloudflare Pages は 404.html が存在しない場合、未知のURLに対して
+// index.html を HTTP 200 で返してしまう（= 全URLがトップページの複製になる soft-404）。
+// このページを置くことで未知URLが正しく 404 を返すようになる。
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  { href: '/category/planter/', emoji: '🪴', label: 'プランター' },
+  { href: '/category/soil/', emoji: '🌱', label: '土・培養土' },
+  { href: '/category/fertilizer/', emoji: '💊', label: '肥料' },
+  { href: '/category/tools/', emoji: '🔧', label: '道具' },
+  { href: '/category/pest-control/', emoji: '🛡️', label: '害虫・病気対策' },
+  { href: '/category/herb/', emoji: '🌿', label: 'ハーブ' },
+  { href: '/category/tomato/', emoji: '🍅', label: 'ミニトマト' },
+  { href: '/category/summer-vege/', emoji: '🥒', label: '夏野菜' },
+];
+---
+<BaseLayout
+  title="ページが見つかりません"
+  description="お探しのページは見つかりませんでした。プランターノートの記事一覧・カテゴリからお探しください。"
+  noindex={true}
+>
+  <h1>ページが見つかりませんでした</h1>
+
+  <p style="margin-top:1rem; line-height:1.95; font-size:0.95rem; color:var(--color-text-muted);">
+    お探しのページは移動したか、URLが間違っている可能性があります。
+    下の記事一覧かカテゴリからお探しください。
+  </p>
+
+  <p style="margin-top:1.4rem;">
+    <a href="/articles/" style="display:inline-block; background:#2d6a4f; color:white; padding:0.55rem 1.3rem; border-radius:7px; text-decoration:none; font-weight:700; font-size:0.9rem;">
+      → 記事一覧を見る
+    </a>
+  </p>
+
+  <section style="margin-top:2.2rem;">
+    <h2 style="margin-bottom:0.8rem;">カテゴリから探す</h2>
+    <div class="category-grid">
+      {categories.map((c) => (
+        <a href={c.href} class="card" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.6rem; padding:0.9rem 1rem;">
+          <span style="font-size:1.5rem; flex-shrink:0;">{c.emoji}</span>
+          <span style="font-weight:700; font-size:0.93rem;">{c.label}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <p style="margin-top:2rem; font-size:0.9rem;">
+    <a href="/" style="color:var(--color-primary-dark);">← トップページに戻る</a>
+  </p>
+</BaseLayout>

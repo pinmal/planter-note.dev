@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="家庭菜園の道具おすすめ — ジョウロ・pH計・水分計・移植ゴテ"
-  description="失敗の28%はpH異常でした。pH計1台で防げます。感覚から数値管理への切り替えに必要な道具を解説。"
+  description="家庭菜園・プランター栽培の道具の選び方。ジョウロ・pH計・水分計・移植ゴテなど、菜園歴12年で実際に使ってよかったものと、買ったが使わなくなったものを記録しています。"
 >
   <h1>🔧 道具 — 感覚より数値を信じる</h1>
 
@@ -59,6 +60,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>水やりのタイミングを見た目だけで判断 → 表面は乾いているのに中が過湿だった（根腐れの典型パターン）</li>
     </ul>
   </section>
+
+  <CategoryArticles category="tools" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>

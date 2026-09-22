@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import DisclosureBanner from '../../components/DisclosureBanner.astro';
+import CategoryArticles from '../../components/CategoryArticles.astro';
 ---
 <BaseLayout
   title="プランターでミニトマト — 脇芽放置で収穫5個になった失敗から学んだ育て方"
-  description="脇芽を放置して実が5個しかつかなかった失敗の記録。整枝・支柱・水やりの3点で安定収穫する方法を解説。"
+  description="プランターで育てるミニトマトの栽培ガイド。脇芽を放置して収穫5個に終わった失敗から、接ぎ木苗と支柱で91個になるまでの記録。土・肥料・支柱の選び方もまとめています。"
 >
   <h1>🍅 ミニトマト — 整枝だけで収穫数が変わる</h1>
 
@@ -97,6 +98,8 @@ import DisclosureBanner from '../../components/DisclosureBanner.astro';
       <li>支柱が短すぎて倒れる → 120cmは伸びる。150cm以上の支柱を最初から立てる</li>
     </ul>
   </section>
+
+  <CategoryArticles category="tomato" />
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連カテゴリ</p>
