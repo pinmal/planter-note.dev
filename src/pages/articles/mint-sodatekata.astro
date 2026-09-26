@@ -1,0 +1,114 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="ミントは単独鉢が絶対条件——バジルと一緒に植えた失敗の記録"
+  description="バジルとミントを同じプランターに植えた翌月、バジルが消えていた。ミントは繁殖力の強さを逆手に取れば2年間収穫し続けられる。"
+  slug="mint-sodatekata"
+  publishDate="2026-09-26"
+  relatedCategory={{ href: '/category/herb/', label: 'ハーブ' }}
+  prevArticle={{ href: '/articles/ichigo-sodatekata/', title: 'イチゴのプランター栽培——秋に植えて翌春47粒収穫した記録' }}
+  nextArticle={{ href: '/articles/broccoli-sodatekata/', title: 'ブロッコリーの側花蕾を知らなかった最初の秋と、3ヶ月収穫し続けた年の記録' }}
+>
+  <h1>ミントは単独鉢が絶対条件——バジルと一緒に植えた失敗の記録</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>ミントが「単独プランター必須」の理由と、他の植物と混植すると起きること</li>
+      <li>一度根付いたミントを2年間収穫し続けるための摘芯と花穂管理</li>
+      <li>夏の強光と水切れでミントが枯れた年の記録と、置き場所を変えて解決した方法</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「失敗ノート1冊目の最初のページに書いてあります。
+      『ミントをバジルと一緒に植えてはいけない』。
+      植えた翌月、バジルが消えていました。
+      犯人はミントでした。それ以来、ミントは必ず単独の鉢に植えています。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      ミントは「育てやすいハーブ」として紹介されることが多い。それは正しい。
+      ただし「他の植物と同じプランターで育てやすい」という意味ではない。
+    </p>
+    <p style="line-height:1.95;">
+      ミントは地下茎で横に広がる性質を持つ。
+      同じプランターに植えると、2〜4週間で根が鉢全体に広がり、他の植物の根のスペースを奪う。
+      バジルと混植した年、バジルは定植から28日後に消えていた。
+      ミントが根を張ったプランターの土を掘り返すと、白い根が網目状に広がっていた。
+    </p>
+    <p style="line-height:1.95;">
+      この繁殖力の強さを「デメリット」と考えるのをやめた年から、ミントの使い方が変わった。
+      単独の鉢に植えれば、ほぼ放置でも育ち、2年以上収穫し続けられる。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>摘芯と花穂管理で葉の収穫を長続きさせる</h2>
+    <p style="line-height:1.95;">
+      ミントは放置すると縦に伸びて花を咲かせる。
+      花が咲くと葉が固くなり、香りも弱くなる。
+    </p>
+    <p style="line-height:1.95;">
+      草丈が15〜20cmになったら先端を摘む（摘芯）。
+      摘むと脇芽が2本伸びて、株が横に広がりながら葉が増える。
+      花穂が出たら早めに切り取る。これを繰り返すだけで、5月から11月まで葉を取り続けられる。
+      難しい技術は何もない。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>夏の置き場所で生死が決まる</h2>
+    <p style="line-height:1.95;">
+      ミントが「育てやすい」という評判を信じて、夏の西日が直接当たるベランダに置き続けた年がある。
+      8月の第2週に葉が黄色くなり始め、第3週には茎ごと枯れた。
+    </p>
+    <p style="line-height:1.95;">
+      ミントは直射日光より「明るい半日陰」を好む。
+      強光と高温で葉が焼け、土の乾燥が加速して根が傷む。
+      真夏は午後の直射日光を避けられる場所に移動するか、遮光ネットを使う。
+      朝の水やりを忘れると翌日には葉がしおれている。土の表面が乾いたらすぐに水をやること。
+    </p>
+    <p style="line-height:1.95;">
+      この2点（置き場所と水切れ防止）を守るだけで、ミントは2年以上同じ鉢で収穫し続けられる。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使っている苗とプランター</h2>
+    <ProductCard id="herb-mint-plant" />
+    <ProductCard id="planter-round-herb" />
+    <ProductCard id="fertilizer-liquid" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">スペアミントとペパーミント、どちらが育てやすいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">どちらも同程度に育てやすいです。スペアミントは葉が柔らかくて料理に使いやすく、ペパーミントはメントール含量が高くて清涼感が強い。料理（サラダ・ドリンク）が目的ならスペアミント、お茶や洗顔など清涼感重視ならペパーミントが向いています。2種を別々の鉢で育てて使い分けるのが最終的には便利です。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">冬はどう管理しますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">ミントは耐寒性があり、地上部が枯れても根が生きていれば春に再び芽吹きます。ベランダのプランターは霜が直接当たらない場所に移動するだけで十分です。水やりは月に1〜2回程度に減らして、土が完全に乾ききらない程度に管理します。春になると自然に新芽が出てきます。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">2年以上経ったミントはどうすればいいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">2〜3年経つと根が鉢全体に詰まって成長が鈍くなります（根詰まり）。春に株を取り出して根を半分ほど切り落とし、新しい培養土に植え直す（株分け）と再び勢いが戻ります。このタイミングで株を2〜3つに分けると、1鉢が3鉢に増やせます。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/basil-sodatekata/">バジルを苗から始めた最初の年と、種から始めた翌年の違い</a><br />
+    <a href="/articles/ohba-shiso-sodatekata/">大葉は摘心を覚えた2年目に収穫量が変わった</a><br />
+    <a href="/articles/aburamushi-taisaku/">定植時から防虫ネットをかけるようになったアブラムシ対策</a>
+  </nav>
+</ArticleLayout>
