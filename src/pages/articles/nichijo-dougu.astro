@@ -1,0 +1,113 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="最初の1シーズンで壊れた道具と、今も使い続けている道具の話"
+  description="家庭菜園を始めた年、安い道具を次々と壊した。3年目に揃えた道具は今も現役で使っている。最初に揃えるべき3つだけを選ぶなら何か。"
+  slug="nichijo-dougu"
+  publishDate="2026-09-26"
+  relatedCategory={{ href: '/category/tools/', label: '道具・ツール' }}
+  prevArticle={{ href: '/articles/tsuchi-saiyo/', title: '使い終えた土を毎年捨てていた5年間——土の再生方法を知ってからの変化' }}
+  nextArticle={{ href: '/articles/snap-endou-sodatekata/', title: 'スナップエンドウは春の入門野菜——4月の収穫まで手がかからなかった記録' }}
+>
+  <h1>最初の1シーズンで壊れた道具と、今も使い続けている道具の話</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>最初の年に3本壊した移植ゴテ——100円の道具を繰り返す非効率さ</li>
+      <li>今も使い続けている3点セットの選び方と基準</li>
+      <li>「安い道具を都度替える」より「良い道具を長く使う」コスト比較</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「最初のシーズンに100円ショップで道具を揃えました。
+      移植ゴテは3本、手袋は2セット、その年のうちに全部ダメになりました。
+      3年目に一度だけまともな道具を揃えてからは、今も全部現役です。
+      品質管理の仕事で言えば、初期コストに見合う耐久性という概念そのものです。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      家庭菜園の道具は百円から数千円まで価格差が大きい。
+      始めた頃は安いものから試してみたくなるが、道具の品質は作業効率と直結する。
+      固い土を掘るとき、安い移植ゴテは刃が曲がる。
+      薄い手袋は刺に引っかかると穴が開く。
+      小さいジョウロは1回の水やりで何往復もしなければならない。
+    </p>
+    <p style="line-height:1.95;">
+      「同じものを何度も買い替えた合計額」と「最初から良いものを買う費用」を比べると、後者のほうが安いことが多い。
+      これは品質管理の仕事で習った「品質コスト」の考え方と同じだ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>最初に揃える3点セット</h2>
+    <p style="line-height:1.95;">
+      道具は増やしすぎると管理が大変になる。
+      最初の1〜2シーズンに本当に必要なのは3つだけだ。
+    </p>
+    <p style="line-height:1.95;">
+      <strong>1. 移植ゴテ（ステンレス製・目盛り付き）</strong><br />
+      植え替えと苗の定植に毎回使う。固い土でも刃が曲がらないステンレス製を選ぶ。
+      目盛り付きは球根の植え付け深さを一定にできて、初心者のうちに感覚をつかむのに役立つ。
+    </p>
+    <p style="line-height:1.95;">
+      <strong>2. 薄手のガーデニング手袋</strong><br />
+      素手で作業すると爪の間に土が入り、剪定バサミで指先を切るリスクもある。
+      ただし厚すぎると細かい作業ができなくなる。薄手のコーティングタイプが最もバランスが良い。
+    </p>
+    <p style="line-height:1.95;">
+      <strong>3. 5Lジョウロ（ハス口付き）</strong><br />
+      種まき直後に勢いよく水をかけると種が流れる。シャワー状に出るハス口は必須だ。
+      5Lは3〜4つのプランターを1回で水やりできるちょうどいいサイズだ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>後から追加してよかった道具</h2>
+    <p style="line-height:1.95;">
+      最初の3点に慣れた後、追加してよかったと感じた道具が土壌pH計だ。
+      失敗の原因がわかるツールは、道具というよりも診断装置に近い。
+      「なぜ育たないのか」がわかると対策が取れる。
+      数値で見える化されると作業の精度が上がる。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使い続けている3点</h2>
+    <ProductCard id="tools-trowel" />
+    <ProductCard id="tools-gloves" />
+    <ProductCard id="tools-jouro" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">剪定バサミは最初から必要ですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">ハーブや夏野菜を育てるなら2年目頃から必要になります。摘芯・わき芽摘み・枯れ葉の除去など使う機会は多いです。ただし最初のシーズンは必須ではありません。まずは3点セットで始めて、次のシーズンから追加することをおすすめします。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">手袋はどんなサイズを選べばいいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">指の長さと手のひらの幅で選びます。きつすぎると指先が利かなくなり、大きすぎると細かい作業でずれます。薄手コーティングタイプはS・M・Lの3サイズが一般的です。試着できない場合は「手の甲の最大周囲」を測って対応サイズを確認してください。洗い替えを考えて2セット購入するのが実用的です。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">スコップとシャベルとジョレン、どれが必要ですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">プランター栽培では移植ゴテで十分です。大型スコップ・シャベル・ジョレン（土鍋）は地植えや広い庭で使うもので、ベランダのプランター栽培には向きません。大きすぎる道具はプランターの中で扱いにくく、場所もとります。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/mizuyari-kihon/">毎朝の水やりに変えてから根腐れと枯れが同時に減った</a><br />
+    <a href="/articles/ph-kanri/">肥料が効かない原因の28%はpH異常だった</a><br />
+    <a href="/articles/tsuchi-erabi/">格安の土で3年失敗して学んだ、土の選び方</a>
+  </nav>
+</ArticleLayout>

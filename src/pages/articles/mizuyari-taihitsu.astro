@@ -1,0 +1,97 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="水やりを毎日から朝夕2回に変えた夏と、自動化を試みた記録"
+  description="毎朝1回の水やりだけで夏を乗り切ろうとして3プランターを枯らした。朝夕2回に変えた翌年、そのさらに翌年に自動化を試みた記録と失敗の内訳。"
+  slug="mizuyari-taihitsu"
+  publishDate="2026-09-26"
+  relatedCategory={{ href: '/category/tools/', label: '道具・ツール' }}
+  prevArticle={{ href: '/articles/tane-sodatekata/', title: '種から育てると何が変わるか——苗購入との違いを記録した8年分' }}
+  nextArticle={{ href: '/articles/ichinen-keikaku/', title: '1年間のプランター菜園を計画するときに決める4つのことの記録' }}
+>
+  <h1>水やりを毎日から朝夕2回に変えた夏と、自動化を試みた記録</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>夏の水やり「朝夕2回」が必要になる条件と目安気温</li>
+      <li>自動水やり器を試した結果——うまくいったことと失敗</li>
+      <li>水やりと根腐れは表裏一体——やりすぎのサインの見分け方</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「8月に3日連続で最高気温が37℃を超えた週に、3つのプランターが枯れました。
+      朝に水をやっていたのに、夕方には萎れていました。
+      翌年から夏だけ夕方にも水やりを追加しました。
+      同じ気温条件でも、その年は1つも枯れませんでした。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      水やりは「土の表面が乾いたらやる」が基本だが、真夏はこのサイクルが急に早まる。
+      朝8時に水やりをして、午後2時には完全に乾いていることが気温35℃を超える日にはある。
+      その状態を放置すると、夕方には葉が垂れ始め、夜に水やりをしても翌朝に回復しきれない株が出る。
+    </p>
+    <p style="line-height:1.95;">
+      水やりの頻度は季節・プランターのサイズ・野菜の種類によって変わる。
+      一度失敗して「このプランターは夏は朝夕2回」と知るのが、体で覚える方法だ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>自動水やり器を試した記録</h2>
+    <p style="line-height:1.95;">
+      旅行で3日間家を空ける機会に、ペットボトル式の自動水やり器を試した。
+      土に差し込むタイプで、毛細管現象でゆっくり水が染み出る仕組みだ。
+    </p>
+    <p style="line-height:1.95;">
+      結果は半々だった。
+      小さいプランターでは機能したが、深型の大きなプランターでは底まで水が届かなかった。
+      また機器によっては水の出る量が安定せず、過湿で根腐れが出たものもあった。
+      「留守中の保険」として有効だが、夏の高温期の主な水管理として使うには限界がある。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>やりすぎのサイン</h2>
+    <p style="line-height:1.95;">
+      水が多すぎると根腐れが起きる。
+      葉が黄色くなる・土が常に湿っている・根元が茶色く軟化している状態は水過多のサインだ。
+      根腐れは早期に発見しても対処が難しいため、予防（水はけの良い土・必要以上にやらない）が大切だ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使っているジョウロと記録道具</h2>
+    <ProductCard id="tools-jouro" />
+    <ProductCard id="planter-deep-60" />
+    <ProductCard id="record-garden-notebook" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">水やりは「土の色」で判断できますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">できます。土の表面が乾くと色が明るくなります（水を含んでいる時は暗い茶色）。これが一番直感的に分かる判断方法です。慣れてくると色の変化だけで水やりのタイミングが分かるようになります。初めのうちは指を土に1cm刺して乾いていたら水やりするのが確実です。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">水道水で問題ありませんか？塩素が気になります。</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">問題ありません。水道水の塩素は野菜の育成に大きな影響を与えないとされています。バケツに汲み置きして1日置けば塩素が抜けますが、普通に使っても差はほとんどありません。pH（酸性・アルカリ性）は地域の水道水によって多少違いますが、培養土のpH緩衝能で吸収されます。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/natsu-kanri/">真夏のプランター管理——水切れと熱が一番の敵だった記録</a><br />
+    <a href="/articles/negusar-genin/">プランターで根腐れが起きる原因と対策</a><br />
+    <a href="/articles/nichijo-dougu/">最初の1シーズンで壊れた道具と、今も使い続けている道具の話</a>
+  </nav>
+</ArticleLayout>

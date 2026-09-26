@@ -1,0 +1,116 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="12年分の失敗ノートから選んだ、繰り返さなかった失敗と繰り返した失敗"
+  description="失敗を記録すると同じ失敗は減る。しかし全部の失敗を防げるわけではない。6冊のノートから見えた、記録で防げた失敗と防げなかった失敗のパターン。"
+  slug="shippai-kiroku"
+  publishDate="2026-09-26"
+  relatedCategory={{ href: '/category/tools/', label: '道具・ツール' }}
+  prevArticle={{ href: '/articles/hajimete-purantar/', title: 'プランター菜園を始める前に決めておくべきことの記録' }}
+  nextArticle={{ href: '/articles/basho-erabi/', title: 'プランターの置き場所を変えたら収穫量が変わった記録' }}
+>
+  <h1>12年分の失敗ノートから選んだ、繰り返さなかった失敗と繰り返した失敗</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>6冊の失敗ノートで「繰り返さなくなった失敗」トップ3</li>
+      <li>記録しても繰り返してしまう失敗のパターン——なぜそうなるか</li>
+      <li>記録の効果を最大にする「最低限の書き方」</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「5年目の春に気づきました。自分は毎年同じ失敗をしていると。
+      種まきのタイミングをずらして失敗する。
+      追肥を飛ばして色が薄くなる。
+      間引きを惜しんで根が太らない。
+      ノートをつけ始めてから、この3つは5年間1度も繰り返していません。
+      ただし水やりの見落としは今も年に数回起きています。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      品質管理の仕事では、不具合が発生したら原因を記録して再発を防ぐ仕組みをつくる。
+      家庭菜園でも同じことができる。
+      失敗を記録して翌年に活かせれば、同じ失敗を繰り返すコストがなくなる。
+      6冊のノートが積み上がった今、記録の効果を振り返ることができる。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>記録で防げた失敗トップ3</h2>
+    <p style="line-height:1.95;">
+      <strong>1. 種まき・定植のタイミングのズレ</strong><br />
+      毎年「今年は例年より遅かった」「早すぎた」と感じていた。
+      記録すると昨年のタイミングと気温の関係がわかり、適期の判断が改善した。
+    </p>
+    <p style="line-height:1.95;">
+      <strong>2. 追肥の飛ばし</strong><br />
+      「先週やったかやっていないか」が曖昧だった。
+      日付と内容を1行書くようになってから飛ばしが0回になった。
+    </p>
+    <p style="line-height:1.95;">
+      <strong>3. 連作の繰り返し</strong><br />
+      どのプランターに何を植えたかを記録していないと、3年後に同じ科を同じ場所に植えてしまう。
+      プランター番号と植えた野菜の記録を残してから連作障害が出なくなった。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>記録しても繰り返す失敗</h2>
+    <p style="line-height:1.95;">
+      水やりの見落としは記録が防ぎにくい失敗だ。
+      スケジュールを書いても、朝の忙しさで後回しにして夕方に土が乾いていることがある。
+      記録は「何をすべきか」を整理するのには役立つが、
+      「毎日の実行」を保証するものではない。
+    </p>
+    <p style="line-height:1.95;">
+      この種の失敗は仕組みの変更（自動灌水装置の導入・水やりチェックリストの設置）でしか解決できない。
+      記録の限界を知ることも、ノートをつけ続けて学べることのひとつだ。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>最低限の書き方</h2>
+    <p style="line-height:1.95;">
+      毎日書こうとすると続かない。
+      週1回・何かをしたとき・気づいたときだけ書く。
+      書く内容は「日付・天気・今日の作業・気づき1行」だけでいい。
+      細かく書こうとしなければ12年続く。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使っているノート</h2>
+    <ProductCard id="record-garden-notebook" />
+    <ProductCard id="record-label" />
+    <ProductCard id="tools-trowel" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">スマートフォンのアプリでも記録できますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">できます。アプリは写真を撮って記録できる点が手書きより優れています。しかし私はアプリを使っていません。手書きのほうが「書く行為」によって記憶に残りやすいと感じているためです。紙の手帳はアプリのようにバージョンが変わって記録が読めなくなるリスクがない点もあります。どちらでも続けられる方法が正解です。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">何年分の記録を取っておくべきですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">連作障害を防ぐためには最低3年分が必要です。同じプランターに何を植えたかを3年分把握していれば、連作のリスクを管理できます。野菜の成長・収穫量・気候との関係を見るには5年分あると傾向が見えてきます。保管しておく意義は、年数が増えるほど大きくなります。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/hiryou-tsuihi/">肥料切れサインを見逃し続けた記録と、週1液肥で解決した話</a><br />
+    <a href="/articles/nichijo-dougu/">最初の1シーズンで壊れた道具と、今も使い続けている道具の話</a><br />
+    <a href="/articles/hajimete-purantar/">プランター菜園を始める前に決めておくべきことの記録</a>
+  </nav>
+</ArticleLayout>
