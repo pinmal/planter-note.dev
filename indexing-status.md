@@ -1,6 +1,6 @@
 # planter-note.dev — Search Console インデックス申請状況
 
-> 最終更新: 2026-09-22（自動更新）
+> 最終更新: 2026-09-26（自動更新）
 
 ## 背景（2026-08-31追記）
 このファイルは公開時のテンプレート（「未申請/未公開」のプレースホルダー行）のまま放置され、
@@ -45,16 +45,6 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 ### Tier1
 | URL | 優先度 | 理由 |
 |---|---|---|
-| https://planter-note.pages.dev/kindle-guide/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/planter/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/soil/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/fertilizer/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/tools/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/pest-control/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/herb/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/tomato/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/category/summer-vege/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
-| https://planter-note.pages.dev/about/ | Tier1 | 🔴 deindex再検知（旧:申請済み）自動差し戻し 2026-09-22 |
 
 ### Tier2
 | URL | 優先度 | 理由 |
@@ -93,19 +83,12 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 
 
 
-| https://planter-note.pages.dev/articles/nasu-sodatekata/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/articles/minitomato-sodatekata/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/articles/bougai-net/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/articles/ph-kanri/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/articles/tsuchi-erabi/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/articles/negusar-genin/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.pages.dev/articles/ | 2026-09-05 | 申請済み | - | 自動申請 by script |
 
 
 
@@ -122,3 +105,37 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.pages.dev/articles/purantar-erabi/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
 
 | https://planter-note.pages.dev/articles/kyuuri-sodatekata/ | 2026-09-19 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/kindle-guide/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/planter/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/soil/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/fertilizer/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/tools/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/pest-control/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/herb/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/tomato/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/category/summer-vege/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/about/ | 2026-09-23 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/ | 2026-09-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/negusar-genin/ | 2026-09-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/tsuchi-erabi/ | 2026-09-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/ph-kanri/ | 2026-09-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/bougai-net/ | 2026-09-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/minitomato-sodatekata/ | 2026-09-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.pages.dev/articles/nasu-sodatekata/ | 2026-09-26 | 申請済み | - | 自動申請 by script |

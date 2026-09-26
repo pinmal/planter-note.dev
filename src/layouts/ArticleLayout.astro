@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import DisclosureBanner from '../components/DisclosureBanner.astro';
-import { relatedArticles, articleHref } from '../data/articles';
+import { articles, relatedArticles, articleHref } from '../data/articles';
 
 interface Props {
   title: string;
@@ -9,14 +9,18 @@ interface Props {
   slug: string;
   publishDate?: string;
   relatedCategory?: { href: string; label: string };
-  prevArticle?: { href: string; title: string };
-  nextArticle?: { href: string; title: string };
 }
-const { title, description, slug, publishDate, relatedCategory, prevArticle, nextArticle } = Astro.props;
+const { title, description, slug, publishDate, relatedCategory } = Astro.props;
 
-// 全16記事の正本 src/data/articles.ts から関連記事を選ぶ
-// （旧実装は9記事のハードコード配列で、7記事が関連枠に一度も出なかった）
+// articles.ts の並び順から前後記事を自動計算（手書き不要・チェーン断絶ゼロ）
 const otherArticles = relatedArticles(slug, 3);
+const idx = articles.findIndex(a => a.slug === slug);
+const prevArticle = idx > 0
+  ? { href: articleHref(articles[idx - 1].slug), title: articles[idx - 1].cardTitle }
+  : undefined;
+const nextArticle = idx < articles.length - 1
+  ? { href: articleHref(articles[idx + 1].slug), title: articles[idx + 1].cardTitle }
+  : undefined;
 const SITE_URL = 'https://planter-note.pages.dev';
 
 const articleSchema = {

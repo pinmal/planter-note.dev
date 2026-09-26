@@ -54,7 +54,7 @@ export const articles: Article[] = [
   {
     slug: 'ph-kanri',
     cardTitle: '肥料が効かない原因の28%はpH異常だった',
-    desc: '肥料を十分与えているのに葉が黄色くなり続けた。pH計で測ったら5.2。苦土石灰で6.0に戻したら2週間で葉色が回復した話。',
+    desc: '肥料を十分与えているのに葉が黄色くなり続けた。pH計で測ったら7.8。ピートモスで6.0に戻したら2週間で葉色が回復した話。',
     emoji: '🔬',
     tag: 'pH管理',
     categories: ['soil', 'fertilizer', 'tools'],
