@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://planter-note.pages.dev/sitemap-index.xml
+Sitemap: https://planter-note.com/sitemap-index.xml
