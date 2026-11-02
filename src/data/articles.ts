@@ -393,6 +393,15 @@ export const articles: Article[] = [
     categories: ['tools'],
     publishDate: '2026-09-26',
   },
+  {
+    slug: 'tamanegi-sodatekata',
+    cardTitle: 'プランターの玉ねぎ栽培｜苗の選び方・植え付け時期・とう立ち対策',
+    desc: '立派な太い苗ほどとう立ちしやすい。鉛筆くらいの太さの苗を選ぶようにして、とう立ちが3割から1割未満に減った記録。',
+    emoji: '🧅',
+    tag: '秋植え野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
 ];
 
 /** 公開日の新しい順 */

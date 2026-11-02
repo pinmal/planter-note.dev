@@ -1,6 +1,6 @@
 # planter-note.com — Search Console インデックス申請状況
 
-> 最終更新: 2026-10-01（自動更新）
+> 最終更新: 2026-10-31（自動更新）
 > ⚠️ 2026-09-30: カスタムドメイン planter-note.com に移行。GSCプロパティは `sc-domain:planter-note.com`。
 > 以下のpages.dev行は旧プロパティへの申請記録。新規申請は .com ドメインで行う。
 
@@ -47,6 +47,7 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 ### Tier1
 | URL | 優先度 | 理由 |
 |---|---|---|
+| https://planter-note.com/articles/tamanegi-sodatekata/ | 高 | 新規記事（玉ねぎ・11月植え付けの季節記事） |
 
 ### Tier2
 | URL | 優先度 | 理由 |
@@ -238,15 +239,11 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 
 | https://planter-note.com/articles/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/aburamushi-taisaku/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/basho-erabi/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/basil-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/bougai-net/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/broccoli-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/byoki-taisaku/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
@@ -256,15 +253,12 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 
 | https://planter-note.com/articles/gooya-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/hajimete-purantar/ | 2026-10-01 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.com/articles/hatsuka-daikon-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/hiryou-tsuihi/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/horenso-komatsuna-aki/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/ichigo-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/ichinen-keikaku/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
@@ -282,19 +276,14 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 
 | https://planter-note.com/articles/mizuyari-kihon/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/mizuyari-taihitsu/ | 2026-10-01 | 申請済み | - | 自動申請 by script |
 
-| https://planter-note.com/articles/nasu-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/natsu-kanri/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/negusar-genin/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/nichijo-dougu/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/ohba-shiso-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/okura-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/papurika-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
@@ -304,19 +293,14 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 
 | https://planter-note.com/articles/piiman-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/purantar-erabi/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/rentou-shogai/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/shippai-kiroku/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/snap-endou-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/articles/tane-sodatekata/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/tsuchi-erabi/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
-| https://planter-note.com/articles/tsuchi-saiyo/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/category/fertilizer/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
@@ -335,3 +319,38 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.com/category/tools/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
 
 | https://planter-note.com/kindle-guide/ | 2026-10-01 | 索引済み確認 | - | 自動確認 GSC確認日: 2026-10-01 |
+
+| https://planter-note.com/articles/mizuyari-taihitsu/ | 2026-10-03 | 申請済み | - | 自動申請 by script |
+
+
+| https://planter-note.com/articles/bougai-net/ | 2026-10-24 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/basil-sodatekata/ | 2026-10-24 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/aburamushi-taisaku/ | 2026-10-24 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/hatsuka-daikon-sodatekata/ | 2026-10-25 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/broccoli-sodatekata/ | 2026-10-25 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/ichigo-sodatekata/ | 2026-10-26 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/nichijo-dougu/ | 2026-10-27 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/negusar-genin/ | 2026-10-27 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/nasu-sodatekata/ | 2026-10-27 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/rentou-shogai/ | 2026-10-28 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/purantar-erabi/ | 2026-10-28 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/okura-sodatekata/ | 2026-10-28 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/tsuchi-saiyo/ | 2026-10-29 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/tsuchi-erabi/ | 2026-10-29 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/shippai-kiroku/ | 2026-10-29 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/hajimete-purantar/ | 2026-10-31 | 申請済み | - | 自動申請 by script |
