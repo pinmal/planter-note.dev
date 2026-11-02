@@ -55,6 +55,7 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.com/articles/satsumaimo-sodatekata/ | 高 | 新規記事（さつまいも・つるぼけ） |
 | https://planter-note.com/articles/toumorokoshi-sodatekata/ | 高 | 新規記事（とうもろこし・歯抜け） |
 | https://planter-note.com/articles/zukkini-sodatekata/ | 高 | 新規記事（ズッキーニ・倒伏と人工授粉） |
+| https://planter-note.com/articles/daikon-kabu-sodatekata/ | 高 | 新規記事（大根・カブ・深さと又根/鬆入り） |
 
 ### Tier2
 | URL | 優先度 | 理由 |

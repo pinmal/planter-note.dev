@@ -465,6 +465,15 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-02',
   },
+  {
+    slug: 'daikon-kabu-sodatekata',
+    cardTitle: 'プランターの大根・カブ栽培｜深さと又根の関係、間引き、鬆入りを防ぐ収穫',
+    desc: '大根は深さ40cmで又根0本、20cmでは6本中5本。カブは迷ったら早めに収穫して鬆入りを防ぐ。種まき時期、間引き、株間、キスジノミハムシ対策を記録。',
+    emoji: '🥬',
+    tag: '秋冬野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-03',
+  },
 ];
 
 /** 公開日の新しい順 */

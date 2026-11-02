@@ -1,0 +1,234 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="プランターの大根・カブ栽培｜深さと又根の関係、間引き、鬆入りを防ぐ収穫"
+  description="大根は深さ40cmで又根が0本、20cmでは6本中5本。カブは迷ったら早めに収穫して鬆入りを防ぐ。種まき時期、間引き3段階と2段階、株間、キスジノミハムシ対策まで実験の記録でまとめました。"
+  slug="daikon-kabu-sodatekata"
+  publishDate="2026-11-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>プランターの大根・カブ栽培｜深さと又根の関係、間引き、鬆入りを防ぐ収穫</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>大根が又根になる原因と、プランターの深さ別の結果</li>
+      <li>大根とカブの種まき時期と、間引きの段階</li>
+      <li>カブの鬆（す）入りを防ぐ収穫の目安と、株間</li>
+      <li>追肥の回数と、水やりの頻度</li>
+      <li>根に筋状の傷をつけるキスジノミハムシへの対策</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「初めて抜いた大根は、途中から二股に、片方はさらに三本に分かれていました。
+      同じ畝の八株のうち、まっすぐ育ったのは二株だけ。
+      カブでは逆に、見た目は丸々としているのに、切ってみたら中がスポンジ状の空洞でした。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      大根とカブは同じアブラナ科ですが、根の育ち方がまったく違います。
+      以下は千葉県市川市（ベランダのプランターと市民農園）での私個人の記録です。時期は地域で変わるので、種袋の案内も確認してください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>大根は「まっすぐ下へ」、カブは「地際がふくらむ」</h2>
+    <p style="line-height:1.95;">
+      大根は、発芽したあとにまっすぐ下へ伸びる一本の根（直根）がそのまま太ります。途中に障害物があると、そこで曲がったり分かれたりします。
+      これが又根です。
+      カブは根そのものというより、地際の茎の部分（胚軸）が丸くふくらんで食べる部分になります。大根ほど深く根を張る必要がありません。
+    </p>
+    <p style="line-height:1.95;">
+      どちらも植え替えを嫌います。特に大根は、根の先端がわずかに傷つくだけで又根になりやすいので、苗は買わず、直まきが基本です。
+    </p>
+    <p style="line-height:1.95;">
+      私は最初、大根用に用意した深いプランターにカブも同じように植えました。
+      カブは底の土をほとんど使わずに育ち、逆に浅いプランターに植えた大根は途中で曲がりました。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>深さ別の実験：20cmは6本中5本が又根、40cmは0本</h2>
+    <p style="line-height:1.95;">
+      又根の原因は主に4つあります。石や分解しきっていない堆肥の塊、土の浅さ、移植で根の先端を傷つけること、土の中の害虫です。
+      私の市民農園での失敗は、前作の残根が残っていたことと、深く耕したつもりが25cmほどしか耕せていなかったことが重なったものでした。
+    </p>
+    <p style="line-height:1.95;">
+      そこで、深さ20cm・30cm・40cm・50cmのプランターを用意し、同じ日に同じ品種の大根を3か所ずつまいて、土・日当たり・水やりをそろえて比べました。
+      翌年も繰り返し、2年分を合算した又根の本数は次のとおりです。
+    </p>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>深さ20cm</strong>：6本中5本が又根（約83%）</li>
+      <li><strong>深さ30cm</strong>：6本中3本が又根（約50%）。残りも先が細くなる「尻すぼみ」</li>
+      <li><strong>深さ40cm</strong>：6本中0本</li>
+      <li><strong>深さ50cm</strong>：6本中0本。40cmと太さ・長さの差はなし</li>
+    </ul>
+    <p style="line-height:1.95;">
+      掘り上げた重さも違いました。20cmで育てた3本の平均はおよそ200g、40cmでは約500gで、2倍以上の差でした。
+      又根は形が崩れるだけでなく、そもそも育ちも悪くなります。
+    </p>
+    <p style="line-height:1.95;">
+      注意点が2つあります。この実験は石を丁寧に取った市販の培養土で行いました。市民農園の土では、深さを確保していても又根が出ました。
+      抜き跡を探ると、深さ35cmほどにゴルフボール大の石が埋まっていました。それ以来、土は掘り返してふるいにかけ、石と残根を取っています。
+      もう一つ、30cmのプランターに堆肥を倍近く入れて土を柔らかくする方法も試しましたが、又根は6本中1本までしか減りませんでした。
+      土を柔らかくしても、深さの代わりにはなりません。
+    </p>
+    <p style="line-height:1.95;">
+      40cmのプランターが置けないときは、丸大根やミニ大根のような短い品種にするか、大根をあきらめてカブにします。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>種まきは日付を先にカレンダーへ書く</h2>
+    <p style="line-height:1.95;">
+      市川市では、大根は8月下旬から9月中旬、カブは9月上旬から10月上旬が目安でした。カブは育ちが速いので、大根より遅くまで間に合います。
+      大根をまき損ねた年は、10月に入ってからカブをまき、11月に収穫できました。
+    </p>
+    <p style="line-height:1.95;">
+      9月下旬まで先延ばしにした年は、根が太る前に気温が下がり、細い大根ばかりになりました。
+      反対に、8月上旬に待ちきれずまいた年は、残暑で発芽率が低く、双葉のうちに枯れた株が出ました。
+      その翌年は慎重になりすぎて9月に入ってからまき、これも少し遅れました。
+      今は8月に入った時点で「大根の種まきは8月25日前後」とカレンダーに書き、前作の片付けより先に種をまいています。
+      最後は「朝晩にわずかでも涼しさを感じ始めたか」で判断します。
+    </p>
+    <p style="line-height:1.95;">
+      発芽するまでの3〜5日は、朝と夕方に土の表面を軽く湿らせます。ジョウロは細かい目のものにして、種が流れないようにします。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>大根の間引きは3段階</h2>
+    <p style="line-height:1.95;">
+      最初の年、間引きを遅らせて一つの穴に3本が育ち、どれも細くいびつになりました。
+      収穫の重さを量ると、間引かなかった穴の3本の合計は、1本に絞った隣の穴の1本分とほぼ同じでした。
+      同じ養分を細い3本で分けただけで、得はしていません。
+    </p>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>1回目（種まきから5〜7日、双葉が開いたころ）</strong>：1か所に3〜4粒まいた中から、元気な2本を残す。</li>
+      <li><strong>2回目（2週間前後、本葉2〜3枚）</strong>：生育のよい1本だけを残す。</li>
+      <li><strong>3回目（1か月前後、本葉5〜6枚）</strong>：間引きではなく確認。根元の太さが順調かを見る。遅れている株は追肥を早める。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      判断の目安は葉の重なりです。隣の葉が触れ合ってきたら時期です。ただ、焦ってまだ双葉だけの段階で絞り込み、弱い株を残してしまった年もありました。
+      今は平日の朝ではなく、休日の午前中にまとめて行い、双葉の厚みを指で比べてから決めています。
+      抜くと隣の根を巻き込むので、間引く株の根元をハサミで切ります。間引き菜は味噌汁やおひたしにできます。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>カブは「迷ったら早めに」収穫する</h2>
+    <p style="line-height:1.95;">
+      カブは種まきから40〜50日で収穫できました。その分、収穫の幅が狭い野菜です。
+      直径5〜6cmが目安と知りながら、「もう少し大きくしたほうが得」と1週間遅らせ、8cmを超えたところで切ると、中心が白いスポンジ状になっていました。これが鬆入りです。
+      見た目はしっかり張っていて、切るまで分かりませんでした。
+    </p>
+    <p style="line-height:1.95;">
+      それ以来、「カブは迷ったら早めに」と決めています。少し小ぶりでも、鬆のないカブのほうが料理には使いやすいからです。
+      種袋に書かれた品種ごとの収穫サイズを失敗ノートに写し、収穫したら直径をメジャーで測って記録しています。
+    </p>
+    <p style="line-height:1.95;">
+      株間は10〜15cmにします。2016年の秋に5cmまで詰めると、実が平たくなりました。
+      翌年、同じ大きさのプランターで比べた記録では、株間5cmの20本は平均約40g（合計約800g）、株間12cmの10本は平均約90g（合計約900g）でした。
+      個数は半分でも、総重量は変わらず、一つあたりは2倍以上です。
+      カブの間引きは2段階（双葉のころに3本ほど残し、本葉3〜4枚で1本にして株間を整える）、60cm幅のプランターなら最終4〜5株が目安です。
+    </p>
+    <p style="line-height:1.95;">
+      カブは根の張りが浅いので、深さ20cmのプランターでも形は崩れませんでした。大根用の40cmにカブを多めにまくと、根が余ったスペースで形がいびつになる株が出ました。
+      両方育てるなら、深い容器を大根に、浅い容器をカブに分けるのが無理のない使い方です。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>追肥と水やりは控えめに、記録して調整する</h2>
+    <p style="line-height:1.95;">
+      大根は、間引きが終わるまでは元肥だけで育ちます。追肥は本葉7〜8枚のころ（種まきから1か月前後）と、その2〜3週間後の2回で、量は控えめにします。多いと葉ばかり茂って根が太りません。
+      カブはさらに少なく、本葉5〜6枚のころに1回、軽く与える程度です。
+    </p>
+    <p style="line-height:1.95;">
+      水やりは、大根は土の表面が乾いたらたっぷり。9月上旬は2日に1回、10月以降は3〜4日に1回ほどでした。
+      カブは、実がふくらみ始める種まきから3週目以降に水切れさせると、硬くなったり割れたりするので、乾く前に与えます。
+    </p>
+    <p style="line-height:1.95;">
+      大根の根の肩の太さを毎週測った年は、4週目で約1.5cm、6週目で3cm、8週目で5.5cm、10週目で7cmでした。8週目以降に急に太ります。
+      カブで同じ記録をとると、太り方が加速するのは3週目ごろで、大根よりずっと早いと分かりました。
+      それに合わせて追肥を1週間早めた翌年は、収穫時の平均直径がおよそ1cm大きくなりました。測る位置がずれないよう、葉の付け根の下に油性ペンで印をつけています。
+      追肥の基本は<a href="/articles/hiryou-tsuihi/">プランター野菜の追肥のやり方</a>にもまとめています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>根に筋状の傷をつけるキスジノミハムシ</h2>
+    <p style="line-height:1.95;">
+      アブラムシは葉の裏を毎日見て、見つけたらすぐ対処します。それ以上に厄介だったのが、キスジノミハムシです。
+      成虫は葉に小さな丸い穴を開け、幼虫は土の中で根の表面をかじって黒っぽい筋をつけます。
+    </p>
+    <p style="line-height:1.95;">
+      葉の被害はわずかだったのに、収穫した大根8本のうち5本に、引っかき傷のような黒い筋が入っていた年がありました。皮を厚めにむけば食べられますが、葉を見ても根の被害は分かりません。
+    </p>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>種まきと同時に防虫ネットをかける</strong>（発芽を待たない）。</li>
+      <li><strong>同じ場所でアブラナ科を続けない。</strong>幼虫は土の中で冬を越すことがあります。詳しくは<a href="/articles/rentou-shogai/">連作障害の記事</a>へ。</li>
+      <li>葉の食害を見つけたら、根まで広がる前に薬剤で対処する。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      この3つを始めた翌年は、8本中1本、傷もごく浅くなりました。
+      薬剤を使う場合は、ラベルで適用作物に大根・カブが入っているか、使用回数・収穫前日数・希釈倍率を必ず確認してください。間引き菜やカブの葉も食べるので、収穫前日数は特に注意が必要です。散布は手袋とマスクを着け、風のない時間帯に行います。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>ベランダに置く前に確認すること</h2>
+    <p style="line-height:1.95;">
+      深さ40cmのプランターは、土と水を含むとかなり重くなります。置く前に、管理規約と耐荷重を確認してください。
+      避難経路・隔て板・排水口をふさがない、手すりから離れた場所に置き、強風や台風の予報時は、軽い鉢を室内へ取り込みます。
+      一度置いたら動かさずに済む位置にすると、無理に持ち上げずに済みます。
+    </p>
+    <p style="line-height:1.95;">
+      初めてなら、先にカブから始めるのがおすすめです。浅い容器で育ち、40〜50日で収穫でき、直まき・間引き・収穫の見極めという根菜の基本を短い間にひと通り経験できます。
+      その後で、深さを用意して大根に進みます。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使っているプランターと道具</h2>
+    <ProductCard id="planter-deep-60" />
+    <ProductCard id="pest-net" />
+    <ProductCard id="soil-ph-adjuster" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">大根はプランターのどのくらいの深さが必要ですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">私の実験では、深さ40cmで又根は0本、30cmで6本中3本、20cmで6本中5本でした。40cm以上が目安です。置けないときは丸大根やミニ大根、またはカブにします。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">カブの中がスカスカになるのはなぜですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">私の場合は、収穫が1週間遅れて直径が8cmを超えたことが原因でした。直径5〜6cmの小カブは、迷ったら早めに収穫しています。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">苗を買って植えてもいいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">おすすめしません。大根は根の先端が傷つくと又根になりやすいので、直まきが基本です。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">土を柔らかくすれば浅いプランターでも育ちますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">30cmのプランターで堆肥を倍近く入れて試しましたが、又根は6本中1本までしか減りませんでした。土づくりは補助で、深さの代わりにはなりませんでした。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/hatsuka-daikon-sodatekata/">ハツカダイコンは20日で収穫できる——間引きをケチって0本だった記録</a><br />
+    <a href="/articles/rentou-shogai/">連作障害を知らなかった4年間と、ローテーション管理で収穫が戻った記録</a><br />
+    <a href="/articles/tsuchi-erabi/">プランター栽培の土の選び方——格安の土で3年失敗した記録</a>
+  </nav>
+</ArticleLayout>
