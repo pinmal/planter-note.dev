@@ -447,6 +447,24 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-02',
   },
+  {
+    slug: 'toumorokoshi-sodatekata',
+    cardTitle: 'プランターのとうもろこし栽培｜歯抜けを防ぐブロック配置と人工授粉のやり方',
+    desc: '一列に植えたら実が歯抜けだった。株をブロック状に並べて人工授粉を加え、実入り率を約4割から9割以上に上げた記録。追肥・鳥害・収穫のタイミングも。',
+    emoji: '🌽',
+    tag: '夏野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
+  {
+    slug: 'zukkini-sodatekata',
+    cardTitle: 'プランターのズッキーニ栽培｜倒れる・実がつかない・育ちすぎを防ぐ管理',
+    desc: '蔓を伸ばさないウリ科だと知らずにネットを張った失敗から。添え木の支柱、株間、人工授粉、1日で数cm伸びる実の収穫タイミングを記録。',
+    emoji: '🥒',
+    tag: '夏野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
 ];
 
 /** 公開日の新しい順 */

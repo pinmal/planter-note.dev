@@ -1,0 +1,202 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+---
+<ArticleLayout
+  title="プランターのとうもろこし栽培｜歯抜けを防ぐブロック配置と人工授粉のやり方"
+  description="とうもろこしの実が歯抜けになる原因は、風媒花の受粉不足。一列植えからブロック配置に変え、人工授粉を加えて実入り率を約4割から9割以上に上げた記録。追肥・水やり・鳥害・収穫のタイミングも解説。"
+  slug="toumorokoshi-sodatekata"
+  publishDate="2026-11-02"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>プランターのとうもろこし栽培｜歯抜けを防ぐブロック配置と人工授粉のやり方</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 この記事で分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>とうもろこしの実が「歯抜け」になる原因</li>
+      <li>プランターの広さと、株の並べ方（一列ではなくブロック）</li>
+      <li>人工授粉のやり方と、実入り率の変化</li>
+      <li>追肥・水やりの量と、先端が実らない原因</li>
+      <li>鳥害対策と、甘いうちに食べる収穫のタイミング</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1rem; padding:1.2rem 1.3rem; background:#f0f7ee; border-radius:12px; border-left:4px solid var(--color-primary);">
+    <p style="margin:0; font-size:0.95rem; line-height:1.95; font-style:italic; color:var(--color-text);">
+      「農業センターの講師に歯抜けの実の写真を見せて、『今回も土か水が原因でしょうか』と聞くと、笑いながら言われました。
+      『とうもろこしだけは、その三つのどれでもないことが多いんですよ』。
+      雄花と雌花が別の場所に咲き、風に花粉を運んでもらう野菜だったのです。」
+    </p>
+    <p style="margin:0.5rem 0 0; font-size:0.84rem; color:var(--color-text-muted); text-align:right;">— 増田博之</p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <p style="line-height:1.95;">
+      トマトやなすは一株でも実がつきます。その感覚でとうもろこしを一列に植えた最初の年、実は歯が抜けたように粒が欠けていました。
+      以下は千葉県市川市（ベランダの大型プランターと市民農園）での私個人の記録です。時期は地域で変わるので、種袋の案内も確認してください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>歯抜けの原因は「受粉の不足」</h2>
+    <p style="line-height:1.95;">
+      とうもろこしの茎の先端に咲くのが雄穂で、花粉を作ります。茎の中ほどの葉の付け根から出るのが雌穂で、これが実になります。
+      雌穂の先から伸びる絹糸は、実の中の一粒一粒につながっていて、その糸の先に花粉が届いた粒だけが育ちます。
+      とうもろこしは昆虫ではなく風で花粉を運ぶ「風媒花」なので、株が少ない、あるいは一列に並べていると、花粉が列の外へ流れて雌穂に届きません。受粉しなかった粒は、育たずに隙間になります。
+    </p>
+    <p style="line-height:1.95;">
+      実の隙間のでき方で、原因を見分けることもできます。不規則に隙間ができるのは受粉不良です。実の先端側にまとまって粒が入らないのは、水切れによる「先端不稔」の可能性があります。
+      人工授粉をしっかりしたのに先端だけ不揃いだった年は、その時期の猛暑で水が切れ気味だったことに思い当たりました。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>株の並べ方で、実入り率はこれだけ違った</h2>
+    <p style="line-height:1.95;">
+      私は粒がびっしり入っている部分の割合を、収穫した実ごとに目で数えて「実入り率」として記録しています。
+    </p>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>一列に並べた年（プランター）</strong>：平均でおよそ4割。株を6本に増やしても、粒がきれいに詰まっていたのは2本だけでした。</li>
+      <li><strong>4本をブロック配置（30cm間隔で2列×2本）</strong>：平均でおよそ6割5分。</li>
+      <li><strong>市民農園で8本をブロック配置（2列×4本）</strong>：平均でおよそ9割。</li>
+      <li><strong>4本のブロック配置＋人工授粉</strong>：平均でおよそ9割5分。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      つまり、株数だけでなく、風向きに関わらず花粉が周囲の株に届く「ブロック状」の並べ方が大事でした。
+      ベランダの大型プランターで無理なく育てられるのは、私の経験では2〜4本です。市民農園のように8本以上植えられるなら、人工授粉を省いても、ある程度の実入りが見込めます。
+    </p>
+    <p style="line-height:1.95;">
+      また、同じブロックの株は、種まきを必ず同じ日にそろえます。開花の時期がずれると、花粉の受け渡しが成り立たないからです。
+      収穫を長く楽しもうと2週間ずらしてまいた年は、両方のグループとも実入りが悪く、「開花がそろわず共倒れ」と記録しました。ずらし蒔きは、とうもろこしでは避けています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>プランターは「深さ」より「広さ」</h2>
+    <p style="line-height:1.95;">
+      とうもろこしは草丈が約2mになり、根は深くだけでなく横にも広がります。茎の地際から斜めに出る「支柱根」が株を支えるので、土の量が足りないと不安定になります。
+      根が必要とする土の量は、一株あたりおよそ30cm四方が目安です。
+    </p>
+    <p style="line-height:1.95;">
+      深さ30cm・幅60cmの標準的なプランターに6本を詰めて植えた年は、台風の夜に3本が傾き、1本は倒れて、まともな実がつきませんでした。
+      今は、幅90cm・奥行45cm・深さ35cmほどの大型プランターに、2株を30cm間隔で2列にして使っています。
+      土を入れて水を含ませると、重さは70〜100kg近くになります。管理規約や耐荷重を管理会社に確認して、私は2台までを上限にしています。
+    </p>
+    <p style="line-height:1.95;">
+      背が高く風を受けやすいので、台風が近づく予報の日は、前日に麻ひもで数本をゆるく束ねて支柱を一本増やします。
+      避難経路や避難ハッチ、隣戸との隔て板の前、手すりのすぐ脇には鉢を置かないでください。落下の恐れがあるほどの強風の予報なら、室内に取り込むか、横に寝かせて固定します。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>品種と種まきの時期</h2>
+    <p style="line-height:1.95;">
+      品種は、種袋にある「種まきから収穫までの日数」で選びます。最初に選んだ品種は収穫まで約80日で、ベランダでの水やりと追肥を続ける負担が、想像より大きく感じました。初めての方は、比較的日数の短い品種のほうが、途中で気が抜けにくいと思います。
+    </p>
+    <p style="line-height:1.95;">
+      市川市での種まきの適期は、4月下旬から5月中旬です。4月中旬に待ちきれずにまいた年は、急な冷え込みで生育が止まり、他の株より小さいままの株が出ました。霜の心配がなくなり、地温が上がってからまきます。
+      直まきで、一か所に3粒ほどまき、本葉が1〜2枚のときに生育のよい1本を残して間引きます。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>人工授粉のやり方</h2>
+    <p style="line-height:1.95;">
+      ブロック配置にしても、限られたスペースでは花粉が足りないことがあります。そこで、自分の手で花粉を絹糸に届けます。
+    </p>
+    <ol style="line-height:2; padding-left:1.2rem;">
+      <li>雄穂の先端に黄色い粉が出ているのを確認する（指で触れると粉が付く）。</li>
+      <li>よく晴れた日の朝、気温が上がりきる前に、雄穂を指で軽く挟んで揺らし、花粉を小さな紙袋に落とす。</li>
+      <li>絹糸が伸びた雌穂の上で袋を小刻みに動かして、絹糸全体に花粉を振りかける。</li>
+      <li>これを、絹糸が伸び始めてからおよそ1週間、毎朝続ける。</li>
+    </ol>
+    <p style="line-height:1.95;">
+      花粉の寿命は短く、水に濡れると働きにくくなるので、雨の日は見送って、晴れた日に念入りにします。
+      絹糸が伸び始めてからの最初の数日がもっとも重要です。この時期に3日間出張で留守にした年は、実入り率が例年より1割ほど低くなりました。
+      雄穂を切り取って絹糸にこすりつける方法もありますが、切った株は花粉を出せなくなります。株数の少ないベランダでは、紙袋で集める方法のほうが向いています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>追肥は2回、水やりは絹糸が出てから特に多く</h2>
+    <p style="line-height:1.95;">
+      とうもろこしは肥料を多く必要とする「大食い」の野菜です。なすやきゅうりと同じ感覚で控えめに追肥した年は、株が弱々しく、実も小ぶりでした。
+      今は追肥を2回に分けています。1回目は本葉が7〜8枚になって、背丈がひざの高さほどのとき。2回目は雄穂が顔を出しはじめたときです。
+      窒素だけでなく、実の充実に関わるカリを含む肥料を選びます。
+    </p>
+    <p style="line-height:1.95;">
+      一方で、目安の1.5倍を与えた年は、株は大きくなったのに、実の大きさも粒の詰まりも変わりませんでした。肥料袋の目安量は、勝手に増やさないようにしています。
+      追肥の基本は<a href="/articles/hiryou-tsuihi/">プランター野菜の追肥のやり方</a>にもまとめています。
+    </p>
+    <p style="line-height:1.95;">
+      水やりで一番大事なのは、絹糸が伸び始めてから収穫までのおよそ3週間です。土の表面が乾く前にたっぷり与えます。気温の高い時期は一日一回、猛暑なら朝夕の二回に増やします。
+      風の強いベランダでは土が早く乾くので、腐葉土を薄く敷くマルチングで乾燥をゆるめています。ただし、鉢底から水が抜けているかも毎回確認してください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>収穫直前の鳥害は、袋がけで防ぐ</h2>
+    <p style="line-height:1.95;">
+      収穫予定日の3日前に、市民農園で8本中3本が鳥に食べられた年があります。実の皮が裂け、粒がまだらにえぐられていました。
+      絹糸が茶色くなるころ、実は鳥にとってもごちそうの合図になります。
+    </p>
+    <p style="line-height:1.95;">
+      今は、絹糸が茶色く色づきはじめたら、実を一本ずつ、目の細かい防鳥ネットや不織布の袋で覆います。口はゆるく縛って、中を確認できるようにします。
+      人工授粉が終わったことを確認してから袋をかけるのが順番です。受粉の途中で覆ってしまい、実入り率を落とした年がありました。
+      袋がけを徹底した翌年は、8本中被害は1本だけでした。猛禽の人形や反射テープは、鳥が慣れるのか、確実な効果が感じられませんでした。
+      防鳥ネットは風で緩むと小さな生き物が絡まることがあるので、見回りのときに張り具合も確認してください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>収穫は絹糸と、皮をめくって確かめる</h2>
+    <p style="line-height:1.95;">
+      収穫の目安は、絹糸が伸び始めてからおよそ20〜25日、絹糸全体が茶色く乾いたころです。絹糸が伸び始めた日を記録して、そこから逆算します。
+      迷ったときは、収穫予定日の2〜3日前に、一本だけ先端の皮を少しめくります。粒が濃い黄色で、爪で押すと白っぽい乳状の汁が出れば適期です。透明な汁ならまだ早く、汁がほとんど出ずに硬く締まっていたら、遅すぎです。
+    </p>
+    <p style="line-height:1.95;">
+      とうもろこしは、収穫した瞬間から糖が変化して、甘みが落ちていきます。冷蔵庫で一晩置いたものは、明らかに甘みが薄れていました。
+      収穫したその日に、できるだけ早く調理します。食べきれない分は、その日のうちに軽く茹でて、実を芯からそぎ落とし、小分けにして冷凍します。生のまま冷凍した年は失敗しました。冷凍したものは1〜2か月を目安に食べ切ります。
+    </p>
+    <p style="line-height:1.95;">
+      収穫後の土は、栄養が大きく消耗しています。翌年は、肥料をあまり必要としない豆類を同じ場所に植えるようにしています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使っているプランターと土</h2>
+    <ProductCard id="planter-deep-60" />
+    <ProductCard id="soil-veggie-25l" />
+    <ProductCard id="fertilizer-kagaku" />
+  </section>
+
+  <section style="margin-top:2rem;">
+    <h2>よくある質問</h2>
+    <dl style="margin:0; display:grid; gap:1rem;">
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">とうもろこしはプランターで育てられますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">育てられますが、広さのある大型のプランターが必要です。株は一列ではなくブロック状に2〜4本植え、人工授粉を組み合わせると、実入りが安定しました。ベランダの耐荷重は事前に確認してください。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">一株だけでも実はなりますか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">実がつかないわけではありませんが、歯抜けになりやすくなります。風で花粉を運ぶ野菜なので、複数の株を近くにまとめて植えます。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">実の先端だけ粒が入っていないのはなぜですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">私の場合は、絹糸が出てからの水切れが原因でした。受粉不良の歯抜けとは、隙間のでき方が違います。絹糸が伸びてから収穫までは、水を切らさないようにしてください。</dd>
+      </div>
+      <div style="padding:1rem 1.1rem; background:white; border:1px solid var(--color-border); border-radius:9px;">
+        <dt style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">収穫したあと、どれくらいで食べるのがいいですか？</dt>
+        <dd style="margin:0; font-size:0.9rem; line-height:1.85; color:var(--color-text);">その日のうちが一番です。私は収穫の日に鍋の湯を沸かしてから畑に向かうほどです。食べきれなければ、軽く茹でて実をそぎ、冷凍します。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/hiryou-tsuihi/">プランター野菜の追肥のやり方｜タイミングと肥料切れのサイン</a><br />
+    <a href="/articles/mizuyari-kihon/">プランターの水やりを毎朝に変えてから、根腐れと枯れが同時に減った</a><br />
+    <a href="/articles/edamame-sodatekata/">収穫直後のエダマメを食べてから、スーパーで買えなくなった記録</a>
+  </nav>
+</ArticleLayout>

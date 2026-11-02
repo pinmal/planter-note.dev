@@ -53,6 +53,8 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.com/articles/soramame-sodatekata/ | 高 | 新規記事（そら豆・越冬） |
 | https://planter-note.com/articles/ninjin-sodatekata/ | 高 | 新規記事（にんじん・発芽） |
 | https://planter-note.com/articles/satsumaimo-sodatekata/ | 高 | 新規記事（さつまいも・つるぼけ） |
+| https://planter-note.com/articles/toumorokoshi-sodatekata/ | 高 | 新規記事（とうもろこし・歯抜け） |
+| https://planter-note.com/articles/zukkini-sodatekata/ | 高 | 新規記事（ズッキーニ・倒伏と人工授粉） |
 
 ### Tier2
 | URL | 優先度 | 理由 |
