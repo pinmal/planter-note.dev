@@ -1,0 +1,138 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 科の分類は植物分類（APG体系）に基づく。連作障害の出やすさはヤンマー「知っておきたい野菜づくりの基本」の記載のみを使用。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+
+type Veg = [string, string?]; // [名前, 記事slug]
+const families: { family: string; vegs: Veg[]; note: string }[] = [
+  { family: 'ナス科', vegs: [['トマト・ミニトマト', 'minitomato-sodatekata'], ['ナス', 'nasu-sodatekata'], ['ピーマン・唐辛子', 'piiman-sodatekata'], ['じゃがいも', 'jagaimo-sodatekata']], note: '出やすい（ヤンマー）。ナス科どうしは互いに連作になる' },
+  { family: 'ウリ科', vegs: [['きゅうり', 'kyuuri-sodatekata'], ['ゴーヤ', 'gooya-sodatekata'], ['ズッキーニ', 'zukkini-sodatekata'], ['スイカ・メロン'], ['かぼちゃ']], note: '出やすい（ヤンマー）。ただし同ページはかぼちゃを「出にくい」側に挙げている' },
+  { family: 'マメ科', vegs: [['枝豆・大豆', 'edamame-sodatekata'], ['インゲン', 'edamame-sodatekata'], ['スナップえんどう・絹さや', 'snap-endou-sodatekata'], ['そら豆', 'soramame-sodatekata'], ['落花生']], note: '出やすい（ヤンマー）' },
+  { family: 'アブラナ科', vegs: [['大根・ラディッシュ', 'hatsuka-daikon-sodatekata'], ['カブ', 'daikon-kabu-sodatekata'], ['小松菜', 'horenso-komatsuna-aki'], ['ブロッコリー', 'broccoli-sodatekata'], ['白菜・キャベツ・水菜']], note: '小松菜は出にくい側に挙げられている（ヤンマー）。他は同ページに記載なし' },
+  { family: 'ヒユ科', vegs: [['ほうれん草', 'horenso-komatsuna-aki']], note: '以前の分類ではアカザ科。同ページに記載なし' },
+  { family: 'ヒガンバナ科（ネギ属）', vegs: [['長ネギ・小ネギ', 'komanegi-sodatekata'], ['玉ねぎ', 'tamanegi-sodatekata'], ['にんにく', 'ninniku-sodatekata'], ['ニラ']], note: '以前の分類ではユリ科。同ページに記載なし' },
+  { family: 'セリ科', vegs: [['にんじん', 'ninjin-sodatekata'], ['パセリ', 'parsley-sodatekata'], ['三つ葉', 'mitsuba-shungiku-sodatekata']], note: 'にんじんは出にくい側に挙げられている（ヤンマー）' },
+  { family: 'キク科', vegs: [['レタス', 'lettuce-sodatekata'], ['春菊', 'mitsuba-shungiku-sodatekata']], note: '同ページに記載なし' },
+  { family: 'シソ科', vegs: [['大葉（シソ）', 'ohba-shiso-sodatekata'], ['バジル', 'basil-sodatekata'], ['ミント', 'mint-sodatekata']], note: '同ページに記載なし' },
+  { family: 'イネ科', vegs: [['とうもろこし', 'toumorokoshi-sodatekata']], note: 'スイートコーンは畑の余分な養分を吸うので後作の生育が良くなる、とヤンマーが記載' },
+  { family: 'ヒルガオ科', vegs: [['サツマイモ', 'satsumaimo-sodatekata']], note: '同ページに記載なし' },
+  { family: 'アオイ科', vegs: [['オクラ', 'okura-sodatekata']], note: '同ページに記載なし' },
+  { family: 'バラ科', vegs: [['イチゴ', 'ichigo-sodatekata']], note: '同ページに記載なし' },
+];
+---
+<ArticleLayout
+  title="野菜の科の早見表｜連作障害を避けるための分類と、続けて植えてはいけない組み合わせ"
+  description="プランター野菜を科ごとに分類した早見表です。連作障害が出やすい科・出にくい野菜、同じ科を続けないための考え方、あける年数の目安に幅がある理由を、出典つきで整理しました。"
+  slug="rensaku-shogai-ka-bunrui"
+  publishDate="2026-11-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>野菜の科の早見表｜連作障害を避けるための分類と、続けて植えてはいけない組み合わせ</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>育てやすい野菜が、どの科に入るか（一覧表）</li>
+      <li>連作障害が出やすい科・出にくい野菜（ヤンマーの解説に基づく）</li>
+      <li>「同じ科を続けない」と考えるときの注意点</li>
+      <li>あける年数の目安が、資料によって違う理由</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>連作障害は「同じ野菜」ではなく「同じ科」で考える</h2>
+    <p style="line-height:1.95;">
+      同じ場所で同じ野菜を毎年育てると、生育が悪くなったり病気が出たりします。これが連作障害です。
+      農機メーカーのヤンマーは、同じ種類だけでなく、同じ科の野菜を続けて育てても出やすくなるとしています。
+      防ぐ方法は、科の違う野菜を順番に育てる「輪作」です。
+    </p>
+    <p style="line-height:1.95;">
+      ヤンマーの同じページでは、連作障害を起こしやすい野菜の例としてナス科・マメ科・ウリ科などを、起こしにくい野菜の例としてにんじん・かぼちゃ・小松菜などを挙げています。
+      つまり、科が同じでも一律ではありません（ウリ科のかぼちゃは「起こしにくい」側に入っています）。
+      そのため、下の表は「同じ科の野菜かどうか」を確認するための早見表として使い、細かい扱いは種袋や自治体の栽培指針で確かめてください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>プランター野菜の科別一覧</h2>
+    <p style="line-height:1.95;">
+      科の分類は現在の植物分類（APG体系）に基づきます。野菜の名前をクリックすると、育て方の記事に移動します。
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:600px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>科</th>
+            <th style={th}>主な野菜</th>
+            <th style={th}>連作障害についての記載</th>
+          </tr>
+        </thead>
+        <tbody>
+          {families.map((f) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}>{f.family}</td>
+              <td style={td}>
+                {f.vegs.map((v, i) => (
+                  <>
+                    {i > 0 && '、'}
+                    {v[1] ? <a href={`/articles/${v[1]}/`}>{v[0]}</a> : v[0]}
+                  </>
+                ))}
+              </td>
+              <td style={td}>{f.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。「同ページに記載なし」は、出典のヤンマーのページに言及がないという意味で、連作障害が出ないという意味ではありません。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>あける年数は、資料によって違います</h2>
+    <p style="line-height:1.95;">
+      「何年あければいいか」は、よく聞かれる疑問です。ところが、調べると資料ごとに数字が違います。
+      たとえばナス科は「3〜4年」とする資料と「4〜5年」とする資料があり、ほうれん草は「1年」とする表と「1〜2年」とする表があります。
+      キャベツも「1年」と「2〜3年」の両方の表が見つかります。
+    </p>
+    <p style="line-height:1.95;">
+      数字が違うのは、土の状態、病気の出方、接ぎ木苗や土壌消毒の有無、プランターか畑かで事情が変わるためです。
+      このページでは、年数を一つの数字に決めて載せていません。お住まいの都道府県の農業技術センターや農業改良普及センターが出している資料があれば、それを優先してください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>プランターで「同じ科を続けない」を実行するコツ</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li>プランターごとに、前に育てた野菜の科をメモに残します。次に植えるときは表で科を確認します。</li>
+      <li>ナス科の後にナス科を植えない、が最初の一歩です。トマトの後にナスやじゃがいもを植えると、同じ科の連作になります。</li>
+      <li>同じ土を使い回すときは、前作の根や残渣を取り除いてから使います。土の入れ替えや再生も選べます。</li>
+      <li>科の違う野菜に順番に替えるだけでなく、「出にくい」とされる野菜をはさむ方法もあります。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      具体的な体験は、<a href="/articles/rentou-shogai/">連作障害の記事</a>に書いています。土の使い回しは<a href="/articles/tsuchi-saiyo/">土の再生</a>の記事も参考にしてください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://www.yanmar.com/jp/agri/agrilife/kitchen_garden/field/basic/" rel="noopener" target="_blank">ヤンマー「知っておきたい野菜づくりの基本」（ごちそう！家庭菜園）</a>：連作障害の説明、出やすい・出にくい野菜の例</li>
+      <li>科の分類：植物分類（APG体系）。以前の分類と科名が変わっているもの（ヒユ科、ヒガンバナ科）は表に併記しました。</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。個々の栽培条件で結果は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/rentou-shogai/">連作障害を知らなかった4年間と、ローテーション管理で収穫が戻った記録</a><br />
+    <a href="/articles/tsuchi-saiyo/">使い終わった土の再生</a><br />
+    <a href="/articles/ichinen-keikaku/">年間の栽培計画</a>
+  </nav>
+</ArticleLayout>

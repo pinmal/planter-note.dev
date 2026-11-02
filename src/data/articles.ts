@@ -474,6 +474,15 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-03',
   },
+  {
+    slug: 'rensaku-shogai-ka-bunrui',
+    cardTitle: '野菜の科の早見表｜連作障害を避けるための分類と、続けて植えてはいけない組み合わせ',
+    desc: 'プランター野菜を科ごとに分類した早見表。連作障害が出やすい科・出にくい野菜、同じ科を続けない考え方、あける年数の目安が資料で違う理由を出典つきで整理。',
+    emoji: '🗂️',
+    tag: '早見表',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-03',
+  },
 ];
 
 /** 公開日の新しい順 */
