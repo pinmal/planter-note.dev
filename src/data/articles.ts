@@ -474,15 +474,6 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-03',
   },
-  {
-    slug: 'planter-yasai-data-shu',
-    cardTitle: 'プランター野菜の栽培データ集｜容器の深さ早見表と、比べた記録の数字まとめ',
-    desc: '野菜別のプランターの深さの目安、大根の深さと又根の記録、やり方を変える前後の収穫比較などを表にまとめました。引用・出典表記の例つき。',
-    emoji: '📊',
-    tag: 'データ集',
-    categories: ['planter', 'soil'],
-    publishDate: '2026-11-03',
-  },
 ];
 
 /** 公開日の新しい順 */
