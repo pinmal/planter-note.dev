@@ -402,6 +402,15 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-02',
   },
+  {
+    slug: 'jagaimo-sodatekata',
+    cardTitle: 'プランターのじゃがいも栽培｜土寄せのやり方・深さ・種芋の選び方',
+    desc: '芋の半分近くが緑色になった最初の年。浅植えと土寄せ不足が原因だった。土寄せを3回に分けて、緑化・腐敗を7割から1割前後に減らした記録。',
+    emoji: '🥔',
+    tag: '春植え野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
 ];
 
 /** 公開日の新しい順 */

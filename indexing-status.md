@@ -47,6 +47,7 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 ### Tier1
 | URL | 優先度 | 理由 |
 |---|---|---|
+| https://planter-note.com/articles/jagaimo-sodatekata/ | 高 | 新規記事（じゃがいも・土寄せ） |
 | https://planter-note.com/articles/tamanegi-sodatekata/ | 高 | 新規記事（玉ねぎ・11月植え付けの季節記事） |
 
 ### Tier2
