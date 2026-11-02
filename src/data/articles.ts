@@ -483,6 +483,15 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-03',
   },
+  {
+    slug: 'aki-yasai-tanemaki-jiki',
+    cardTitle: '秋まき野菜の種まき時期の早見表｜キャベツ・ダイコン・ニンジンなど10種を時期順に整理',
+    desc: 'タキイ種苗の秋まき種まきカレンダーにある10種の「まき時期」を早い順に並べた早見表。出典つき。地域差と品種差の注意点も。',
+    emoji: '📅',
+    tag: '早見表',
+    categories: ['planter'],
+    publishDate: '2026-11-03',
+  },
 ];
 
 /** 公開日の新しい順 */

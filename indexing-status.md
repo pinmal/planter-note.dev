@@ -57,6 +57,7 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.com/articles/zukkini-sodatekata/ | 高 | 新規記事（ズッキーニ・倒伏と人工授粉） |
 | https://planter-note.com/articles/daikon-kabu-sodatekata/ | 高 | 新規記事（大根・カブ・深さと又根/鬆入り） |
 | https://planter-note.com/articles/rensaku-shogai-ka-bunrui/ | 高 | 新規記事（科の早見表・連作障害・出典つき） |
+| https://planter-note.com/articles/aki-yasai-tanemaki-jiki/ | 高 | 新規記事（秋まき野菜の種まき時期早見表・タキイ出典） |
 
 ### Tier2
 | URL | 優先度 | 理由 |

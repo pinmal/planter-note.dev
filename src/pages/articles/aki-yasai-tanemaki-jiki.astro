@@ -1,0 +1,109 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 時期はタキイ種苗「野菜種子の種まきカレンダー」（秋まき・タキイネット通販）の「まき時期」表記をそのまま転記。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+
+type Row = { name: string; slug?: string; period: string };
+const rows: Row[] = [
+  { name: 'キャベツ', period: '7月中旬〜8月中旬 ／ 9月下旬〜10月下旬（2つの時期が示されている）' },
+  { name: 'ブロッコリー', slug: 'broccoli-sodatekata', period: '7月中旬〜8月中旬' },
+  { name: 'カリフラワー', period: '7月中旬〜8月中旬' },
+  { name: 'ニンジン', slug: 'ninjin-sodatekata', period: '7月下旬〜8月下旬' },
+  { name: 'レタス', slug: 'lettuce-sodatekata', period: '8月上旬〜9月上旬' },
+  { name: 'ハクサイ', period: '8月上旬〜9月上旬' },
+  { name: 'カブ', slug: 'daikon-kabu-sodatekata', period: '8月中旬〜9月下旬' },
+  { name: 'ダイコン', slug: 'daikon-kabu-sodatekata', period: '9月中旬' },
+  { name: 'タマネギ', slug: 'tamanegi-sodatekata', period: '9月中旬' },
+  { name: 'ホウレンソウ', slug: 'horenso-komatsuna-aki', period: '9月中旬〜10月' },
+];
+---
+<ArticleLayout
+  title="秋まき野菜の種まき時期の早見表｜キャベツ・ダイコン・ニンジンなど10種を時期順に整理"
+  description="タキイ種苗の「野菜種子の種まきカレンダー」（秋まき）にある10種の「まき時期」を、早い順に並べ替えた早見表です。出典つき。地域差があるため、お住まいの地域の目安と合わせて使ってください。"
+  slug="aki-yasai-tanemaki-jiki"
+  publishDate="2026-11-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>秋まき野菜の種まき時期の早見表｜キャベツ・ダイコン・ニンジンなど10種を時期順に整理</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>秋に種をまく野菜10種の「まき時期」を、早い順に並べた表</li>
+      <li>最初にまく野菜と、最後にまく野菜の差</li>
+      <li>この表を使うときに確認しておきたいこと</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>秋まき野菜は、種をまく時期が夏のうちから始まります</h2>
+    <p style="line-height:1.95;">
+      種苗会社のタキイ種苗は、種まきカレンダーの秋まき版で、キャベツ・ブロッコリー・カリフラワーの「まき時期」を7月中旬から示しています。
+      ニンジンは7月下旬から、レタスとハクサイは8月上旬から、です。
+      秋だから9月に入ってからでいい、と思っていると、早い野菜の時期を過ぎてしまいます。
+    </p>
+    <p style="line-height:1.95;">
+      逆に、ダイコンとタマネギは9月中旬と、時期のはっきりした野菜です。
+      下の表は、タキイ種苗が示す「まき時期」を、早い順に並べ替えたものです。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>秋まき野菜10種の「まき時期」早見表（早い順）</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:420px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th>
+            <th style={th}>まき時期（タキイ種苗の表記）</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}>
+                {r.slug ? <a href={`/articles/${r.slug}/`}>{r.name}</a> : r.name}
+              </td>
+              <td style={td}>{r.period}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。野菜の名前から、育て方の記事に移動できるものがあります（ダイコンとカブは同じ記事です）。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表を使うときに確認しておきたいこと</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>地域によって時期は変わります。</strong>タキイ種苗のページでは、野菜ごとの表（画像）で寒い地域・平らな地域・暖かい地域などに分けて示しています。この早見表は、そのページに文字で書かれている「まき時期」だけを並べたもので、地域ごとの違いまでは載せていません。</li>
+      <li><strong>品種で時期が違うことがあります。</strong>種袋の裏面に、その品種のまき時期が書かれています。種袋の記載がある場合は、そちらを優先してください。</li>
+      <li><strong>プランターでも、考え方は同じです。</strong>ただ、夏の終わりは気温が高く、発芽後の苗が弱りやすい時期です。日よけや水やりの工夫が要ります。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      同じ科の野菜を続けて同じ土で育てないための確認は、<a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表</a>が使えます。
+      秋冬の栽培全体の流れは、<a href="/articles/ichinen-keikaku/">年間の栽培計画</a>にまとめています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://shop.takii.co.jp/simages/shop/selection/tanemaki1302_03.html" rel="noopener" target="_blank">タキイ種苗「野菜種子の種まきカレンダー」（タキイネット通販）</a>：各野菜の「まき時期」の表記</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。並べ替えと表の作成はプランターノートが行いました。個々の品種・地域・栽培条件で適した時期は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表｜連作障害を避けるための分類</a><br />
+    <a href="/articles/ichinen-keikaku/">年間の栽培計画</a><br />
+    <a href="/articles/rentou-shogai/">連作障害を知らなかった4年間と、ローテーション管理で収穫が戻った記録</a>
+  </nav>
+</ArticleLayout>
