@@ -411,6 +411,42 @@ export const articles: Article[] = [
     categories: ['planter', 'soil'],
     publishDate: '2026-11-02',
   },
+  {
+    slug: 'ninniku-sodatekata',
+    cardTitle: 'プランターのにんにく栽培｜種球の選び方・植え付けの向きと一片球の対策',
+    desc: '収穫したら小さな一片球ばかりだった最初の年。原因は種球が寒さを経験していなかったこと。種球の選び方、尖った方を上にする植え付け、追肥3回を記録。',
+    emoji: '🧄',
+    tag: '秋植え野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
+  {
+    slug: 'soramame-sodatekata',
+    cardTitle: 'プランターのそら豆栽培｜種まき時期・越冬の大きさ・摘芯と収穫の見極め',
+    desc: '早くまいたそら豆は、冬の寒波で十株中七株の先端が黒くなった。本葉4〜5枚で冬を迎える種まき時期、囲う支柱、草丈70cmでの摘芯を記録。',
+    emoji: '🫛',
+    tag: '秋まき野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
+  {
+    slug: 'ninjin-sodatekata',
+    cardTitle: 'プランターのにんじん栽培｜発芽しない原因・品種と深さ・又根の防ぎ方',
+    desc: '二十粒まいて芽が出たのは二本だった。覆土を5mm以下にして不織布で乾燥を防ぎ、発芽を14本に増やした方法と、品種・深さ・間引きの記録。',
+    emoji: '🥕',
+    tag: '春・夏まき野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
+  {
+    slug: 'satsumaimo-sodatekata',
+    cardTitle: 'プランターのさつまいも栽培｜つるぼけを防ぐ肥料の控え方と追熟のやり方',
+    desc: 'つるは茂ったのに芋がほとんどできなかった年。肥料を控えて収穫量を8倍に増やした方法と、深さ35cm以上のプランター、追熟で甘くするやり方を記録。',
+    emoji: '🍠',
+    tag: '春植え野菜',
+    categories: ['planter', 'soil'],
+    publishDate: '2026-11-02',
+  },
 ];
 
 /** 公開日の新しい順 */

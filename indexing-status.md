@@ -49,6 +49,10 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 |---|---|---|
 | https://planter-note.com/articles/jagaimo-sodatekata/ | 高 | 新規記事（じゃがいも・土寄せ） |
 | https://planter-note.com/articles/tamanegi-sodatekata/ | 高 | 新規記事（玉ねぎ・11月植え付けの季節記事） |
+| https://planter-note.com/articles/ninniku-sodatekata/ | 高 | 新規記事（にんにく・一片球） |
+| https://planter-note.com/articles/soramame-sodatekata/ | 高 | 新規記事（そら豆・越冬） |
+| https://planter-note.com/articles/ninjin-sodatekata/ | 高 | 新規記事（にんじん・発芽） |
+| https://planter-note.com/articles/satsumaimo-sodatekata/ | 高 | 新規記事（さつまいも・つるぼけ） |
 
 ### Tier2
 | URL | 優先度 | 理由 |
