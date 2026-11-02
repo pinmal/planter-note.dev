@@ -1,0 +1,151 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 岡山県「野菜の年間栽培計画をたてよう！」（PDF）の「光の強弱」「土の湿りの程度」の表を、野菜ごとにまとめ直したもの。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+
+const light: Record<string, string[]> = {
+  '強（日当たりの良い）': ['キュウリ', 'カボチャ', 'スイカ', 'ナス', 'トマト', 'ピーマン', 'インゲン', 'スイートコーン', 'サツマイモ', 'ジャガイモ', 'ダイコン', 'ニンジン'],
+  '中（半日陰）': ['イチゴ', 'ネギ', 'タマネギ', 'レタス', 'コマツナ', 'ホウレンソウ', 'ハクサイ', 'キャベツ', 'サトイモ'],
+  '弱（日陰）': ['ミツバ', 'フキ', 'ショウガ', 'ニラ'],
+};
+const wet: Record<string, string[]> = {
+  '湿（土を握ると手のひらがぬれる）': ['サトイモ', 'ミツバ', 'フダンソウ', 'ゴボウ', 'イチゴ'],
+  '中（握ると湿り気は感じるが手のひらはぬれない）': ['ナス', 'キュウリ', 'エンドウ', 'タマネギ', 'ニンジン', 'シュンギク', 'ホウレンソウ', 'コマツナ'],
+  '乾（握ってもあまり湿り気を感じない）': ['インゲン', 'トマト', 'スイカ', 'カボチャ', 'サツマイモ', 'キャベツ'],
+};
+
+const slugs: Record<string, string> = {
+  キュウリ: 'kyuuri-sodatekata', ナス: 'nasu-sodatekata', トマト: 'minitomato-sodatekata', ピーマン: 'piiman-sodatekata',
+  スイートコーン: 'toumorokoshi-sodatekata', サツマイモ: 'satsumaimo-sodatekata', ジャガイモ: 'jagaimo-sodatekata',
+  ダイコン: 'daikon-kabu-sodatekata', ニンジン: 'ninjin-sodatekata', イチゴ: 'ichigo-sodatekata', タマネギ: 'tamanegi-sodatekata',
+  ネギ: 'komanegi-sodatekata', レタス: 'lettuce-sodatekata', コマツナ: 'horenso-komatsuna-aki', ホウレンソウ: 'horenso-komatsuna-aki',
+  ミツバ: 'mitsuba-shungiku-sodatekata', シュンギク: 'mitsuba-shungiku-sodatekata',
+};
+
+const names: string[] = [];
+for (const g of [light, wet]) for (const list of Object.values(g)) for (const n of list) if (!names.includes(n)) names.push(n);
+const find = (g: Record<string, string[]>, n: string) => Object.keys(g).find((k) => g[k].includes(n)) ?? '—';
+const matrix = names.map((n) => ({ n, l: find(light, n), w: find(wet, n) }));
+---
+<ArticleLayout
+  title="野菜の日当たり・土の湿り具合の早見表｜どの野菜がどんな場所に向くか"
+  description="岡山県が公開している栽培計画の資料をもとに、野菜を「日当たり」と「土の湿り具合」で分類した早見表です。ベランダの日当たりや用土の乾きやすさに合わせた野菜選びに。出典つき。"
+  slug="hiatari-shimeri-yasai-hyo"
+  publishDate="2026-11-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>野菜の日当たり・土の湿り具合の早見表｜どの野菜がどんな場所に向くか</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>野菜を日当たりの強さ（強・中・弱）で分けた表</li>
+      <li>野菜を土の湿り具合（湿・中・乾）で分けた表</li>
+      <li>野菜ごとに、両方の分類を並べた一覧</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>輪作だけでなく、日当たりと土の湿りで野菜を選ぶ</h2>
+    <p style="line-height:1.95;">
+      岡山県が公開している栽培計画の資料には、連作を避ける輪作のほかに、「日当たりや土地の乾湿で作物を選ぶことも必要」と書かれています。
+      そこで、資料の2つの表（光の強弱、土の湿りの程度）を、野菜ごとにまとめ直しました。
+      ベランダや庭の日当たり、用土の乾きやすさに合わせて野菜を選ぶときの早見表として使えます。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>日当たりの強さ別</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:480px;">
+        <thead>
+          <tr style="background:#eef6f1;"><th style={th}>光の強さ</th><th style={th}>適する野菜</th></tr>
+        </thead>
+        <tbody>
+          {Object.entries(light).map(([k, v]) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}>{k}</td>
+              <td style={td}>{v.join('、')}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>土の湿り具合別</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:480px;">
+        <thead>
+          <tr style="background:#eef6f1;"><th style={th}>土の湿り</th><th style={th}>適する野菜</th></tr>
+        </thead>
+        <tbody>
+          {Object.entries(wet).map(([k, v]) => (
+            <tr>
+              <td style={td + ' font-weight:700;'}>{k}</td>
+              <td style={td}>{v.join('、')}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>野菜ごとの一覧</h2>
+    <p style="line-height:1.95;">
+      2つの表を野菜ごとに並べました。「—」は、その表に野菜が載っていないという意味です。向かない、という意味ではありません。
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:520px;">
+        <thead>
+          <tr style="background:#eef6f1;"><th style={th}>野菜</th><th style={th}>日当たり</th><th style={th}>土の湿り</th></tr>
+        </thead>
+        <tbody>
+          {matrix.map((m) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}>{slugs[m.n] ? <a href={`/articles/${slugs[m.n]}/`}>{m.n}</a> : m.n}</td>
+              <td style={td}>{m.l}</td>
+              <td style={td}>{m.w}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li>出典は畑を想定した資料です。プランターは土の量が少ないため、一般に畑より乾きやすくなります。土の湿りの分類は、水やりの頻度を考える目安として使ってください。</li>
+      <li>資料では、実のなる野菜やいも類の多くが「強（日当たりの良い）」に入っています。「中（半日陰）」にはネギ類・レタス・コマツナ・ホウレンソウ・キャベツなどが、「弱（日陰）」にはミツバ・ショウガ・ニラなどが入っています。</li>
+      <li>資料に載っていない野菜は、この表では分類できません。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      同じ科の野菜を続けて育てない考え方は、<a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表</a>にまとめています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://www.pref.okayama.jp/uploaded/life/55809_191217_misc.pdf" rel="noopener" target="_blank">岡山県「野菜の年間栽培計画をたてよう！」（PDF）</a>：光の強弱、土の湿りの程度の表</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。野菜ごとの一覧への並べ替えと文章はプランターノートが行いました。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表｜連作障害を避けるための分類</a><br />
+    <a href="/articles/companion-plants-kumiawase-hyo/">コンパニオンプランツの組み合わせ早見表</a><br />
+    <a href="/articles/ichinen-keikaku/">年間の栽培計画</a>
+  </nav>
+</ArticleLayout>

@@ -484,6 +484,15 @@ export const articles: Article[] = [
     publishDate: '2026-11-03',
   },
   {
+    slug: 'hiatari-shimeri-yasai-hyo',
+    cardTitle: '野菜の日当たり・土の湿り具合の早見表｜どの野菜がどんな場所に向くか',
+    desc: '岡山県が公開している栽培計画の資料をもとに、野菜を日当たりと土の湿り具合で分類した早見表。ベランダの条件に合わせた野菜選びに。',
+    emoji: '☀️',
+    tag: '早見表',
+    categories: ['planter'],
+    publishDate: '2026-11-03',
+  },
+  {
     slug: 'companion-plants-kumiawase-hyo',
     cardTitle: 'コンパニオンプランツの組み合わせ早見表｜トマト・ナス・キュウリ・ピーマンなどの相性と効果',
     desc: 'タキイ種苗が紹介する、野菜ごとのコンパニオンプランツの組み合わせを表に整理。効果とコツ、プランターでの注意点を出典つきで。',

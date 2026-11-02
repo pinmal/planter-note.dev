@@ -23,6 +23,15 @@ const families: { family: string; vegs: Veg[]; note: string }[] = [
 ];
 
 // タキイ種苗「春の菜園 野菜栽培カレンダー」の科・連作表記。[野菜, 科, 表記, 記事slug]
+// 岡山県「野菜の年間栽培計画をたてよう！」の連作制限表（PDF）をそのまま転記。
+const okayama: [string, string][] = [
+  ['連作しても害が少ない', 'ダイコン、ニンジン、カブ、タマネギ、コマツナ'],
+  ['1年間は別の作物をつくる', 'ホウレンソウ、シュンギク、ネギ、レタス、セルリー'],
+  ['2年間は別の作物をつくる', 'キュウリ、ハクサイ、キャベツ、イチゴ'],
+  ['3年間は別の作物をつくる', 'ウリ類、ソラマメ、サトイモ、インゲン'],
+  ['4〜5年間は別の作物をつくる', 'トマト、ナス、ピーマン、ゴボウ、ジャガイモ、エダマメ、エンドウ'],
+];
+
 const takii: [string, string, string, string?][] = [
   ['トマト', 'ナス科', '連作注意', 'minitomato-sodatekata'],
   ['ナス', 'ナス科', '連作特に注意', 'nasu-sodatekata'],
@@ -140,15 +149,41 @@ const takii: [string, string, string, string?][] = [
   </section>
 
   <section style="margin-top:1.8rem;">
-    <h2>あける年数は、資料によって違います</h2>
+    <h2>あける年数の目安（岡山県の資料）と、資料による違い</h2>
     <p style="line-height:1.95;">
-      「何年あければいいか」は、よく聞かれる疑問です。ところが、調べると資料ごとに数字が違います。
+      「何年あければいいか」は、よく聞かれる疑問です。岡山県が公開している栽培計画の資料に、野菜の連作制限の表（目安）があります。
+      資料は「あくまで目安」と断っています。
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:480px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>制限の程度</th>
+            <th style={th}>作物（岡山県の資料の表記）</th>
+          </tr>
+        </thead>
+        <tbody>
+          {okayama.map((o) => (
+            <tr>
+              <td style={td + ' white-space:nowrap; font-weight:700;'}>{o[0]}</td>
+              <td style={td}>{o[1]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。同じ資料では、連作障害の原因を「約85%が病気、約8%がセンチュウなどの虫害、ごく一部が微量要素欠乏など」としています。
+      また、どうしても連作ぎみになるときは、完熟した堆肥を作付け前に入れ、土の中の微生物が病原菌を抑える力を高める土づくりが大切だと書かれています。
+    </p>
+    <p style="line-height:1.95;">
+      ところが、ほかの資料と見比べると、数字が違うところがあります。
       たとえばナス科は「3〜4年」とする資料と「4〜5年」とする資料があり、ほうれん草は「1年」とする表と「1〜2年」とする表があります。
       キャベツも「1年」と「2〜3年」の両方の表が見つかります。
     </p>
     <p style="line-height:1.95;">
       数字が違うのは、土の状態、病気の出方、接ぎ木苗や土壌消毒の有無、プランターか畑かで事情が変わるためです。
-      このページでは、年数を一つの数字に決めて載せていません。お住まいの都道府県の農業技術センターや農業改良普及センターが出している資料があれば、それを優先してください。
+      このページでは、岡山県の表を出典つきで載せましたが、これが唯一の正解というわけではありません。お住まいの都道府県の農業技術センターや農業改良普及センターが出している資料があれば、それを優先してください。
     </p>
   </section>
 
@@ -169,6 +204,7 @@ const takii: [string, string, string, string?][] = [
     <h2>出典</h2>
     <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
       <li><a href="https://www.yanmar.com/jp/agri/agrilife/kitchen_garden/field/basic/" rel="noopener" target="_blank">ヤンマー「知っておきたい野菜づくりの基本」（ごちそう！家庭菜園）</a>：連作障害の説明、出やすい・出にくい野菜の例</li>
+      <li><a href="https://www.pref.okayama.jp/uploaded/life/55809_191217_misc.pdf" rel="noopener" target="_blank">岡山県「野菜の年間栽培計画をたてよう！」（PDF）</a>：連作制限の表（目安）、連作障害の原因の割合、日当たり・土の湿りに合う野菜</li>
       <li><a href="https://shop.takii.co.jp/selection/calendar13sp3.html" rel="noopener" target="_blank">タキイ種苗「春の菜園 野菜栽培カレンダー」（タキイネット通販）</a>：野菜ごとの科と連作の注意度の表記（9種）</li>
       <li>科の分類：植物分類（APG体系）。以前の分類と科名が変わっているもの（ヒユ科、ヒガンバナ科）は表に併記しました。</li>
     </ul>
