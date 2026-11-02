@@ -1,0 +1,101 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 数値はタキイ種苗「春まき根菜を育てよう」（解説：成松次郎氏）の記載に基づく。畑（露地・トンネル）の解説であり、プランターの数値ではない。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+
+const rows: { item: string; slug: string; values: string[] }[] = [
+  { item: 'ダイコン', slug: 'daikon-kabu-sodatekata', values: ['15〜30℃', '約20℃（25℃を超えると高温障害が出やすい）', 'タネの吸水時から（5℃前後が最も敏感）', '首の太さ約8cm・重さ約1kg（青首ダイコン）', '本葉4〜5枚で1本に'] },
+  { item: 'カブ', slug: 'daikon-kabu-sodatekata', values: ['15〜20℃', '15〜25℃（暑さと乾燥に弱い）', 'タネの吸水時から', '根の直径5〜6cm（小カブ）', '最終の株間10〜15cm'] },
+  { item: 'ニンジン', slug: 'ninjin-sodatekata', values: ['15〜25℃（8℃以上が必要）', '地上部は18〜21℃', 'ある程度の大きさになってから', '根の直径4〜5cm', '最終の株間10〜15cm'] },
+];
+const heads = ['発芽適温', '生育適温', '低温に反応しはじめる時期', '収穫の目安', '間引き'];
+---
+<ArticleLayout
+  title="春まきの根菜（ダイコン・カブ・ニンジン）の比較表｜発芽適温・収穫の目安・トウ立ち対策"
+  description="タキイ種苗の解説をもとに、春まきのダイコン・カブ・ニンジンの発芽適温、生育適温、収穫の目安、間引きの目安を一つの表に整理しました。トウ立ちを避ける3つのポイントも。出典つき。"
+  slug="haru-makikonsai-hikaku"
+  publishDate="2026-11-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>春まきの根菜（ダイコン・カブ・ニンジン）の比較表｜発芽適温・収穫の目安・トウ立ち対策</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>3種の根菜の、温度・収穫サイズ・間引きの比較表</li>
+      <li>春まきで一番気をつける「トウ立ち」の考え方</li>
+      <li>春まきを成功させる3つのポイント</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>ダイコン・カブ・ニンジンは、春にもまけます</h2>
+    <p style="line-height:1.95;">
+      この3つの根菜は、ふつう夏から秋にまいて秋冬に収穫します。
+      タキイ種苗の解説（園芸研究家の成松次郎さん）では、春にまいて梅雨時までに収穫する栽培も可能だとしています。
+      ただし、夏秋まきに比べて、やや上級者向けの栽培法です。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>3種の比較表</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:720px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th>
+            {heads.map((h) => <th style={th}>{h}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}><a href={`/articles/${r.slug}/`}>{r.item}</a></td>
+              {r.values.map((v) => <td style={td}>{v}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。数値は畑（露地・トンネル栽培）の解説に基づきます。プランターの深さや株数には、そのままは当てはまりません。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>春まきで一番気をつけること：トウ立ち</h2>
+    <p style="line-height:1.95;">
+      この3種は低温性の野菜で、寒さを感じると花芽ができ、その後の長い日照で花茎が伸びます。これがトウ立ちです。
+      ダイコンとカブは、タネが水を吸った時から低温に反応します。ニンジンは、ある程度の大きさになってから反応します。
+      春まきで最も注意することは、収穫までトウ立ちさせないことだと、出典では説明されています。
+    </p>
+    <h3>成功させる3つのポイント（出典の記載）</h3>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>トウ立ちしにくい品種を選ぶ：</strong>種袋に「晩抽（ばんちゅう）性」などと書かれた品種です。低温でも根がよく太る特性があるとさらによいと、出典にあります。</li>
+      <li><strong>生育初期に保温する：</strong>タネまき期は低温のため、トンネル栽培などで保温します。トンネルは、日中に気温が上がりすぎない（30℃を超えない）よう換気が必要です。</li>
+      <li><strong>梅雨入り前に収穫を終える：</strong>関西〜関東は例年6月上中旬に梅雨入りします。雨で病気が出やすく、高温で害虫も増えるため、できるだけ早くまきます。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      出典では、ダイコンのまき時期の目安は示されていません。カブは「中間地の露地で3〜4月まきが標準」、ニンジンは「平均気温が10℃以上（ソメイヨシノの開花期）になる時期」とされています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://shop.takii.co.jp/selection/konsai1701.html" rel="noopener" target="_blank">タキイ種苗「春まき根菜を育てよう」（解説：成松次郎氏・タキイネット通販）</a></li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への整理と文章はプランターノートが行いました。品種や地域、栽培条件で結果は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/aki-yasai-tanemaki-jiki/">秋まき野菜の種まき時期の早見表</a><br />
+    <a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表｜連作障害を避けるための分類</a><br />
+    <a href="/articles/ichinen-keikaku/">年間の栽培計画</a>
+  </nav>
+</ArticleLayout>

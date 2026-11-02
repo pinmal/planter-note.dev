@@ -1,0 +1,108 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 組み合わせと効果はタキイ種苗「果菜類と一緒に育てるコンパニオンプランツ」（解説：木嶋利男氏）の記載に基づく。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+
+type Row = { main: string; mainSlug?: string; partner: string; partnerSlug?: string; effect: string; point: string };
+const rows: Row[] = [
+  { main: 'トマト', mainSlug: 'minitomato-sodatekata', partner: 'バジル', partnerSlug: 'basil-sodatekata', effect: '根のまわりの水分を適度に保ち、糖度などの品質向上が期待できる。根のまわりの微生物が多様になり、土の病気の予防も期待できる', point: '肥料はトマト分だけでよい。プランターでも混植できる' },
+  { main: 'トマト', mainSlug: 'minitomato-sodatekata', partner: 'ニラ', effect: 'ニラの根に、土の病原菌を抑える微生物がいるため、トマトの連作障害（萎凋病など）を避けられる', point: '植え付け時、ニラの根の上にトマトの根鉢を置いて根を重ねる' },
+  { main: 'ナス', mainSlug: 'nasu-sodatekata', partner: 'ショウガ', effect: '双子葉のナスと単子葉のショウガでは根のまわりの微生物や虫が異なり、病害虫の被害が抑えられる。ショウガはナスの日陰でも育つ', point: '萌芽直後のショウガは折れやすいので、株元の除草に注意' },
+  { main: 'ナス', mainSlug: 'nasu-sodatekata', partner: 'パセリ・ラッカセイ・長ネギ', effect: 'ナスはパセリ、ラッカセイなど多くの野菜と共栄するとされ、同ページに混植例が載っている', point: 'ナスの株元のすき間を使う' },
+  { main: 'キュウリ', mainSlug: 'kyuuri-sodatekata', partner: '長ネギ', effect: '長ネギの根のまわりの微生物が病原菌を抑えるため、キュウリのつる割れ病などの連作障害を避けられる。互いの根の老廃物を利用し合い、生育が促進される', point: '畝に薄めにわらや枯れ草を敷き、浅い根を守る' },
+  { main: 'ピーマン', mainSlug: 'piiman-sodatekata', partner: 'マリーゴールド（またはナスタチウム）', effect: '花に訪花昆虫や天敵が集まり、ハダニやコナジラミの発生が抑えられる', point: '畝間の通路に植える。第1果は早めに摘み取る' },
+  { main: 'サツマイモ', mainSlug: 'satsumaimo-sodatekata', partner: 'オオムギ', effect: '畝間に先にまいたオオムギが雑草を抑える。枯れたオオムギが地面を覆い、つる返しが不要になる', point: '畝を立てたらすぐ畝間にオオムギをまく' },
+  { main: 'カボチャ', partner: 'オオムギ', effect: 'オオムギのうどんこ病に寄生する菌が、カボチャのうどんこ病にも寄生して防ぐ。枯れたオオムギは敷き草のように根を守る', point: '先に通路にオオムギをまき、発芽後にカボチャを植える' },
+];
+---
+<ArticleLayout
+  title="コンパニオンプランツの組み合わせ早見表｜トマト・ナス・キュウリ・ピーマンなどの相性と効果"
+  description="種苗会社タキイ種苗が紹介する、野菜ごとのコンパニオンプランツの組み合わせを表に整理しました。効果とコツ、プランターでの注意点を出典つきでまとめています。"
+  slug="companion-plants-kumiawase-hyo"
+  publishDate="2026-11-03"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>コンパニオンプランツの組み合わせ早見表｜トマト・ナス・キュウリ・ピーマンなどの相性と効果</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>育てる野菜ごとの、相性のよい組み合わせ（一覧表）</li>
+      <li>組み合わせで期待できる効果と、植えるときのコツ</li>
+      <li>コンパニオンプランツの、3つのメリット</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>コンパニオンプランツとは</h2>
+    <p style="line-height:1.95;">
+      相性のよい植物を近くに植えて、互いの生育を助けたり、病害虫を減らしたりする方法です。
+      タキイ種苗が紹介している、農学博士の木嶋利男さんの解説では、メリットを次の3つにまとめています。
+    </p>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>あいたスペースの有効利用：</strong>植えた直後の小さな時期や、草丈の高い野菜の株元のすき間を使えます。</li>
+      <li><strong>病害虫の予防：</strong>虫には食べる植物の好みがあり、微生物にも寄生できる野菜が決まっています。好みでない野菜が近くにあると、被害が出にくくなります。</li>
+      <li><strong>生育の促進：</strong>マメ科は根粒菌が空気中のチッソを固定します。日陰を好むミツバやショウガは、背の高い野菜の株元で育ちやすくなります。</li>
+    </ul>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>野菜ごとの組み合わせ早見表</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:640px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>育てる野菜</th>
+            <th style={th}>組み合わせる植物</th>
+            <th style={th}>期待できる効果</th>
+            <th style={th}>コツ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}>{r.mainSlug ? <a href={`/articles/${r.mainSlug}/`}>{r.main}</a> : r.main}</td>
+              <td style={td}>{r.partnerSlug ? <a href={`/articles/${r.partnerSlug}/`}>{r.partner}</a> : r.partner}</td>
+              <td style={td}>{r.effect}</td>
+              <td style={td}>{r.point}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。トマトの記事は、ミニトマトの栽培記事に移動します。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>プランターで使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li>出典の記事で「プランターでも混植可能」と明記されているのは、トマトとバジルの組み合わせです。それ以外の組み合わせは、畑（地植え）の解説です。</li>
+      <li>畑の解説にある株間や畝の幅は、そのままプランターには当てはまりません。プランターのサイズに合わせて、植える株数を減らしてください。</li>
+      <li>トマトは、ほとんどの野菜と共栄しにくい野菜で、バジルは例外的な組み合わせだと、出典で説明されています。トマトのそばに何でも植えてよいわけではありません。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      同じ科の野菜を続けて同じ土で作らないための表は、<a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表</a>にあります。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://shop.takii.co.jp/selection/companion_plants1214.html" rel="noopener" target="_blank">タキイ種苗「果菜類と一緒に育てるコンパニオンプランツ」（解説：木嶋利男氏・タキイネット通販）</a></li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への整理と文章はプランターノートが行いました。効果は条件によって変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/rensaku-shogai-ka-bunrui/">野菜の科の早見表｜連作障害を避けるための分類</a><br />
+    <a href="/articles/aki-yasai-tanemaki-jiki/">秋まき野菜の種まき時期の早見表</a><br />
+    <a href="/articles/ichinen-keikaku/">年間の栽培計画</a>
+  </nav>
+</ArticleLayout>

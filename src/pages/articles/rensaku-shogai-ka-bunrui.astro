@@ -21,6 +21,19 @@ const families: { family: string; vegs: Veg[]; note: string }[] = [
   { family: 'アオイ科', vegs: [['オクラ', 'okura-sodatekata']], note: '同ページに記載なし' },
   { family: 'バラ科', vegs: [['イチゴ', 'ichigo-sodatekata']], note: '同ページに記載なし' },
 ];
+
+// タキイ種苗「春の菜園 野菜栽培カレンダー」の科・連作表記。[野菜, 科, 表記, 記事slug]
+const takii: [string, string, string, string?][] = [
+  ['トマト', 'ナス科', '連作注意', 'minitomato-sodatekata'],
+  ['ナス', 'ナス科', '連作特に注意', 'nasu-sodatekata'],
+  ['ピーマン', 'ナス科', '連作特に注意', 'piiman-sodatekata'],
+  ['きゅうり', 'ウリ科', '連作注意', 'kyuuri-sodatekata'],
+  ['カボチャ', 'ウリ科', '連作に強い'],
+  ['スイカ', 'ウリ科', '連作注意'],
+  ['スイートコーン', 'イネ科', '連作に強い', 'toumorokoshi-sodatekata'],
+  ['いんげん（菜豆）', 'マメ科', '連作特に注意'],
+  ['えだまめ', 'マメ科', '連作注意', 'edamame-sodatekata'],
+];
 ---
 <ArticleLayout
   title="野菜の科の早見表｜連作障害を避けるための分類と、続けて植えてはいけない組み合わせ"
@@ -36,6 +49,7 @@ const families: { family: string; vegs: Veg[]; note: string }[] = [
     <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
       <li>育てやすい野菜が、どの科に入るか（一覧表）</li>
       <li>連作障害が出やすい科・出にくい野菜（ヤンマーの解説に基づく）</li>
+      <li>種苗会社（タキイ種苗）が示す、9種の連作の注意度</li>
       <li>「同じ科を続けない」と考えるときの注意点</li>
       <li>あける年数の目安が、資料によって違う理由</li>
     </ul>
@@ -93,6 +107,39 @@ const families: { family: string; vegs: Veg[]; note: string }[] = [
   </section>
 
   <section style="margin-top:1.8rem;">
+    <h2>種苗会社の栽培カレンダーでの「連作」の注意度（9種）</h2>
+    <p style="line-height:1.95;">
+      種苗会社のタキイ種苗は、春の菜園の野菜栽培カレンダーで、野菜ごとに科と連作の注意度を示しています。
+      野菜の種類ごとに分かれて書かれているので、同じ科でも差があることが分かります。
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:420px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th>
+            <th style={th}>科</th>
+            <th style={th}>タキイ種苗の表記</th>
+          </tr>
+        </thead>
+        <tbody>
+          {takii.map((t) => (
+            <tr>
+              <td style={td + ' font-weight:700; white-space:nowrap;'}>
+                {t[3] ? <a href={`/articles/${t[3]}/`}>{t[0]}</a> : t[0]}
+              </td>
+              <td style={td}>{t[1]}</td>
+              <td style={td}>{t[2]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※「連作に強い」と書かれたカボチャとスイートコーンも、同じ科の別の野菜と続けて作る場合は、上の科別一覧を見てください。この表の9種以外は、同じページに記載がありません。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
     <h2>あける年数は、資料によって違います</h2>
     <p style="line-height:1.95;">
       「何年あければいいか」は、よく聞かれる疑問です。ところが、調べると資料ごとに数字が違います。
@@ -122,6 +169,7 @@ const families: { family: string; vegs: Veg[]; note: string }[] = [
     <h2>出典</h2>
     <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
       <li><a href="https://www.yanmar.com/jp/agri/agrilife/kitchen_garden/field/basic/" rel="noopener" target="_blank">ヤンマー「知っておきたい野菜づくりの基本」（ごちそう！家庭菜園）</a>：連作障害の説明、出やすい・出にくい野菜の例</li>
+      <li><a href="https://shop.takii.co.jp/selection/calendar13sp3.html" rel="noopener" target="_blank">タキイ種苗「春の菜園 野菜栽培カレンダー」（タキイネット通販）</a>：野菜ごとの科と連作の注意度の表記（9種）</li>
       <li>科の分類：植物分類（APG体系）。以前の分類と科名が変わっているもの（ヒユ科、ヒガンバナ科）は表に併記しました。</li>
     </ul>
     <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
