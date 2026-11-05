@@ -1,6 +1,6 @@
 # planter-note.com — Search Console インデックス申請状況
 
-> 最終更新: 2026-10-31（自動更新）
+> 最終更新: 2026-11-04（自動更新）
 > ⚠️ 2026-09-30: カスタムドメイン planter-note.com に移行。GSCプロパティは `sc-domain:planter-note.com`。
 > 以下のpages.dev行は旧プロパティへの申請記録。新規申請は .com ドメインで行う。
 
@@ -47,20 +47,6 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 ### Tier1
 | URL | 優先度 | 理由 |
 |---|---|---|
-| https://planter-note.com/articles/jagaimo-sodatekata/ | 高 | 新規記事（じゃがいも・土寄せ） |
-| https://planter-note.com/articles/tamanegi-sodatekata/ | 高 | 新規記事（玉ねぎ・11月植え付けの季節記事） |
-| https://planter-note.com/articles/ninniku-sodatekata/ | 高 | 新規記事（にんにく・一片球） |
-| https://planter-note.com/articles/soramame-sodatekata/ | 高 | 新規記事（そら豆・越冬） |
-| https://planter-note.com/articles/ninjin-sodatekata/ | 高 | 新規記事（にんじん・発芽） |
-| https://planter-note.com/articles/satsumaimo-sodatekata/ | 高 | 新規記事（さつまいも・つるぼけ） |
-| https://planter-note.com/articles/toumorokoshi-sodatekata/ | 高 | 新規記事（とうもろこし・歯抜け） |
-| https://planter-note.com/articles/zukkini-sodatekata/ | 高 | 新規記事（ズッキーニ・倒伏と人工授粉） |
-| https://planter-note.com/articles/daikon-kabu-sodatekata/ | 高 | 新規記事（大根・カブ・深さと又根/鬆入り） |
-| https://planter-note.com/articles/rensaku-shogai-ka-bunrui/ | 高 | 新規記事（科の早見表・連作障害・出典つき） |
-| https://planter-note.com/articles/aki-yasai-tanemaki-jiki/ | 高 | 新規記事（秋まき野菜の種まき時期早見表・タキイ出典） |
-| https://planter-note.com/articles/hiatari-shimeri-yasai-hyo/ | 高 | 新規記事（日当たり・土の湿り別の野菜早見表・岡山県出典） |
-| https://planter-note.com/articles/companion-plants-kumiawase-hyo/ | 高 | 新規記事（コンパニオンプランツ組み合わせ早見表・タキイ出典） |
-| https://planter-note.com/articles/haru-makikonsai-hikaku/ | 高 | 新規記事（春まき根菜の比較表・タキイ出典） |
 
 ### Tier2
 | URL | 優先度 | 理由 |
@@ -367,3 +353,47 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.com/articles/shippai-kiroku/ | 2026-10-29 | 申請済み | - | 自動申請 by script |
 
 | https://planter-note.com/articles/hajimete-purantar/ | 2026-10-31 | 申請済み | - | 自動申請 by script |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| https://planter-note.com/articles/haru-makikonsai-hikaku/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/companion-plants-kumiawase-hyo/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/hatsuga-seiiku-tekion-hyo/ | 高 | 新規記事（発芽適温・生育適温の早見表・長野県/岡山県出典） |
+| https://planter-note.com/articles/fukuoka-sakugata-hyo/ | 高 | 新規記事（福岡県の作型表・種まき時期と収穫期） |
+| https://planter-note.com/articles/hiatari-shimeri-yasai-hyo/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/aki-yasai-tanemaki-jiki/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/rensaku-shogai-ka-bunrui/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/daikon-kabu-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/zukkini-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/toumorokoshi-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/satsumaimo-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/ninjin-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/soramame-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/ninniku-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/tamanegi-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
+
+| https://planter-note.com/articles/jagaimo-sodatekata/ | 2026-11-04 | 申請済み | - | 自動申請 by script |

@@ -1,0 +1,265 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 数値は長野県「主な果菜類／葉洋菜類の発芽適温と育苗温度のめやす」「生育適温のめやす」（参考：野菜栽培指標(長野県)、農業技術大系）
+// と、岡山県の資料「主要野菜の最適培地温度（橘 1989）」の表を、そのまま転記したもの。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+const tdn = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top; white-space:nowrap;';
+
+const slugs: Record<string, string> = {
+  トマト: 'minitomato-sodatekata', ナス: 'nasu-sodatekata', ピーマン: 'piiman-sodatekata', キュウリ: 'kyuuri-sodatekata',
+  スイートコーン: 'toumorokoshi-sodatekata', イチゴ: 'ichigo-sodatekata', エダマメ: 'edamame-sodatekata',
+  レタス: 'lettuce-sodatekata', ブロッコリー: 'broccoli-sodatekata', ニンジン: 'ninjin-sodatekata', ダイコン: 'daikon-kabu-sodatekata',
+  カブ: 'daikon-kabu-sodatekata', ジャガイモ: 'jagaimo-sodatekata', タマネギ: 'tamanegi-sodatekata', ホウレンソウ: 'horenso-komatsuna-aki',
+  パセリ: 'parsley-sodatekata', ミツバ: 'mitsuba-shungiku-sodatekata', シュンギク: 'mitsuba-shungiku-sodatekata',
+};
+
+// 果菜類：発芽適温／育苗の目標温度（日中・夜間）／最低限界
+const kasaiHatsuga: string[][] = [
+  ['トマト', '25〜30', '20〜25', '8〜13', '5'],
+  ['ナス', '25〜35', '23〜28', '15〜18', '10'],
+  ['ピーマン', '28〜30', '25〜30', '15〜20', '12'],
+  ['キュウリ', '25〜30', '18〜25', '12〜15', '8'],
+  ['スイカ', '25〜30', '23〜28', '13〜20', '10'],
+  ['カボチャ', '25〜28', '20〜22', '10〜15', '8'],
+  ['スイートコーン', '32〜36', '22〜30', '15前後', '6'],
+  ['イチゴ', '—', '18〜23（日中・夜間共通）', '', '0'],
+  ['サヤインゲン', '—', '10〜25（日中・夜間共通）', '', '10以上'],
+  ['サヤエンドウ', '18〜20', '10〜20（日中・夜間共通）', '', '5'],
+  ['エダマメ', '30〜35', '15〜25（日中・夜間共通）', '', '4'],
+];
+// 果菜類：生育適温（昼の最高限界／昼の適温／夜の適温／夜の最低温度）
+const kasaiSeiiku: string[][] = [
+  ['キュウリ', '35', '25〜18', '15〜12', '10〜8'],
+  ['トマト', '35', '25〜20', '13〜8', '5'],
+  ['ナス', '40〜30', '28〜23', '18〜15', '13〜10'],
+  ['ピーマン', '35〜32', '30〜25', '20〜15', '12'],
+  ['スイカ', '35', '28〜23', '20〜13', '10'],
+  ['カボチャ', '35〜28', '22〜20', '15〜10', '8'],
+  ['スイートコーン', '35', '30〜22', '15前後', '8〜6'],
+  ['イチゴ', '35〜30', '23〜18（昼夜共通）', '', '7〜5'],
+  ['サヤエンドウ', '25', '20〜10（昼夜共通）', '', '5'],
+];
+// 葉洋菜類：発芽適温／高温限界／日中／夜間／備考
+const hayouHatsuga: string[][] = [
+  ['レタス', '18〜20', '25', '12〜23', '5', ''],
+  ['ハクサイ', '18〜22', '23〜25', '18〜21', '13〜15', ''],
+  ['キャベツ', '15〜30', '25', '15〜20', '10', ''],
+  ['カリフラワー', '20〜25', '25〜30', '20前後（20〜25）', '10〜18', '早生種の夜温は17〜18℃'],
+  ['ブロッコリー', '25前後', '25', '18〜22', '12〜13（10〜12）', '早生種の夜温は20℃目標'],
+  ['チンゲンサイ', '20〜25', '25〜30', '15〜20', '13〜15', '夜温15℃目標'],
+  ['白ネギ', '18〜20（15〜25）', '25（25〜30）', '12〜22', '8〜15（4〜7）', '25℃以上で生育遅延等'],
+  ['セルリー', '18〜20', '23〜25', '15〜20', '15〜20', 'コーネル系は最低温度を20℃前後とする'],
+  ['パセリ', '15〜25', '25', '15〜20', '10〜12', '5℃まで生育可'],
+];
+// 葉洋菜類（根菜類）：生育適温（気温）最高限界／適温／最低温度
+const hayouSeiiku: string[][] = [
+  ['ハクサイ', '23', '18〜13', '5〜4'],
+  ['キャベツ', '25', '20〜15', '8〜4'],
+  ['カリフラワー', '30〜25', '25〜10', '5〜4'],
+  ['ブロッコリー', '25', '20〜15', '5〜4'],
+  ['チンゲンサイ', '（35）', '20〜15', '5'],
+  ['レタス', '25', '22〜15', '8〜4'],
+  ['シュンギク', '35〜25', '20〜15', '10〜8'],
+  ['ホウレンソウ', '25〜23', '20〜15', '8〜0'],
+  ['アスパラガス', '35', '30〜10', '5'],
+  ['パセリ', '30〜25', '20〜15', '5'],
+  ['セルリー', '23', '18〜13', '5〜3'],
+  ['ミツバ', '25', '20〜15', '8'],
+  ['ニンジン', '33', '22〜18', '3'],
+  ['ダイコン', '25', '20〜25', '8'],
+  ['カブ', '30', '20〜15', '8'],
+  ['ジャガイモ', '29', '23〜10', '8〜4'],
+  ['ゴボウ', '35', '25〜20', '5'],
+  ['タマネギ', '25', '23〜15', '〜△8'],
+  ['ネギ', '30〜25', '22〜12', '4'],
+  ['ニラ', '30', '23〜16', '5'],
+];
+// 岡山県の資料：主要野菜の最適培地温度（橘 1989）
+const chion: string[][] = [
+  ['トマト', '15〜20'], ['きゅうり', '18〜25'], ['なす', '20〜25'], ['とうがらし', '22〜25'], ['メロン', '18〜25'],
+  ['いちご', '18〜21'], ['レタス', '20〜25'], ['ほうれんそう', '18〜23'], ['ねぎ', '18〜22'], ['みつば', '15〜20'],
+];
+const nameCell = (n: string) => n;
+---
+<ArticleLayout
+  title="野菜の発芽適温・生育適温の早見表｜果菜類と葉菜・根菜の温度の目安（長野県・岡山県の資料）"
+  description="長野県と岡山県が公開している資料の表をもとに、野菜の発芽適温、育苗温度、生育適温、地温の目安を一覧にしました。種まきと植え付けの時期を考える材料に。出典つき。"
+  slug="hatsuga-seiiku-tekion-hyo"
+  publishDate="2026-11-05"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>野菜の発芽適温・生育適温の早見表｜果菜類と葉菜・根菜の温度の目安（長野県・岡山県の資料）</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>野菜ごとの、発芽に向く温度（発芽適温）</li>
+      <li>育てる間の、昼と夜の温度の目安（生育適温）</li>
+      <li>根が水や養分を吸いやすい、土の温度（地温）の目安</li>
+      <li>表を使うときに知っておきたい注意点</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>温度を知ると、種まきと植え付けの時期が決めやすくなります</h2>
+    <p style="line-height:1.95;">
+      種をまく時期を決めるとき、手がかりになるのが温度です。
+      発芽に向く温度の範囲があり、育つ間にも向く昼夜の温度があります。
+      長野県が公開している資料に、主な野菜の温度の目安をまとめた表があります（元の資料は、長野県の野菜栽培指標と農業技術大系を参考にしたものです）。
+      この表を、野菜の種類ごとに見やすく並べ直しました。単位はすべて℃です。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>果菜類の発芽適温と、苗を育てるときの温度</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:600px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th><th style={th}>発芽適温</th><th style={th}>育苗：日中</th><th style={th}>育苗：夜間</th><th style={th}>最低限界</th>
+          </tr>
+        </thead>
+        <tbody>
+          {kasaiHatsuga.map((r) => (
+            <tr>
+              <td style={tdn + ' font-weight:700;'}>{slugs[r[0]] ? <a href={`/articles/${slugs[r[0]]}/`}>{r[0]}</a> : r[0]}</td>
+              <td style={tdn}>{r[1]}</td>
+              {r[3] === '' ? <td style={td} colspan={2}>{r[2]}</td> : <><td style={tdn}>{r[2]}</td><td style={tdn}>{r[3]}</td></>}
+              <td style={tdn}>{r[4]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※横にスクロールできます。「—」は資料に数値がないという意味です。トマトの記事は、ミニトマトの栽培記事に移動します。元の資料には温室メロンとマクワ型メロンもありますが、省いています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>果菜類の生育適温（昼と夜）</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:560px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th><th style={th}>昼：最高限界</th><th style={th}>昼：適温</th><th style={th}>夜：適温</th><th style={th}>夜：最低温度</th>
+          </tr>
+        </thead>
+        <tbody>
+          {kasaiSeiiku.map((r) => (
+            <tr>
+              <td style={tdn + ' font-weight:700;'}>{slugs[r[0]] ? <a href={`/articles/${slugs[r[0]]}/`}>{r[0]}</a> : r[0]}</td>
+              <td style={tdn}>{r[1]}</td>
+              {r[3] === '' ? <td style={td} colspan={2}>{r[2]}</td> : <><td style={tdn}>{r[2]}</td><td style={tdn}>{r[3]}</td></>}
+              <td style={tdn}>{r[4]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>葉菜類の発芽適温と、苗を育てるときの温度</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:680px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th><th style={th}>発芽適温</th><th style={th}>高温限界</th><th style={th}>育苗：日中</th><th style={th}>育苗：夜間</th><th style={th}>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          {hayouHatsuga.map((r) => (
+            <tr>
+              <td style={tdn + ' font-weight:700;'}>{slugs[r[0]] ? <a href={`/articles/${slugs[r[0]]}/`}>{r[0]}</a> : r[0]}</td>
+              <td style={tdn}>{r[1]}</td><td style={tdn}>{r[2]}</td><td style={tdn}>{r[3]}</td><td style={tdn}>{r[4]}</td><td style={td}>{r[5]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※括弧の中の数値は、資料でも括弧つきで併記されているものです。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>葉菜・根菜類の生育適温（気温）</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:480px;">
+        <thead>
+          <tr style="background:#eef6f1;">
+            <th style={th}>野菜</th><th style={th}>最高限界</th><th style={th}>適温</th><th style={th}>最低温度</th>
+          </tr>
+        </thead>
+        <tbody>
+          {hayouSeiiku.map((r) => (
+            <tr>
+              <td style={tdn + ' font-weight:700;'}>{slugs[r[0]] ? <a href={`/articles/${slugs[r[0]]}/`}>{r[0]}</a> : r[0]}</td>
+              <td style={tdn}>{r[1]}</td><td style={tdn}>{r[2]}</td><td style={tdn}>{r[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      ※数値は資料の表記のままです。ダイコンの適温は資料で「20〜25」と書かれており、最高限界（25）と同じ値が含まれています。タマネギの最低温度の「△」は、資料で使われている記号です。
+      ダイコンの適温については、タキイ種苗の解説では「約20℃で、25℃を超えると高温障害が出やすい」とされています（<a href="/articles/haru-makikonsai-hikaku/">春まき根菜の比較表</a>）。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>根が水や養分を吸いやすい地温（岡山県の資料）</h2>
+    <p style="line-height:1.95;">
+      岡山県の資料は、地温が低いと、すべての無機養分の吸収が低下し、とくにリン酸の吸収が著しく抑えられると説明しています。
+      水分を吸う力も下がります。下がった地温を上げるのはとても難しいので、基本は地温を下げないように工夫することだとしています。
+      同じ資料に、主要野菜の最適な培地温度（橘 1989）が載っています。
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:320px;">
+        <thead>
+          <tr style="background:#eef6f1;"><th style={th}>野菜</th><th style={th}>最適な培地温度（℃）</th></tr>
+        </thead>
+        <tbody>
+          {chion.map((r) => (
+            <tr><td style={tdn + ' font-weight:700;'}>{r[0]}</td><td style={tdn}>{r[1]}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表を使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>これは「目安」の表です。</strong>資料の題名にも「めやす」とあります。品種によって適温は変わります。種袋に書かれた数値があれば、そちらを優先してください。</li>
+      <li><strong>施設栽培を想定した資料が含まれます。</strong>岡山県の資料は、温度管理が収量と品質の基本になる「施設栽培」の解説の中にある表です。ベランダのプランターに、そのまま当てはめられるとは限りません。</li>
+      <li><strong>プランターは土の量が少ない分、気温の影響を受けやすくなります。</strong>夏の高温期は、最高限界を超えないよう、置き場所を日陰や風通しのよい場所にするなどの工夫が要ります（一般的な栽培上の考え方です）。</li>
+      <li><strong>種まきの時期は、地域によって変わります。</strong>温度の表を見て、お住まいの地域の気温の変化と合わせて考えてください。</li>
+    </ul>
+    <p style="line-height:1.95;">
+      種まきの月の目安は、<a href="/articles/aki-yasai-tanemaki-jiki/">秋まき野菜の種まき時期の早見表</a>と<a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表</a>にまとめています。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li>長野県「主な果菜類の発芽適温と育苗温度（生育適温）のめやす」「主な果菜類の生育適温のめやす」（PDF）：<a href="https://www.pref.nagano.lg.jp/sakuchi/nosei-aec/joho/gijutsu/documents/kasai-ondo.pdf" rel="noopener" target="_blank">https://www.pref.nagano.lg.jp/sakuchi/nosei-aec/joho/gijutsu/documents/kasai-ondo.pdf</a>（資料の参考文献：野菜栽培指標(長野県)、農業技術大系）</li>
+      <li>長野県「主な葉洋菜類の発芽適温と育苗温度のめやす」「主な葉洋菜類（根菜類）の生育適温のめやす」（PDF）：<a href="https://www.pref.nagano.lg.jp/sakuchi/nosei-aec/joho/gijutsu/documents/hayousai-ondo.pdf" rel="noopener" target="_blank">https://www.pref.nagano.lg.jp/sakuchi/nosei-aec/joho/gijutsu/documents/hayousai-ondo.pdf</a></li>
+      <li>岡山県「（２）野菜」施設栽培の温度管理の解説（PDF）：<a href="https://www.pref.okayama.jp/uploaded/life/817942_7706090_misc.pdf" rel="noopener" target="_blank">https://www.pref.okayama.jp/uploaded/life/817942_7706090_misc.pdf</a>（最適培地温度：橘 1989）</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への並べ替えと文章はプランターノートが行いました。個々の品種・地域・栽培条件で適した温度は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/aki-yasai-tanemaki-jiki/">秋まき野菜の種まき時期の早見表</a><br />
+    <a href="/articles/haru-makikonsai-hikaku/">春まきの根菜（ダイコン・カブ・ニンジン）の比較表</a><br />
+    <a href="/articles/ichinen-keikaku/">年間の栽培計画</a>
+  </nav>
+</ArticleLayout>
