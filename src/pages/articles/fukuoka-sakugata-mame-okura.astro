@@ -1,0 +1,220 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・園芸振興課）の「Ⅰ 品種・作型」の表から、
+// は種期・定植期・収穫期・摘要を転記（品種名は省略）。表のページ画像を見て行の対応を確認した。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+const tdn = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top; white-space:nowrap;';
+
+type R = { type: string; sow: string; plant: string; harvest: string; note: string };
+type G = { name: string; slug: string | null; rows: R[] };
+const groups: G[] = [
+  {
+    "name": "オクラ",
+    "slug": "okura-sodatekata",
+    "rows": [
+      {
+        "type": "早熟",
+        "sow": "3月上旬〜3月下旬",
+        "plant": "4月上旬",
+        "harvest": "6月〜10月",
+        "note": "温床育苗し、トンネルに定植"
+      },
+      {
+        "type": "普通",
+        "sow": "4月上旬〜5月上旬",
+        "plant": "—",
+        "harvest": "6月中旬〜10月",
+        "note": "マルチ直播き。4月下旬播きまではトンネル被覆"
+      }
+    ]
+  },
+  {
+    "name": "インゲン（つるあり）",
+    "slug": null,
+    "rows": [
+      {
+        "type": "早熟",
+        "sow": "2月下旬〜3月上旬",
+        "plant": "3月中旬〜3月下旬",
+        "harvest": "4月下旬〜5月下旬",
+        "note": "ポットまたはセル育苗。早播きはトンネル栽培または無加温ハウス栽培"
+      },
+      {
+        "type": "普通",
+        "sow": "4月中旬〜5月中旬",
+        "plant": "5月上旬〜6月上旬",
+        "harvest": "6月上旬〜10月下旬",
+        "note": "露地直播き、またはポット育苗"
+      },
+      {
+        "type": "抑制",
+        "sow": "7月中旬〜8月中旬",
+        "plant": "—",
+        "harvest": "9月上旬〜10月下旬",
+        "note": "露地直播き"
+      }
+    ]
+  },
+  {
+    "name": "ソラマメ",
+    "slug": "soramame-sodatekata",
+    "rows": [
+      {
+        "type": "早出(1)",
+        "sow": "10月中旬〜11月上旬",
+        "plant": "—",
+        "harvest": "4月中旬〜5月中旬",
+        "note": "トンネル栽培。4月中旬の収量確保が必要な場合は、催芽種子を低温処理(2〜4℃、約31日)する。"
+      },
+      {
+        "type": "早出(2)",
+        "sow": "10月中旬〜11月上旬",
+        "plant": "—",
+        "harvest": "4月下旬〜5月下旬",
+        "note": "霜よけ栽培。端境期の4月下旬〜5月上旬に収穫するため、催芽種子を低温処理(2〜4℃、約31日)する。落花を防ぐため、不織布などによる霜よけが必要。"
+      },
+      {
+        "type": "普通",
+        "sow": "10月下旬",
+        "plant": "—",
+        "harvest": "5月中旬〜5月下旬",
+        "note": "催芽処理後、カルクロンにて消毒した種子を播種。ポット育苗の場合は10月下旬播種、11月中旬定植。"
+      }
+    ]
+  },
+  {
+    "name": "エンドウ",
+    "slug": "snap-endou-sodatekata",
+    "rows": [
+      {
+        "type": "実用｜普通",
+        "sow": "10月中旬〜11月上旬",
+        "plant": "—",
+        "harvest": "4月中旬〜5月下旬",
+        "note": ""
+      },
+      {
+        "type": "さや用｜普通",
+        "sow": "10月上旬",
+        "plant": "—",
+        "harvest": "4月中旬〜5月下旬",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "name": "エダマメ",
+    "slug": "edamame-sodatekata",
+    "rows": [
+      {
+        "type": "早熟",
+        "sow": "2月中旬〜3月下旬",
+        "plant": "3月下旬〜5月上旬",
+        "harvest": "5月下旬〜7月下旬",
+        "note": "育苗はハウスまたはトンネル"
+      },
+      {
+        "type": "普通",
+        "sow": "5月下旬〜6月下旬",
+        "plant": "—",
+        "harvest": "7月上旬〜9月中旬",
+        "note": ""
+      }
+    ]
+  }
+];
+---
+<ArticleLayout
+  title="福岡県の作型表｜エダマメ・オクラ・インゲン・ソラマメ・エンドウの種まき時期と収穫期"
+  description="福岡県が公開している野菜の作型表から、エダマメ・オクラ・インゲン・ソラマメ・エンドウの種まき・植え付け・収穫の時期と、ソラマメの低温処理などの摘要を整理。出典つき。"
+  slug="fukuoka-sakugata-mame-okura"
+  publishDate="2026-11-05"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>福岡県の作型表｜エダマメ・オクラ・インゲン・ソラマメ・エンドウの種まき時期と収穫期</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>エダマメ・オクラ・インゲン・ソラマメ・エンドウの作型ごとの時期</li>
+      <li>ソラマメの低温処理など、摘要に書かれた栽培のポイント</li>
+      <li>この表を家庭のプランターで使うときの注意</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表について</h2>
+    <p style="line-height:1.95;">
+      福岡県は、県内で作られる主要な野菜73品目について、作型ごとの種まき・植え付け・収穫の時期を表にまとめて公開しています。
+      ここでは、豆類とオクラの作型を抜き出し、品種名を省いて時期と栽培の摘要だけを並べました。
+    </p>
+    <p style="line-height:1.95;">
+      ソラマメとエンドウは、秋（10月）に種をまいて春に収穫する作型です。種を直接まく作型が多いため、植え付けの欄は「—」になっています。
+    </p>
+  </section>
+
+  {groups.map((g) => (
+    <section style="margin-top:1.8rem;">
+      <h2>{g.slug ? <a href={`/articles/${g.slug}/`} style="color:inherit;">{g.name}</a> : g.name}</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:560px;">
+          <thead>
+            <tr style="background:#eef6f1;">
+              <th style={th}>作型</th><th style={th}>種まき</th>
+              {g.rows.some((r) => r.plant !== '—') && <th style={th}>植え付け</th>}
+              <th style={th}>収穫</th><th style={th}>摘要（栽培のしかた）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.rows.map((r) => (
+              <tr>
+                <td style={tdn + ' font-weight:700;'}>{r.type}</td>
+                <td style={tdn}>{r.sow}</td>
+                {g.rows.some((x) => x.plant !== '—') && <td style={tdn}>{r.plant}</td>}
+                <td style={tdn}>{r.harvest}</td>
+                <td style={td}>{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+  <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+    ※横にスクロールできます。インゲンは、資料の「つるあり」の品種の作型です。エンドウは、実を食べる「実用」とさやを食べる「さや用」に分かれています。
+  </p>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表を使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>福岡県の、農家向けの標準的な作型です。</strong>九州北部の気候を前提にしており、寒い地域では時期が違います。お住まいの地域の目安と合わせて見てください。</li>
+      <li><strong>トンネル・ハウス・雨よけ・マルチなどを使う作型が含まれます。</strong>摘要の欄にそうした記載がある作型は、保温や雨よけの設備を前提にしています。設備のないベランダでは、同じ時期にまいても同じようには育たないことがあります。</li>
+      <li><strong>収穫期は、その作型で収穫できる期間の幅です。</strong>種まきの時期が早いほど、収穫の時期も早くなります。</li>
+      <li><strong>ソラマメの摘要には、種子の低温処理（2〜4℃、約31日）や、霜よけの記載があります。</strong>これは農家の作型としての記載で、家庭で同じ処理が必要とは限りません。</li>
+      <li><strong>「—」は、その項目に該当がない（種を直接まく野菜の植え付けなど）という意味です。</strong></li>
+    </ul>
+    <p style="line-height:1.95;">
+      「作型」の意味は<a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a>で説明しています。育て方は、<a href="/articles/edamame-sodatekata/">エダマメ</a>・<a href="/articles/okura-sodatekata/">オクラ</a>・<a href="/articles/soramame-sodatekata/">ソラマメ</a>・<a href="/articles/snap-endou-sodatekata/">スナップエンドウ</a>の各記事を見てください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://www.pref.fukuoka.lg.jp/gyosei-shiryo/yasai-syuyousaibai-hinsyu06.html" rel="noopener" target="_blank">福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・福岡県農林水産部園芸振興課）</a>：「Ⅰ 品種・作型」の表（PDF）</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への並べ替えと文章はプランターノートが行いました。個々の品種・地域・栽培条件で適した時期は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a><br />
+    <a href="/articles/fukuoka-sakugata-tomato-nasu/">福岡県の作型表（トマト・ナス・ピーマンなど）</a><br />
+    <a href="/articles/fukuoka-sakugata-kyuuri-kabocha/">福岡県の作型表（キュウリ・スイカ・カボチャ・スイートコーンなど）</a><br />
+    <a href="/articles/hatsuga-seiiku-tekion-hyo/">野菜の発芽適温・生育適温の早見表</a>
+  </nav>
+</ArticleLayout>

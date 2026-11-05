@@ -377,6 +377,9 @@ sitemap.xml は2026-08-31送信以降 `isPending: true` のままGoogleに一度
 | https://planter-note.com/articles/fukuoka-sakugata-kyabetsu-hakusai/ | 高 | 新規記事（福岡県の作型表・キャベツ・ブロッコリー・ハクサイ等） |
 | https://planter-note.com/articles/fukuoka-sakugata-lettuce/ | 高 | 新規記事（福岡県の作型表・レタス類） |
 | https://planter-note.com/articles/fukuoka-sakugata-negi-nira/ | 高 | 新規記事（福岡県の作型表・ネギ・ニラ・ニンニク等） |
+| https://planter-note.com/articles/fukuoka-sakugata-tomato-nasu/ | 高 | 新規記事（福岡県の作型表・トマト・ナス・ピーマン等） |
+| https://planter-note.com/articles/fukuoka-sakugata-kyuuri-kabocha/ | 高 | 新規記事（福岡県の作型表・キュウリ・カボチャ・スイートコーン等） |
+| https://planter-note.com/articles/fukuoka-sakugata-mame-okura/ | 高 | 新規記事（福岡県の作型表・エダマメ・オクラ・インゲン・ソラマメ等） |
 | https://planter-note.com/articles/hiatari-shimeri-yasai-hyo/ | 2026-11-04 | 申請済み | - | 自動申請 by script |
 
 | https://planter-note.com/articles/aki-yasai-tanemaki-jiki/ | 2026-11-04 | 申請済み | - | 自動申請 by script |

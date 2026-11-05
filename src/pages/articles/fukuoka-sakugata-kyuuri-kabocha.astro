@@ -1,0 +1,302 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・園芸振興課）の「Ⅰ 品種・作型」の表から、
+// は種期・定植期・収穫期・摘要を転記（品種名は省略）。表のページ画像を見て行の対応を確認した。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+const tdn = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top; white-space:nowrap;';
+
+type R = { type: string; sow: string; plant: string; harvest: string; note: string };
+type G = { name: string; slug: string | null; rows: R[] };
+const groups: G[] = [
+  {
+    "name": "キュウリ",
+    "slug": "kyuuri-sodatekata",
+    "rows": [
+      {
+        "type": "促成",
+        "sow": "8月上旬〜10月上旬",
+        "plant": "8月下旬〜11月上旬",
+        "harvest": "9月下旬〜7月上旬",
+        "note": "ハウス加温栽培、接ぎ木栽培"
+      },
+      {
+        "type": "半促成",
+        "sow": "11月下旬〜1月下旬",
+        "plant": "12月下旬〜2月下旬",
+        "harvest": "1月下旬〜6月下旬",
+        "note": "ハウス初期加温栽培、接ぎ木栽培"
+      },
+      {
+        "type": "早熟",
+        "sow": "1月下旬〜4月下旬",
+        "plant": "2月下旬〜5月上旬",
+        "harvest": "3月下旬〜7月中旬",
+        "note": "ハウス無加温栽培、接ぎ木栽培"
+      },
+      {
+        "type": "普通(1)",
+        "sow": "4月上旬〜5月下旬",
+        "plant": "5月上旬〜6月上旬",
+        "harvest": "6月中旬〜8月下旬",
+        "note": "平坦地露地栽培、接ぎ木栽培"
+      },
+      {
+        "type": "普通(2)",
+        "sow": "5月下旬〜7月上旬",
+        "plant": "6月下旬〜8月上旬",
+        "harvest": "7月中旬〜10月上旬",
+        "note": "山間地露地栽培、接ぎ木栽培"
+      },
+      {
+        "type": "抑制(1)",
+        "sow": "6月上旬〜8月中旬",
+        "plant": "7月上旬〜9月上旬",
+        "harvest": "8月上旬〜11月下旬",
+        "note": "雨よけハウス栽培、ハウス無加温栽培、接ぎ木栽培"
+      }
+    ]
+  },
+  {
+    "name": "スイカ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "半促成",
+        "sow": "1月上旬〜1月下旬",
+        "plant": "3月上旬〜3月中旬",
+        "harvest": "6月中旬〜7月上旬",
+        "note": "ハウス無加温栽培、接ぎ木栽培"
+      },
+      {
+        "type": "早熟",
+        "sow": "2月中旬〜3月中旬",
+        "plant": "3月下旬〜4月下旬",
+        "harvest": "6月上旬〜8月上旬",
+        "note": "トンネル栽培、ハウス無加温栽培、接ぎ木栽培"
+      },
+      {
+        "type": "普通",
+        "sow": "4月上旬",
+        "plant": "5月上旬",
+        "harvest": "7月中旬〜8月下旬",
+        "note": "露地栽培、接ぎ木栽培"
+      }
+    ]
+  },
+  {
+    "name": "メロン・マクワウリ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "メロン｜初夏どり",
+        "sow": "2月中旬〜3月上旬",
+        "plant": "3月中旬〜4月上旬",
+        "harvest": "6月中旬〜7月上旬",
+        "note": "ハウス栽培、自根"
+      },
+      {
+        "type": "メロン｜夏どり",
+        "sow": "3月下旬〜4月中旬",
+        "plant": "4月下旬〜5月中旬",
+        "harvest": "7月上旬〜8月中旬",
+        "note": "ハウス栽培、自根"
+      },
+      {
+        "type": "マクワウリ｜早熟",
+        "sow": "3月上旬",
+        "plant": "4月下旬",
+        "harvest": "7月上旬〜8月上旬",
+        "note": "トンネル栽培、自根栽培"
+      }
+    ]
+  },
+  {
+    "name": "カボチャ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "早熟",
+        "sow": "2月上旬〜3月下旬",
+        "plant": "3月上旬〜4月上旬",
+        "harvest": "6月下旬〜3月上旬",
+        "note": "トンネル栽培"
+      },
+      {
+        "type": "普通",
+        "sow": "3月下旬〜4月上旬",
+        "plant": "4月下旬〜5月上旬",
+        "harvest": "7月上旬〜7月下旬",
+        "note": ""
+      },
+      {
+        "type": "抑制",
+        "sow": "7月上旬〜7月下旬",
+        "plant": "—",
+        "harvest": "10月下旬〜11月中旬",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "name": "ズッキーニ",
+    "slug": "zukkini-sodatekata",
+    "rows": [
+      {
+        "type": "早熟",
+        "sow": "2月中旬",
+        "plant": "3月下旬〜4月上旬",
+        "harvest": "5月上旬〜6月下旬",
+        "note": "トンネル栽培"
+      }
+    ]
+  },
+  {
+    "name": "シロウリ・ニガウリ",
+    "slug": "gooya-sodatekata",
+    "rows": [
+      {
+        "type": "シロウリ｜早熟",
+        "sow": "2月下旬〜3月上旬",
+        "plant": "4月上旬〜4月中旬",
+        "harvest": "5月下旬〜8月中旬",
+        "note": "トンネル栽培、接ぎ木栽培"
+      },
+      {
+        "type": "シロウリ｜普通",
+        "sow": "3月下旬〜4月上旬",
+        "plant": "5月上旬〜5月中旬",
+        "harvest": "6月中旬〜8月下旬",
+        "note": "接ぎ木栽培"
+      },
+      {
+        "type": "ニガウリ｜普通",
+        "sow": "3月中旬〜4月中旬",
+        "plant": "4月下旬〜5月中旬",
+        "harvest": "6月下旬〜9月下旬",
+        "note": "接ぎ木栽培、露地マルチ栽培"
+      }
+    ]
+  },
+  {
+    "name": "スイートコーン",
+    "slug": "toumorokoshi-sodatekata",
+    "rows": [
+      {
+        "type": "半促成",
+        "sow": "2月上旬〜2月下旬",
+        "plant": "3月上旬〜3月中旬",
+        "harvest": "5月下旬〜6月上旬",
+        "note": "ハウスまたはトンネル利用のマルチ(透明、緑)栽培。移植栽培の場合は、2〜3葉で定植"
+      },
+      {
+        "type": "早熟",
+        "sow": "3月上旬〜3月下旬",
+        "plant": "—",
+        "harvest": "6月上旬〜6月下旬",
+        "note": "トンネル利用の透明または黒マルチ栽培"
+      },
+      {
+        "type": "普通",
+        "sow": "4月上旬〜5月下旬",
+        "plant": "—",
+        "harvest": "7月上旬〜7月下旬",
+        "note": "マルチ栽培。生育初期及び開花期のイネヨトウに注意"
+      }
+    ]
+  }
+];
+---
+<ArticleLayout
+  title="福岡県の作型表｜キュウリ・スイカ・カボチャ・スイートコーンなどの種まき時期と収穫期"
+  description="福岡県が公開している野菜の作型表から、キュウリ・スイカ・メロン・カボチャ・ズッキーニ・ニガウリ・スイートコーンなどの種まき・植え付け・収穫の時期を整理。出典つき。"
+  slug="fukuoka-sakugata-kyuuri-kabocha"
+  publishDate="2026-11-05"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>福岡県の作型表｜キュウリ・スイカ・カボチャ・スイートコーンなどの種まき時期と収穫期</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>キュウリ・スイカ・メロン・マクワウリ・カボチャ・ズッキーニ・シロウリ・ニガウリ・スイートコーンの作型ごとの時期</li>
+      <li>ハウス・トンネル・露地・マルチなどの栽培様式</li>
+      <li>この表を家庭のプランターで使うときの注意</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表について</h2>
+    <p style="line-height:1.95;">
+      福岡県は、県内で作られる主要な野菜73品目について、作型ごとの種まき・植え付け・収穫の時期を表にまとめて公開しています。
+      ここでは、ウリの仲間（キュウリ・スイカ・メロン・カボチャなど）とスイートコーンの作型を抜き出し、品種名と台木（接ぎ木の土台）の品種名を省いて、時期と栽培の摘要だけを並べました。
+    </p>
+    <p style="line-height:1.95;">
+      スイートコーンは、半促成だけが苗を植える作型で、早熟と普通は種を直接まく作型のため、植え付けの欄が「—」になっています。
+    </p>
+  </section>
+
+  {groups.map((g) => (
+    <section style="margin-top:1.8rem;">
+      <h2>{g.slug ? <a href={`/articles/${g.slug}/`} style="color:inherit;">{g.name}</a> : g.name}</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:560px;">
+          <thead>
+            <tr style="background:#eef6f1;">
+              <th style={th}>作型</th><th style={th}>種まき</th>
+              {g.rows.some((r) => r.plant !== '—') && <th style={th}>植え付け</th>}
+              <th style={th}>収穫</th><th style={th}>摘要（栽培のしかた）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.rows.map((r) => (
+              <tr>
+                <td style={tdn + ' font-weight:700;'}>{r.type}</td>
+                <td style={tdn}>{r.sow}</td>
+                {g.rows.some((x) => x.plant !== '—') && <td style={tdn}>{r.plant}</td>}
+                <td style={tdn}>{r.harvest}</td>
+                <td style={td}>{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+  <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+    ※横にスクロールできます。カボチャ（早熟）の収穫期「6月下旬〜3月上旬」は、資料の表記のとおりに写しています。
+  </p>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表を使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>福岡県の、農家向けの標準的な作型です。</strong>九州北部の気候を前提にしており、寒い地域では時期が違います。お住まいの地域の目安と合わせて見てください。</li>
+      <li><strong>トンネル・ハウス・雨よけ・マルチなどを使う作型が含まれます。</strong>摘要の欄にそうした記載がある作型は、保温や雨よけの設備を前提にしています。設備のないベランダでは、同じ時期にまいても同じようには育たないことがあります。</li>
+      <li><strong>収穫期は、その作型で収穫できる期間の幅です。</strong>種まきの時期が早いほど、収穫の時期も早くなります。</li>
+      <li><strong>多くは、ハウスや水耕などの施設で育てる作型です。</strong>「促成」「半促成」「抑制」などの作型は、加温や遮光ができる設備を前提にしています。摘要に「露地」「雨よけ」「トンネル」とある行が、設備の少ない作型です。</li>
+      <li><strong>「—」は、その項目に該当がない（種を直接まく野菜の植え付けなど）という意味です。</strong></li>
+    </ul>
+    <p style="line-height:1.95;">
+      「作型」の意味は<a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a>で説明しています。育て方は、<a href="/articles/kyuuri-sodatekata/">キュウリ</a>・<a href="/articles/zukkini-sodatekata/">ズッキーニ</a>・<a href="/articles/gooya-sodatekata/">ゴーヤ</a>・<a href="/articles/toumorokoshi-sodatekata/">トウモロコシ</a>の各記事を見てください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://www.pref.fukuoka.lg.jp/gyosei-shiryo/yasai-syuyousaibai-hinsyu06.html" rel="noopener" target="_blank">福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・福岡県農林水産部園芸振興課）</a>：「Ⅰ 品種・作型」の表（PDF）</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への並べ替えと文章はプランターノートが行いました。個々の品種・地域・栽培条件で適した時期は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a><br />
+    <a href="/articles/fukuoka-sakugata-tomato-nasu/">福岡県の作型表（トマト・ナス・ピーマンなど）</a><br />
+    <a href="/articles/fukuoka-sakugata-mame-okura/">福岡県の作型表（エダマメ・オクラ・インゲン・ソラマメ・エンドウ）</a><br />
+    <a href="/articles/hatsuga-seiiku-tekion-hyo/">野菜の発芽適温・生育適温の早見表</a>
+  </nav>
+</ArticleLayout>
