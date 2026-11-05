@@ -1,30 +1,90 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { articlesByDate, articleHref } from '../../data/articles';
+import { articles, articlesByDate, articleHref } from '../../data/articles';
+import { articleGroups } from '../../data/article-groups';
+
+const bySlug = new Map(articles.map((a) => [a.slug, a]));
+const used = new Set<string>();
+
+// 分類表に載っている記事だけを、記事データと突き合わせて並べる
+const groups = articleGroups.map((g) => ({
+  ...g,
+  subs: g.subs.map((s) => ({
+    label: s.label,
+    items: s.slugs
+      .map((slug) => bySlug.get(slug))
+      .filter((a): a is NonNullable<typeof a> => {
+        if (a) used.add(a.slug);
+        return !!a;
+      }),
+  })),
+}));
+
+// 分類表に載せ忘れた記事は「その他」に自動でまとめる（記事が一覧から消えないようにする）
+const rest = articlesByDate.filter((a) => !used.has(a.slug));
+if (rest.length > 0) {
+  groups.push({
+    id: 'other',
+    emoji: '📝',
+    title: 'その他の記事',
+    lead: '',
+    subs: [{ label: '', items: rest }],
+  });
+}
+const count = (g: (typeof groups)[number]) => g.subs.reduce((n, s) => n + s.items.length, 0);
 ---
 <BaseLayout
   title="記事一覧 — プランターノート"
-  description="プランター菜園の失敗と解決策をまとめた全記事一覧。根腐れ・土の選び方・pH管理・追肥・水やり・防虫ネット・ミニトマト・なす・きゅうり・ピーマン・オクラ・ハーブ・秋野菜まで。"
+  description="プランター菜園の記事を目的別に分類した一覧。はじめ方・困ったときの対策・毎日の世話・野菜別の育て方・種まき時期や温度の早見表から探せます。"
 >
   <h1>📝 記事一覧</h1>
   <p style="margin-top:0.5rem; line-height:1.9; color:var(--color-text-muted); font-size:0.95rem;">
-    失敗ノート6冊から生まれた「なぜ失敗したか」「どう解決したか」の記録です。全{articlesByDate.length}記事。
+    全{articles.length}記事を、目的別に分けました。育てたい野菜の名前や、困っていることのキーワードで絞り込むこともできます。
   </p>
 
-  <ul style="list-style:none; padding:0; margin-top:1.4rem; display:grid; gap:1rem;">
-    {articlesByDate.map((a) => (
-      <li>
-        <a href={articleHref(a.slug)} style="display:flex; gap:1rem; align-items:flex-start; background:white; border:1px solid var(--color-border); border-radius:10px; padding:1.1rem 1.2rem; text-decoration:none; color:inherit;">
-          <span style="font-size:2rem; line-height:1; flex-shrink:0; margin-top:0.1rem;">{a.emoji}</span>
-          <div style="min-width:0;">
-            <span style="font-size:0.78rem; font-weight:700; color:var(--color-primary-dark); background:var(--color-bg-card); padding:0.15rem 0.55rem; border-radius:20px; margin-bottom:0.4rem; display:inline-block;">{a.tag}</span>
-            <p style="margin:0.3rem 0 0.4rem; font-weight:700; font-size:1rem; color:var(--color-text); line-height:1.45;">{a.cardTitle}</p>
-            <p style="margin:0; font-size:0.87rem; line-height:1.75; color:var(--color-text-muted);">{a.desc}</p>
-          </div>
-        </a>
-      </li>
+  <!-- 絞り込み -->
+  <div style="margin-top:1.2rem;">
+    <label for="art-filter" style="display:block; font-size:0.85rem; font-weight:700; color:var(--color-primary-dark); margin-bottom:0.35rem;">キーワードで絞り込む</label>
+    <input id="art-filter" type="search" placeholder="例：トマト、根腐れ、種まき、福岡" autocomplete="off"
+      style="width:100%; box-sizing:border-box; padding:0.7rem 0.9rem; font-size:1rem; border:1px solid var(--color-border); border-radius:8px; background:white;" />
+    <p id="art-filter-msg" aria-live="polite" style="margin:0.4rem 0 0; font-size:0.84rem; color:var(--color-text-muted); min-height:1.2em;"></p>
+  </div>
+
+  <!-- 目的から探す -->
+  <nav aria-label="目的から探す" id="art-toc" style="margin-top:1rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:0.6rem;">
+    {groups.map((g) => (
+      <a href={`#${g.id}`} style="display:flex; align-items:center; gap:0.5rem; background:white; border:1px solid var(--color-border); border-radius:10px; padding:0.7rem 0.8rem; text-decoration:none; color:inherit; line-height:1.35;">
+        <span style="font-size:1.4rem; flex-shrink:0;">{g.emoji}</span>
+        <span style="font-size:0.85rem; font-weight:700; min-width:0;">{g.title}<span style="display:block; font-size:0.75rem; font-weight:400; color:var(--color-text-muted);">{count(g)}記事</span></span>
+      </a>
     ))}
-  </ul>
+  </nav>
+
+  <!-- 分類ごとの一覧 -->
+  {groups.map((g) => (
+    <section id={g.id} class="art-group" style="margin-top:2.4rem; scroll-margin-top:1rem;">
+      <h2 style="margin-bottom:0.3rem;">{g.emoji} {g.title}</h2>
+      {g.lead && <p style="margin:0 0 0.8rem; font-size:0.88rem; color:var(--color-text-muted); line-height:1.7;">{g.lead}</p>}
+      {g.subs.map((s) => (
+        <div class="art-sub" style="margin-top:1rem;">
+          {s.label && <h3 style="margin:0 0 0.6rem; font-size:0.98rem; color:var(--color-primary-dark); border-left:4px solid var(--color-primary); padding-left:0.6rem;">{s.label}</h3>}
+          <ul style="list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:0.7rem;">
+            {s.items.map((a) => (
+              <li class="art-item" data-text={`${a.cardTitle} ${a.desc} ${a.tag}`.toLowerCase()}>
+                <a href={articleHref(a.slug)} style="display:flex; gap:0.8rem; align-items:flex-start; height:100%; box-sizing:border-box; background:white; border:1px solid var(--color-border); border-radius:10px; padding:0.8rem 0.9rem; text-decoration:none; color:inherit;">
+                  <span style="font-size:1.6rem; line-height:1; flex-shrink:0; margin-top:0.1rem;">{a.emoji}</span>
+                  <span style="min-width:0;">
+                    <span style="display:block; font-weight:700; font-size:0.92rem; color:var(--color-text); line-height:1.45;">{a.cardTitle}</span>
+                    <span style="display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; margin-top:0.25rem; font-size:0.8rem; line-height:1.6; color:var(--color-text-muted);">{a.desc}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  ))}
 
   <nav style="margin-top:2.4rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem; line-height:2;">
     <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">商品を探す</p>
@@ -37,4 +97,36 @@ import { articlesByDate, articleHref } from '../../data/articles';
     <a href="/category/tomato/">ミニトマト</a> ·
     <a href="/category/summer-vege/">夏野菜</a>
   </nav>
+
+  <script is:inline>
+    (function () {
+      var input = document.getElementById('art-filter');
+      var msg = document.getElementById('art-filter-msg');
+      var toc = document.getElementById('art-toc');
+      if (!input) return;
+      var items = Array.prototype.slice.call(document.querySelectorAll('.art-item'));
+      function apply() {
+        var q = input.value.replace(/[\s　]+/g, ' ').trim().toLowerCase();
+        var words = q ? q.split(' ') : [];
+        var shown = 0;
+        items.forEach(function (li) {
+          var t = li.getAttribute('data-text') || '';
+          var ok = words.every(function (w) { return t.indexOf(w) !== -1; });
+          li.style.display = ok ? '' : 'none';
+          if (ok) shown++;
+        });
+        Array.prototype.forEach.call(document.querySelectorAll('.art-sub'), function (s) {
+          var any = s.querySelector('.art-item:not([style*="display: none"])');
+          s.style.display = any ? '' : 'none';
+        });
+        Array.prototype.forEach.call(document.querySelectorAll('.art-group'), function (g) {
+          var any = g.querySelector('.art-item:not([style*="display: none"])');
+          g.style.display = any ? '' : 'none';
+        });
+        if (toc) toc.style.display = q ? 'none' : '';
+        msg.textContent = q ? (shown > 0 ? shown + '件が見つかりました' : '該当する記事がありません。別のキーワードを試してください') : '';
+      }
+      input.addEventListener('input', apply);
+    })();
+  </script>
 </BaseLayout>
