@@ -1,0 +1,261 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・園芸振興課）の「Ⅰ 品種・作型」の表から、
+// は種期・定植期・収穫期・摘要を転記（品種名は省略）。表のページ画像を見て行の対応を確認した。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+const tdn = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top; white-space:nowrap;';
+
+type R = { type: string; sow: string; plant: string; harvest: string; note: string };
+type G = { name: string; slug: string | null; rows: R[] };
+const groups: G[] = [
+  {
+    "name": "ネギ（白ねぎ・青ねぎ）",
+    "slug": "komanegi-sodatekata",
+    "rows": [
+      {
+        "type": "白ねぎ｜秋冬出",
+        "sow": "2月上旬〜6月上旬",
+        "plant": "4月中旬〜8月中旬",
+        "harvest": "9月〜3月",
+        "note": "土寄せは数回に分けて行う。抽苔が問題となる時期は、長悦、春扇、初夏扇、夏扇4号を使用。"
+      },
+      {
+        "type": "小ねぎ｜冬春出",
+        "sow": "9月上旬〜3月下旬",
+        "plant": "—",
+        "harvest": "11月中旬〜6月中旬",
+        "note": "雨よけ栽培、防虫ネット、UVカットフィルム使用"
+      },
+      {
+        "type": "小ねぎ｜夏秋出",
+        "sow": "4月上旬〜8月下旬",
+        "plant": "—",
+        "harvest": "6月下旬〜11月上旬",
+        "note": "雨よけ栽培、防虫ネット、UVカットフィルム使用"
+      },
+      {
+        "type": "中・大ねぎ｜夏出",
+        "sow": "3月中旬〜4月中旬",
+        "plant": "5月下旬〜6月下旬",
+        "harvest": "7月下旬〜10月中旬",
+        "note": ""
+      },
+      {
+        "type": "中・大ねぎ｜秋冬出",
+        "sow": "5月下旬〜6月下旬",
+        "plant": "8月中旬〜9月下旬",
+        "harvest": "10月下旬〜2月下旬",
+        "note": ""
+      },
+      {
+        "type": "中・大ねぎ｜春出",
+        "sow": "8月下旬〜9月中旬",
+        "plant": "10月上旬〜11月中旬",
+        "harvest": "3月上旬〜7月中旬",
+        "note": "抽苔が問題となるため、九条系は6月下旬〜7月中旬収穫のハウス栽培で使用。"
+      }
+    ]
+  },
+  {
+    "name": "ワケギ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "早出",
+        "sow": "—",
+        "plant": "7月中旬〜7月下旬",
+        "harvest": "8月下旬〜9月下旬",
+        "note": "ハウス内(30℃以内)に3週間つるして休眠を打破し植え付ける。"
+      },
+      {
+        "type": "秋出",
+        "sow": "—",
+        "plant": "8月上旬〜8月中旬",
+        "harvest": "9月下旬〜10月下旬",
+        "note": ""
+      },
+      {
+        "type": "冬出",
+        "sow": "—",
+        "plant": "8月下旬〜9月上旬",
+        "harvest": "11月上旬〜2月下旬",
+        "note": "露地栽培またはトンネル栽培"
+      },
+      {
+        "type": "春出",
+        "sow": "—",
+        "plant": "10月中旬〜11月中旬",
+        "harvest": "3月上旬〜5月上旬",
+        "note": "秋〜冬出の株を株分けして定植。防寒のため深植えにする。"
+      }
+    ]
+  },
+  {
+    "name": "葉たまねぎ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "早出",
+        "sow": "9月上旬",
+        "plant": "10月中旬〜11月上旬",
+        "harvest": "2月中旬〜4月上旬",
+        "note": "トンネル、マルチ栽培"
+      }
+    ]
+  },
+  {
+    "name": "ニンニク",
+    "slug": "ninniku-sodatekata",
+    "rows": [
+      {
+        "type": "普通",
+        "sow": "—",
+        "plant": "10月中旬〜10月下旬",
+        "harvest": "5月下旬",
+        "note": "マルチ栽培。内陸の中山間部では9月下旬〜10月上旬に定植"
+      }
+    ]
+  },
+  {
+    "name": "ニラ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "夏出",
+        "sow": "11月上旬〜12月下旬",
+        "plant": "3月中旬〜4月中旬",
+        "harvest": "7月下旬〜11月下旬",
+        "note": "雨よけ栽培"
+      },
+      {
+        "type": "冬出",
+        "sow": "2月中旬〜3月中旬",
+        "plant": "5月下旬〜7月中旬",
+        "harvest": "11月中旬〜7月中旬",
+        "note": "ハウス栽培"
+      }
+    ]
+  },
+  {
+    "name": "ラッキョウ",
+    "slug": null,
+    "rows": [
+      {
+        "type": "普通",
+        "sow": "—",
+        "plant": "8月〜9月",
+        "harvest": "6月中旬〜7月上旬",
+        "note": "2年掘りは、らくだ、八つ房を使用"
+      }
+    ]
+  },
+  {
+    "name": "アスパラガス",
+    "slug": null,
+    "rows": [
+      {
+        "type": "半促成（長期採り）",
+        "sow": "1月下旬〜2月中旬",
+        "plant": "3月中旬〜4月中旬",
+        "harvest": "2月上旬〜10月下旬",
+        "note": "雨よけ栽培。1年目は8月下旬から、2年目は1月下旬から収穫可能"
+      }
+    ]
+  }
+];
+---
+<ArticleLayout
+  title="福岡県の作型表｜ネギ・ワケギ・ニラ・ニンニクなどの種まき時期と収穫期"
+  description="福岡県が公開している野菜の作型表から、ネギ（白ねぎ・小ねぎ・中大ねぎ）・ワケギ・葉たまねぎ・ニンニク・ニラ・ラッキョウ・アスパラガスの時期を整理。出典つき。"
+  slug="fukuoka-sakugata-negi-nira"
+  publishDate="2026-11-05"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>福岡県の作型表｜ネギ・ワケギ・ニラ・ニンニクなどの種まき時期と収穫期</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>ネギ・ワケギ・葉たまねぎ・ニンニク・ニラ・ラッキョウ・アスパラガスの作型ごとの時期</li>
+      <li>種ではなく、球根や株を植える野菜の植え付け時期</li>
+      <li>この表を家庭のプランターで使うときの注意</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表について</h2>
+    <p style="line-height:1.95;">
+      福岡県は、県内で作られる主要な野菜73品目について、作型ごとの種まき・植え付け・収穫の時期を表にまとめて公開しています。
+      ここでは、ネギの仲間とその周辺の品目（ワケギ・葉たまねぎ・ニンニク・ニラ・ラッキョウ・アスパラガス）を抜き出し、品種名を省いて時期と栽培の摘要だけを並べました。
+      タマネギ（玉になるもの）は<a href="/articles/fukuoka-sakugata-hyo/">別のページ</a>にあります。
+    </p>
+    <p style="line-height:1.95;">
+      ワケギ・ニンニク・ラッキョウは、種ではなく球根（種球）を植える野菜のため、種まきの欄が「—」になっています。
+    </p>
+  </section>
+
+  {groups.map((g) => (
+    <section style="margin-top:1.8rem;">
+      <h2>{g.slug ? <a href={`/articles/${g.slug}/`} style="color:inherit;">{g.name}</a> : g.name}</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:560px;">
+          <thead>
+            <tr style="background:#eef6f1;">
+              <th style={th}>作型</th><th style={th}>種まき</th>
+              {g.rows.some((r) => r.plant !== '—') && <th style={th}>植え付け</th>}
+              <th style={th}>収穫</th><th style={th}>摘要（栽培のしかた）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.rows.map((r) => (
+              <tr>
+                <td style={tdn + ' font-weight:700;'}>{r.type}</td>
+                <td style={tdn}>{r.sow}</td>
+                {g.rows.some((x) => x.plant !== '—') && <td style={tdn}>{r.plant}</td>}
+                <td style={tdn}>{r.harvest}</td>
+                <td style={td}>{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+  <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+    ※横にスクロールできます。ネギは、資料で白ねぎ・青ねぎ（小ねぎ、中・大ねぎ）に分かれており、ここでは作型の前に区分を付けています。
+  </p>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表を使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>福岡県の、農家向けの標準的な作型です。</strong>九州北部の気候を前提にしており、寒い地域では時期が違います。お住まいの地域の目安と合わせて見てください。</li>
+      <li><strong>トンネル・ハウス・雨よけ・マルチなどを使う作型が含まれます。</strong>摘要の欄にそうした記載がある作型は、保温や雨よけの設備を前提にしています。設備のないベランダでは、同じ時期にまいても同じようには育たないことがあります。</li>
+      <li><strong>収穫期は、その作型で収穫できる期間の幅です。</strong>種まきの時期が早いほど、収穫の時期も早くなります。</li>
+      <li><strong>ワケギ・ニンニク・ラッキョウは、球根や株を植えます。</strong>摘要には、植え付けの前に球根を吊るして休眠を破る、秋〜冬に収穫した株を分けて植える、などの方法が書かれています。</li>
+      <li><strong>「—」は、その項目に該当がない（種を直接まく野菜の植え付けなど）という意味です。</strong></li>
+    </ul>
+    <p style="line-height:1.95;">
+      「作型」の意味は<a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a>で説明しています。ニンニクの育て方は<a href="/articles/ninniku-sodatekata/">ニンニクの育て方</a>を、小ねぎの育て方は<a href="/articles/komanegi-sodatekata/">小ねぎの育て方</a>を見てください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://www.pref.fukuoka.lg.jp/gyosei-shiryo/yasai-syuyousaibai-hinsyu06.html" rel="noopener" target="_blank">福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・福岡県農林水産部園芸振興課）</a>：「Ⅰ 品種・作型」の表（PDF）</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への並べ替えと文章はプランターノートが行いました。個々の品種・地域・栽培条件で適した時期は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a><br />
+    <a href="/articles/fukuoka-sakugata-kyabetsu-hakusai/">福岡県の作型表（キャベツ・ブロッコリー・ハクサイなど）</a><br />
+    <a href="/articles/fukuoka-sakugata-lettuce/">福岡県の作型表（レタス・リーフレタス・ロメインレタス）</a><br />
+    <a href="/articles/hatsuga-seiiku-tekion-hyo/">野菜の発芽適温・生育適温の早見表</a>
+  </nav>
+</ArticleLayout>

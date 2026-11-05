@@ -1,0 +1,283 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+// 福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・園芸振興課）の「Ⅰ 品種・作型」の表から、
+// は種期・定植期・収穫期・摘要を転記（品種名は省略）。表のページ画像を見て行の対応を確認した。
+const th = 'text-align:left; padding:0.6rem; border:1px solid var(--color-border);';
+const td = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top;';
+const tdn = 'padding:0.6rem; border:1px solid var(--color-border); vertical-align:top; white-space:nowrap;';
+
+type R = { type: string; sow: string; plant: string; harvest: string; note: string };
+type G = { name: string; slug: string | null; rows: R[] };
+const groups: G[] = [
+  {
+    "name": "レタス",
+    "slug": "lettuce-sodatekata",
+    "rows": [
+      {
+        "type": "秋出",
+        "sow": "8月中旬〜9月上旬",
+        "plant": "8月下旬〜9月下旬",
+        "harvest": "10月中旬〜11月中旬",
+        "note": "セル成型苗(128、200セル)。育苗日数17〜23日"
+      },
+      {
+        "type": "冬出",
+        "sow": "9月上旬〜9月下旬",
+        "plant": "9月下旬〜10月下旬",
+        "harvest": "11月下旬〜2月上旬",
+        "note": "セル成型苗(128、200セル)。育苗日数18〜26日。12月からトンネル被覆栽培"
+      },
+      {
+        "type": "早春出",
+        "sow": "10月上旬〜10月中旬",
+        "plant": "10月下旬〜11月中旬",
+        "harvest": "2月上旬〜3月下旬",
+        "note": "セル成型苗(128、200セル)。育苗日数27〜35日。トンネル、ハウス栽培"
+      },
+      {
+        "type": "春出",
+        "sow": "10月下旬〜12月下旬",
+        "plant": "12月上旬〜2月上旬",
+        "harvest": "3月下旬〜4月下旬",
+        "note": "セル成型苗(128、200セル)。育苗日数35〜45日。トンネル栽培(ただし、4月上旬以降トンネル除去)"
+      },
+      {
+        "type": "初夏出",
+        "sow": "1月上旬〜4月下旬",
+        "plant": "2月中旬〜5月下旬",
+        "harvest": "5月上旬〜5月下旬",
+        "note": "セル成型苗(128、200セル)。育苗日数25〜42日"
+      }
+    ]
+  },
+  {
+    "name": "リーフレタス（赤色系）",
+    "slug": "lettuce-sodatekata",
+    "rows": [
+      {
+        "type": "秋出",
+        "sow": "8月上旬〜8月下旬",
+        "plant": "8月下旬〜9月中旬",
+        "harvest": "9月下旬〜10月下旬",
+        "note": "セル成型苗(128、200セル)。育苗日数17〜18日"
+      },
+      {
+        "type": "冬出",
+        "sow": "9月上旬〜10月下旬",
+        "plant": "9月下旬〜11月下旬",
+        "harvest": "11月上旬〜3月上旬",
+        "note": "セル成型苗(128、200セル)。育苗日数23〜24日。トンネル、ハウス栽培"
+      },
+      {
+        "type": "春出",
+        "sow": "11月上旬〜1月中旬",
+        "plant": "12月中旬〜2月下旬",
+        "harvest": "3月上旬〜4月下旬",
+        "note": "セル成型苗(128、200セル)。育苗日数40〜45日。トンネル、ハウス栽培(ただし、4月上旬以降はトンネル除去)"
+      },
+      {
+        "type": "初夏出",
+        "sow": "1月下旬〜4月中旬",
+        "plant": "3月上旬〜5月中旬",
+        "harvest": "5月上旬〜6月中旬",
+        "note": "セル成型苗(128、200セル)。育苗日数26〜40日。露地栽培、トンネル、ハウス栽培(ただし、4月上旬以降はトンネル除去)"
+      }
+    ]
+  },
+  {
+    "name": "リーフレタス（緑色系）",
+    "slug": "lettuce-sodatekata",
+    "rows": [
+      {
+        "type": "秋冬出",
+        "sow": "8月中旬〜10月下旬",
+        "plant": "9月上旬〜12月上旬",
+        "harvest": "9月下旬〜2月下旬",
+        "note": "セル成型苗(200セル)。育苗日数18〜45日。トンネル、ハウス栽培"
+      },
+      {
+        "type": "春夏出",
+        "sow": "11月上旬〜4月下旬",
+        "plant": "12月下旬〜5月下旬",
+        "harvest": "3月上旬〜6月上旬",
+        "note": "セル成型苗(200セル)。育苗日数18〜45日。トンネル、ハウス栽培"
+      }
+    ]
+  },
+  {
+    "name": "リーフレタス（フリル系）",
+    "slug": "lettuce-sodatekata",
+    "rows": [
+      {
+        "type": "初秋出",
+        "sow": "7月上旬〜7月下旬",
+        "plant": "7月下旬〜8月中旬",
+        "harvest": "9月上旬〜9月下旬",
+        "note": "中山間地(標高300m以上)で生産が可能。セル成型苗(200セル)。育苗日数17〜18日"
+      },
+      {
+        "type": "秋出",
+        "sow": "8月上旬〜8月下旬",
+        "plant": "8月下旬〜9月中旬",
+        "harvest": "10月上旬〜11月下旬",
+        "note": "セル成型苗(200セル)。育苗日数17〜18日"
+      },
+      {
+        "type": "冬出",
+        "sow": "9月上旬〜9月下旬",
+        "plant": "10月上旬〜10月下旬",
+        "harvest": "12月上旬〜2月下旬",
+        "note": "セル成型苗(200セル)。育苗日数26日。トンネル、ハウス栽培"
+      },
+      {
+        "type": "春出",
+        "sow": "10月上旬〜12月上旬",
+        "plant": "11月中旬〜1月中旬",
+        "harvest": "3月上旬〜4月中旬",
+        "note": "セル成型苗(200セル)。育苗日数35〜40日。トンネル、ハウス栽培(ただし、4月以降はトンネル除去)"
+      },
+      {
+        "type": "初夏出",
+        "sow": "3月上旬〜4月上旬",
+        "plant": "4月上旬〜4月下旬",
+        "harvest": "5月中旬〜6月中旬",
+        "note": "セル成型苗(200セル)。育苗日数26〜31日"
+      }
+    ]
+  },
+  {
+    "name": "ロメインレタス",
+    "slug": "lettuce-sodatekata",
+    "rows": [
+      {
+        "type": "初冬出",
+        "sow": "9月中旬〜9月下旬",
+        "plant": "10月中旬",
+        "harvest": "11月下旬〜12月下旬",
+        "note": ""
+      },
+      {
+        "type": "冬春出",
+        "sow": "9月下旬〜2月中旬",
+        "plant": "10月中旬〜3月下旬",
+        "harvest": "12月下旬〜5月上旬",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "name": "サラダ菜・トレビス",
+    "slug": null,
+    "rows": [
+      {
+        "type": "サラダ菜｜周年",
+        "sow": "周年(随時)",
+        "plant": "周年(随時)",
+        "harvest": "周年(随時)",
+        "note": "ハウス栽培。3〜8月は種は生育日数40〜50日、9〜10月は種は50〜60日、11月〜12月は種は70〜80日。夏季高温期はチップバーンの発生が多い"
+      },
+      {
+        "type": "トレビス｜冬出",
+        "sow": "8月中旬〜8月下旬",
+        "plant": "9月中旬〜9月下旬",
+        "harvest": "11月下旬〜12月下旬",
+        "note": "セル成型苗(128穴)。育苗日数25〜30日。マルチ栽培"
+      }
+    ]
+  }
+];
+---
+<ArticleLayout
+  title="福岡県の作型表｜レタス・リーフレタス・ロメインレタスの種まき時期と収穫期"
+  description="福岡県が公開している野菜の作型表から、レタス・リーフレタス（赤・緑・フリル）・ロメインレタス・サラダ菜・トレビスの種まき・植え付け・収穫の時期と育苗日数を整理。出典つき。"
+  slug="fukuoka-sakugata-lettuce"
+  publishDate="2026-11-05"
+  relatedCategory={{ href: '/category/planter/', label: 'プランター' }}
+>
+  <h1>福岡県の作型表｜レタス・リーフレタス・ロメインレタスの種まき時期と収穫期</h1>
+
+  <div style="margin:1rem 0 1.5rem; padding:1rem 1.2rem; background:#f5faf7; border-radius:10px; border:1px solid #c2ddd0;">
+    <p style="margin:0 0 0.5rem; font-size:0.84rem; font-weight:700; color:var(--color-primary-dark);">📚 このページで分かること</p>
+    <ul style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:2.1; color:var(--color-text);">
+      <li>レタス・リーフレタス・ロメインレタス・サラダ菜・トレビスの作型ごとの時期</li>
+      <li>リーフレタスは「赤色系・緑色系・フリル系」の別</li>
+      <li>苗を育てる日数（育苗日数）の目安</li>
+    </ul>
+  </div>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表について</h2>
+    <p style="line-height:1.95;">
+      福岡県は、県内で作られる主要な野菜73品目について、作型ごとの種まき・植え付け・収穫の時期を表にまとめて公開しています。
+      レタスの仲間は、玉になるレタス・リーフレタス・ロメインレタス・サラダ菜・トレビスが別の品目として載っています。
+      ここでは、品種名を省いて時期と栽培の摘要だけを並べました。
+    </p>
+    <p style="line-height:1.95;">
+      レタスとリーフレタスは、ほとんどの作型で、種をまいてセル成型苗（小さな穴のついたトレーで育てる苗）にしてから畑に植える方法をとっています。摘要の欄に、苗を育てる日数（育苗日数）が書かれています。
+    </p>
+  </section>
+
+  {groups.map((g) => (
+    <section style="margin-top:1.8rem;">
+      <h2>{g.slug ? <a href={`/articles/${g.slug}/`} style="color:inherit;">{g.name}</a> : g.name}</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.88rem; line-height:1.8; min-width:560px;">
+          <thead>
+            <tr style="background:#eef6f1;">
+              <th style={th}>作型</th><th style={th}>種まき</th>
+              {g.rows.some((r) => r.plant !== '—') && <th style={th}>植え付け</th>}
+              <th style={th}>収穫</th><th style={th}>摘要（栽培のしかた）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.rows.map((r) => (
+              <tr>
+                <td style={tdn + ' font-weight:700;'}>{r.type}</td>
+                <td style={tdn}>{r.sow}</td>
+                {g.rows.some((x) => x.plant !== '—') && <td style={tdn}>{r.plant}</td>}
+                <td style={tdn}>{r.harvest}</td>
+                <td style={td}>{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+  <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+    ※横にスクロールできます。サラダ菜は、資料では周年（随時）の栽培として、種をまく時期ごとの生育日数だけが書かれています。
+  </p>
+
+  <section style="margin-top:1.8rem;">
+    <h2>この表を使うときの注意</h2>
+    <ul style="line-height:2; padding-left:1.2rem;">
+      <li><strong>福岡県の、農家向けの標準的な作型です。</strong>九州北部の気候を前提にしており、寒い地域では時期が違います。お住まいの地域の目安と合わせて見てください。</li>
+      <li><strong>トンネル・ハウス・雨よけ・マルチなどを使う作型が含まれます。</strong>摘要の欄にそうした記載がある作型は、保温や雨よけの設備を前提にしています。設備のないベランダでは、同じ時期にまいても同じようには育たないことがあります。</li>
+      <li><strong>収穫期は、その作型で収穫できる期間の幅です。</strong>種まきの時期が早いほど、収穫の時期も早くなります。</li>
+      <li><strong>サラダ菜の「周年（随時）」は、ハウス栽培を前提にした表記です。</strong>摘要には、夏の高温期はチップバーン（葉の縁が傷む症状）が多いという注意があります。</li>
+      <li><strong>「—」は、その項目に該当がない（種を直接まく野菜の植え付けなど）という意味です。</strong></li>
+    </ul>
+    <p style="line-height:1.95;">
+      「作型」の意味は<a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a>で説明しています。レタスの育て方は<a href="/articles/lettuce-sodatekata/">レタスの育て方</a>を、発芽や育つ間の温度は<a href="/articles/hatsuga-seiiku-tekion-hyo/">発芽適温・生育適温の早見表</a>を見てください。
+    </p>
+  </section>
+
+  <section style="margin-top:1.8rem;">
+    <h2>出典</h2>
+    <ul style="line-height:2; padding-left:1.2rem; font-size:0.9rem;">
+      <li><a href="https://www.pref.fukuoka.lg.jp/gyosei-shiryo/yasai-syuyousaibai-hinsyu06.html" rel="noopener" target="_blank">福岡県「福岡県野菜主要栽培品種一覧表」（令和7年3月・福岡県農林水産部園芸振興課）</a>：「Ⅰ 品種・作型」の表（PDF）</li>
+    </ul>
+    <p style="font-size:0.84rem; color:var(--color-text-muted); line-height:1.8;">
+      このページは、公開されている資料をもとにした一般的な整理です。表の形への並べ替えと文章はプランターノートが行いました。個々の品種・地域・栽培条件で適した時期は変わります。
+    </p>
+  </section>
+
+  <nav style="margin-top:2rem; padding:1rem; border:1px solid var(--color-border); border-radius:8px; font-size:0.9rem;">
+    <p style="margin:0 0 0.4rem; font-weight:700; color:var(--color-primary-dark);">関連記事</p>
+    <a href="/articles/fukuoka-sakugata-hyo/">福岡県の作型表（ダイコン・カブ・ニンジン・ホウレンソウ・タマネギ）</a><br />
+    <a href="/articles/fukuoka-sakugata-kyabetsu-hakusai/">福岡県の作型表（キャベツ・ブロッコリー・ハクサイなど）</a><br />
+    <a href="/articles/fukuoka-sakugata-negi-nira/">福岡県の作型表（ネギ・ワケギ・ニラ・ニンニクなど）</a><br />
+    <a href="/articles/hatsuga-seiiku-tekion-hyo/">野菜の発芽適温・生育適温の早見表</a>
+  </nav>
+</ArticleLayout>
